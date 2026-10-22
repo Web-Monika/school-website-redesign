@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Календар | СУ „Недялка Шилева“</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #faf7f1;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 105px;
+            background: #fffdf8;
+            border-bottom: 1px solid #e8dfd2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-symbol {
+            width: 115px;
+            height: 115px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-symbol img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            line-height: 1;
+            color: #151515;
+        }
+
+        .logo-text p {
+            margin-top: 7px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #6c675f;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252525;
+            font-size: 14px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #8e2928;
+        }
+
+        nav a.active {
+            color: #8e2928;
+        }
+
+        nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #8e2928;
+        }
+
+        .header-button {
+            display: inline-block;
+            background: #8e2928;
+            color: white;
+            border: none;
+
+            padding: 13px 22px;
+            border-radius: 30px;
+
+            cursor: pointer;
+            font-family: "Inter", sans-serif;
+            font-size: 13px;
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+        .header-button:hover {
+            background: #6f2020;
+            transform: translateY(-2px);
+        }
+
+        .page-title {
+            text-align: center;
+            padding: 55px 20px 30px;
+        }
+
+        .page-title h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 45px;
+            color: #171717;
+            margin-bottom: 8px;
+        }
+
+        .page-title h2::before {
+            content: "✦";
+            color: #8e2928;
+            margin-right: 12px;
+            font-size: 25px;
+        }
+
+        .page-title p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .calendar-section {
+            max-width: 1250px;
+            margin: 0 auto;
+            padding: 30px 20px 80px;
+        }
+
+        .calendar-box {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+
+        .calendar {
+            background: #fffdf8;
+            border: 1px solid #e3d9cb;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(70, 45, 25, 0.06);
+        }
+
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+
+            border-bottom: 1px solid #e5ddd2;
+        }
+
+        .calendar-header h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px;
+        }
+
+        .calendar-header button {
+            width: 40px;
+            height: 40px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: #f1e9dd;
+            color: #8e2928;
+
+            font-size: 25px;
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .calendar-header button:hover {
+            background: #8e2928;
+            color: white;
+        }
+
+        .days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+            text-align: center;
+        }
+
+        .day-name {
+            color: #8e2928;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 12px 5px;
+        }
+
+        .day {
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 1px solid transparent;
+            background: #faf7f1;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+        .day:hover {
+            border-color: #d8c8b5;
+            background: #f8f1e7;
+        }
+
+        .event-day {
+            color: #8e2928;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .event-day::after {
+            content: "•";
+
+            position: absolute;
+            bottom: 5px;
+
+            font-size: 18px;
+            line-height: 10px;
+        }
+
+        .calendar-events {
+            background: #fffdf8;
+
+            border: 1px solid #e3d9cb;
+            border-left: 4px solid #8e2928;
+
+            padding: 30px;
+
+            box-shadow: 0 10px 30px rgba(70, 45, 25, 0.06);
+        }
+
+        .calendar-events h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+        .calendar-event {
+            padding: 15px 0;
+            border-bottom: 1px solid #e5ddd2;
+        }
+
+        .calendar-event:last-child {
+            border-bottom: none;
+        }
+
+        .event-date {
+            color: #8e2928;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .calendar-event h4 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+
+            margin: 4px 0;
+        }
+
+        .calendar-event p {
+            color: #777;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .no-events {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.6;
+            padding-top: 10px;
+        }
+
+        footer {
+            background: #233d30;
+            color: white;
+            padding: 35px 6% 20px;
+            text-align: center;
+        }
+
+        footer p {
+            color: #d7d7d0;
+            font-size: 13px;
+        }
+
+        .copyright {
+            margin-top: 20px;
+            padding-top: 15px;
+
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+            font-size: 11px;
+            color: #bfc6c0;
+        }
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 15px;
+            }
+
+        }
+
+        @media (max-width: 900px) {
+
+            .calendar-box {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                height: auto;
+                padding: 20px;
+
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-button {
+                display: none;
+            }
+
+            .page-title {
+                padding-top: 35px;
+            }
+
+            .page-title h2 {
+                font-size: 36px;
+            }
+
+            .calendar {
+                padding: 15px;
+            }
+
+            .calendar-header h2 {
+                font-size: 25px;
+            }
+
+            .day {
+                min-height: 50px;
+                font-size: 12px;
+            }
+
+            .day-name {
+                font-size: 11px;
+            }
+
+            .calendar-events {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-symbol">
+                <img src="logo.png" alt="Лого на училището">
+            </div>
+
+            <div class="logo-text">
+
+                <h1>
+                    Средно училище<br>
+                    „Недялка Шилева“
+                </h1>
+
+                <p>
+                    ЗНАНИЕ • ТРАДИЦИИ • БЪДЕЩЕ
+                </p>
+
+            </div>
+
+        </div>
+
+        <nav>
+
+            <a href="index.html">
+                Начало
+            </a>
+
+            <a href="about.html">
+                За нас
+            </a>
+
+            <a href="news.html">
+                Новини
+            </a>
+
+            <a href="gallery.html">
+                Галерия
+            </a>
+
+            <a href="contacts.html">
+                Контакти
+            </a>
+
+            <a href="parents.html">
+                За родители
+            </a>
+
+        </nav>
+
+        <a href="jobs.html" class="header-button">
+            ♡ Търсите ли работа?
+        </a>
+
+    </header>
+
+    <section class="page-title">
+
+        <h2>
+            Календар
+        </h2>
+
+        <p>
+            Важни дати, събития и неучебни дни
+        </p>
+
+    </section>
+
+    <section class="calendar-section">
+
+        <div class="calendar-box">
+
+            <div class="calendar">
+
+                <div class="calendar-header">
+
+                    <button id="prevMonth" type="button">‹</button>
+
+                    <h2 id="monthTitle">Октомври 2026</h2>
+
+                    <button id="nextMonth" type="button">›</button>
+
+                </div>
+
+                <div class="days" id="calendarDays">
+                </div>
+
+            </div>
+
+            <div class="calendar-events">
+
+                <h3>Предстоящи събития</h3>
+
+                <div id="eventsList">
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>
+            СУ „Недялка Шилева“ – град Съединение
+        </p>
+
+        <div class="copyright">
+            © 2026 СУ „Недялка Шилева“ • Всички права запазени
+        </div>
+
+    </footer>
+
+    <script>
+
+        const months = [
+            "Януари",
+            "Февруари",
+            "Март",
+            "Април",
+            "Май",
+            "Юни",
+            "Юли",
+            "Август",
+            "Септември",
+            "Октомври",
+            "Ноември",
+            "Декември"
+        ];
+
+        const daysOfWeek = [
+            "Пн",
+            "Вт",
+            "Ср",
+            "Чт",
+            "Пт",
+            "Сб",
+            "Нд"
+        ];
+
+        const events = {
+
+            "2026-8": [
+
+                {
+                    day: 1,
+                    title: "Оперативка",
+                    description: "Начало на оперативката: 09:00 ч."
+                },
+
+                {
+                    day: 3,
+                    title: "Педагогически съвет",
+                    description: "Начало на педагогически съвет: 09:00 ч."
+                },
+
+                {
+                    day: 8,
+                    title: "Родителска среща",
+                    description: "Улица Васил Левски 4; Начало: 18:00 ч."
+                },
+
+                {
+                    day: 9,
+                    title: "Родителска среща",
+                    description: "Улица Чардафон Велики."
+                },
+
+                {
+                    day: 10,
+                    title: "Родителска среща",
+                    description: "5-ти и 8-ми клас."
+                },
+
+                {
+                    day: 11,
+                    title: "Родителска среща",
+                    description: "с. Царимир."
+                },
+
+                {
+                    day: 14,
+                    title: "Педагогически съвет",
+                    description: "Начало: 12:30 ч."
+                },
+
+                {
+                    day: 15,
+                    title: "Откриване на учебната 2026/2027 г.",
+                    description: ""
+                },
+
+                {
+                    day: 22,
+                    title: "Ден на независимостта",
+                    description: ""
+                },
+
+                {
+                    day: 23,
+                    title: "Родителска среща",
+                    description: "6-ти, 7-ми, 8-ми, 9-ти, 10-ти, 11-ти и 12-ти клас."
+                },
+
+                {
+                    day: 25,
+                    title: "Европейски ден на спорта",
+                    description: ""
+                }
+
+            ],
+
+            "2026-9": [
+
+                {
+                    day: 21,
+                    title: "Евакуация – пожар",
+                    description: "Учебна тренировка за действие при възникване на пожар."
+                },
+
+                {
+                    day: 26,
+                    title: "Неучебен ден",
+                    description: "Неучебен ден след провеждане на избори."
+                },
+
+                {
+                    day: 29,
+                    title: "Проектна дейност",
+                    description: "Проектна дейност, свързана с Васил Левски."
+                },
+
+                {
+                    day: 30,
+                    title: "Есенен спортен празник",
+                    description: "Спортни занимания и активности за учениците."
+                }
+
+            ],
+
+            "2026-10": [
+
+                {
+                    day: 2,
+                    title: "Есенна ваканция",
+                    description: ""
+                },
+
+                {
+                    day: 12,
+                    title: "Родителска среща",
+                    description: "БДП и ПАВ."
+                },
+
+                {
+                    day: 13,
+                    title: "Интерактивни часове с БДП",
+                    description: ""
+                },
+
+                {
+                    day: 25,
+                    title: "Евакуация – терор",
+                    description: ""
+                }
+
+            ],
+
+            "2026-11": [
+
+                {
+                    day: 23,
+                    title: "Коледни тържества",
+                    description: ""
+                }
+
+            ],
+
+            "2026-12": [
+
+                {
+                    day: 1,
+                    title: "Начало на празничните инициативи",
+                    description: "Начало на празничната програма в училището."
+                },
+
+                {
+                    day: 23,
+                    title: "Неучебен ден",
+                    description: "Неучебен ден."
+                }
+
+            ]
+
+        };
+
+        let currentMonth = 9;
+        let currentYear = 2026;
+
+        function renderCalendar() {
+
+            const calendarDays =
+                document.getElementById("calendarDays");
+
+            const monthTitle =
+                document.getElementById("monthTitle");
+
+            const eventsList =
+                document.getElementById("eventsList");
+
+            monthTitle.textContent =
+                months[currentMonth] + " " + currentYear;
+
+            calendarDays.innerHTML = "";
+            eventsList.innerHTML = "";
+
+            daysOfWeek.forEach(day => {
+
+                const dayName =
+                    document.createElement("div");
+
+                dayName.className = "day-name";
+                dayName.textContent = day;
+
+                calendarDays.appendChild(dayName);
+
+            });
+
+            const firstDay =
+                new Date(currentYear, currentMonth, 1);
+
+            let startDay =
+                firstDay.getDay();
+
+            startDay =
+                startDay === 0 ? 6 : startDay - 1;
+
+            const daysInMonth =
+                new Date(
+                    currentYear,
+                    currentMonth + 1,
+                    0
+                ).getDate();
+
+            for (let i = 0; i < startDay; i++) {
+
+                const emptyDay =
+                    document.createElement("div");
+
+                emptyDay.className = "day";
+
+                calendarDays.appendChild(emptyDay);
+
+            }
+
+            const monthEvents =
+                events[`${currentYear}-${currentMonth}`] || [];
+
+            for (
+                let day = 1;
+                day <= daysInMonth;
+                day++
+            ) {
+
+                const dayElement =
+                    document.createElement("div");
+
+                dayElement.className = "day";
+                dayElement.textContent = day;
+
+                const hasEvent =
+                    monthEvents.some(
+                        event => event.day === day
+                    );
+
+                if (hasEvent) {
+                    dayElement.classList.add("event-day");
+                }
+
+                calendarDays.appendChild(dayElement);
+
+            }
+
+            if (monthEvents.length === 0) {
+
+                eventsList.innerHTML = `
+                    <p class="no-events">
+                        Няма въведени събития за този месец.
+                    </p>
+                `;
+
+            } else {
+
+                monthEvents.forEach(event => {
+
+                    const eventElement =
+                        document.createElement("div");
+
+                    eventElement.className =
+                        "calendar-event";
+
+                    eventElement.innerHTML = `
+
+                        <div class="event-date">
+                            ${event.day} ${months[currentMonth].toUpperCase()}
+                        </div>
+
+                        <h4>
+                            ${event.title}
+                        </h4>
+
+                        ${
+                            event.description
+                                ? `<p>${event.description}</p>`
+                                : ""
+                        }
+
+                    `;
+
+                    eventsList.appendChild(eventElement);
+
+                });
+
+            }
+
+        }
+
+        document
+            .getElementById("prevMonth")
+            .addEventListener("click", function () {
+
+                currentMonth--;
+
+                if (currentMonth < 0) {
+
+                    currentMonth = 11;
+                    currentYear--;
+
+                }
+
+                renderCalendar();
+
+            });
+
+        document
+            .getElementById("nextMonth")
+            .addEventListener("click", function () {
+
+                currentMonth++;
+
+                if (currentMonth > 11) {
+
+                    currentMonth = 0;
+                    currentYear++;
+
+                }
+
+                renderCalendar();
+
+            });
+
+        renderCalendar();
+
+    </script>
+
+</body>
+</html>

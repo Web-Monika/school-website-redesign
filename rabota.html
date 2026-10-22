@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+
+<html lang="bg">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Търсите ли работа? | СУ „Недялка Шилева“</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        background: #faf7f1;
+        color: #252525;
+        line-height: 1.6;
+    }
+
+
+    header {
+        min-height: 105px;
+        background: #fffdf8;
+        border-bottom: 1px solid #e8dfd2;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 6%;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo-symbol {
+        width: 115px;
+        height: 115px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-symbol img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .logo-text h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 28px;
+        line-height: 1;
+        color: #151515;
+    }
+
+    .logo-text p {
+        margin-top: 7px;
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: #6c675f;
+    }
+
+
+    nav {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #252525;
+        font-size: 14px;
+        position: relative;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #8e2928;
+    }
+
+    nav a.active {
+        color: #8e2928;
+    }
+
+    nav a.active::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #8e2928;
+    }
+
+
+    .header-button {
+        background: #8e2928;
+        color: white;
+        border: none;
+        padding: 13px 22px;
+        border-radius: 30px;
+        cursor: pointer;
+        font-family: "Inter";
+        font-size: 13px;
+        transition: 0.3s;
+    }
+
+    .header-button:hover {
+        background: #6f2020;
+        transform: translateY(-2px);
+    }
+
+
+    .page-hero {
+        min-height: 330px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(35, 61, 48, 0.95),
+                rgba(35, 61, 48, 0.78)
+            ),
+            url("school.jpg");
+
+        background-size: cover;
+        background-position: center;
+
+        color: white;
+
+        padding: 60px 20px;
+    }
+
+    .page-hero-content {
+        max-width: 800px;
+    }
+
+    .page-hero h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 55px;
+        margin-bottom: 12px;
+    }
+
+    .page-hero p {
+        font-size: 15px;
+        color: #eee8df;
+    }
+
+
+    .jobs-section {
+        max-width: 1100px;
+        margin: auto;
+        padding: 60px 20px 80px;
+    }
+
+    .intro {
+        text-align: center;
+        max-width: 750px;
+        margin: 0 auto 45px;
+    }
+
+    .intro h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 42px;
+        margin-bottom: 15px;
+        color: #171717;
+    }
+
+    .intro h2::before {
+        content: "✦";
+        color: #8e2928;
+        margin-right: 10px;
+    }
+
+    .intro p {
+        font-size: 14px;
+        color: #707070;
+    }
+
+
+    .info-card {
+        background: #fffdf8;
+        border: 1px solid #e4dacd;
+        padding: 40px;
+        margin-bottom: 25px;
+    }
+
+    .info-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 30px;
+        margin-bottom: 15px;
+        color: #233d30;
+    }
+
+    .info-card p {
+        font-size: 14px;
+        color: #626262;
+        margin-bottom: 12px;
+    }
+
+
+    .jobs-list {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .job-item {
+        background: #fffdf8;
+        border: 1px solid #e4dacd;
+        margin-bottom: 15px;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    .job-item:hover {
+        border-color: #c9b9a5;
+    }
+
+
+    .job-title {
+        width: 100%;
+        border: none;
+        background: transparent;
+
+        padding: 23px 28px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        cursor: pointer;
+
+        font-family: "Cormorant Garamond", serif;
+        font-size: 25px;
+
+        color: #252525;
+
+        text-align: left;
+
+        transition: 0.3s;
+    }
+
+    .job-title:hover {
+        color: #8e2928;
+        background: #faf7f1;
+    }
+
+
+    .arrow {
+        font-family: "Inter", sans-serif;
+        font-size: 25px;
+        color: #8e2928;
+
+        transition: transform 0.3s;
+    }
+
+
+    .job-item.open .arrow {
+        transform: rotate(180deg);
+    }
+
+
+    .job-details {
+        max-height: 0;
+        overflow: hidden;
+
+        padding: 0 28px;
+
+        background: #faf7f1;
+
+        transition:
+            max-height 0.4s ease,
+            padding 0.4s ease;
+    }
+
+
+    .job-item.open .job-details {
+        max-height: 2000px;
+        padding: 25px 28px 30px;
+        border-top: 1px solid #e4dacd;
+    }
+
+    .job-details h3{
+        color:#d32421;
+    }
+
+    .job-details p {
+        font-family: "Inter", sans-serif;
+        font-size: 13px;
+
+        color: #666;
+
+        margin-bottom: 12px;
+    }
+
+
+    .job-details p:last-child {
+        margin-bottom: 0;
+    }
+
+
+    .job-details strong {
+        color: #252525;
+    }
+
+
+    .application-box {
+        margin-top: 40px;
+
+        background: #efe5d5;
+
+        padding: 35px;
+
+        border-left: 5px solid #28553d;
+    }
+
+    .application-box h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+
+    .application-box h4 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 21px;
+        margin-bottom: 8px;
+        color: #233d30;
+    }
+
+    .application-box p {
+        font-size: 13px;
+        color: #625e57;
+        margin-bottom: 10px;
+    }
+
+    .application-box strong {
+        color: #252525;
+    }
+
+
+    footer {
+        background: #233d30;
+        color: white;
+        padding: 55px 6% 25px;
+    }
+
+    .footer-grid {
+        max-width: 1250px;
+        margin: auto;
+
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 50px;
+    }
+
+    .footer-brand h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+        color: #d7d7d0;
+        font-size: 13px;
+        max-width: 300px;
+    }
+
+    footer h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 21px;
+        margin-bottom: 15px;
+    }
+
+    footer ul {
+        list-style: none;
+    }
+
+    footer li {
+        margin-bottom: 8px;
+        font-size: 13px;
+    }
+
+    footer a {
+        color: #d7d7d0;
+        text-decoration: none;
+        font-size: 13px;
+    }
+
+    footer a:hover {
+        color: white;
+    }
+
+    .copyright {
+        max-width: 1250px;
+        margin: 45px auto 0;
+        padding-top: 20px;
+
+        border-top: 1px solid rgba(255,255,255,0.15);
+
+        text-align: center;
+
+        font-size: 11px;
+        color: #bfc6c0;
+    }
+
+
+    @media (max-width: 1000px) {
+
+        nav {
+            gap: 15px;
+        }
+
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+        header {
+            height: auto;
+            padding: 20px;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        nav {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .header-button {
+            display: none;
+        }
+
+        .page-hero {
+            min-height: 260px;
+        }
+
+        .page-hero h2 {
+            font-size: 42px;
+        }
+
+        .info-card,
+        .application-box {
+            padding: 25px 20px;
+        }
+
+        .job-title {
+            padding: 20px;
+            font-size: 22px;
+        }
+
+        .job-details {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .job-item.open .job-details {
+            padding: 20px 20px 25px;
+        }
+
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-symbol">
+
+            <img src="logo.png" alt="Лого на училището">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h1>
+                Средно училище<br>
+                „Недялка Шилева“
+            </h1>
+
+            <p>
+                ЗНАНИЕ • ТРАДИЦИИ • БЪДЕЩЕ
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Начало
+        </a>
+
+        <a href="about.html">
+            За нас
+        </a>
+
+        <a href="news.html">
+            Новини
+        </a>
+
+        <a href="gallery.html">
+            Галерия
+        </a>
+
+        <a href="contacts.html">
+            Контакти
+        </a>
+
+        <a href="parents.html">
+            За родители
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <h2>
+            Търсите ли работа?
+        </h2>
+
+        <p>
+            Възможности за работа в СУ „Недялка Шилева“ –
+            гр. Съединение
+        </p>
+
+    </div>
+
+</section>
+
+
+<main class="jobs-section">
+
+
+    <div class="intro">
+
+        <h2>
+            Свободни работни места
+        </h2>
+
+        <p>
+            На тази страница публикуваме информация за
+            свободни работни позиции в СУ „Недялка Шилева“.
+        </p>
+
+    </div>
+
+
+    <div class="info-card">
+
+        <h3>
+            СЪОБЩЕНИЕ
+        </h3>
+
+        <p>
+            Във връзка с провеждането на подбор на кадри в СУ „Недялка Шилева“ –
+            гр. Съединение, съгласно утвърдените
+            Правила за осъществяване на подбор на кадри, информираме,
+            че след извършване на подбор чрез проверка на постъпилата документация
+            Комисията за подбор ще уведоми само кандидатите, допуснати до интервю.
+            Допуснатите до интервю кандидати ще бъдат уведомени индивидуално за датата,
+            часа и мястото на провеждане на интервюто.
+        </p>
+
+        <p>
+            Кандидатите, които не са допуснати до интервю, няма да бъдат уведомявани индивидуално.<br>
+            Настоящото съобщение има за цел да информира кандидатите за реда и начина на уведомяване при провеждането на подбора.
+        </p>
+
+        <p>
+            28.08.2026 г.<br>
+            Директор: Величка Кирова
+        </p>
+
+    </div>
+
+
+    <div class="jobs-list">
+
+
+        <div class="job-item">
+
+            <button type="button" class="job-title" onclick="toggleJob(this)">
+
+                <span>
+                    Учител ГЦОУД
+                </span>
+
+                <span class="arrow">⌄</span>
+
+            </button>
+
+
+            <div class="job-details">
+
+                <h3>Позицията е заета</h3>
+                <br>
+                <p>
+                    <strong>Длъжност:</strong>
+                    Учител ГЦОУД V клас
+                </p>
+
+                <p>
+                    <strong>БРОЙ СВОБОДНИ МЕСТА:</strong>
+                    1
+                </p>
+
+                <p>
+                    <strong>МЯСТОТО Е СВОБОДНО, СЧИТАНО ОТ:</strong>
+                    19.08.2026 г.
+                </p>
+
+                <p>
+                    <strong>МЯСТО НА РАБОТА:</strong>
+                    СУ „Недялка Шилева“ град Съединение, ул. „Баба Исака Скачкова“ №3
+                </p>
+
+                <p>
+                    <strong>ИЗИСКВАНИЯ ЗА ЗАЕМАНЕ НА ДЛЪЖНОСТТА:</strong>
+                </p>
+
+                <p>
+                    <strong>ОБРАЗОВАНИЕ:</strong>
+                    висше – бакалавър
+                </p>
+
+                <p>
+                    <strong>СПЕЦИАЛНОСТИ И КВАЛИФИКАЦИЯ:</strong>
+                    Учител по: БЕЛ; Математика; Английски език
+                </p>
+
+                <p>
+                    <strong>ТРУДОВ СТАЖ:</strong>
+                    не се изисква
+                </p>
+
+                <p>
+                    <strong>РАБОТНО ВРЕМЕ:</strong>
+                    Пълно работно време
+                </p>
+
+                <p>
+                    <strong>ВИД ТРУДОВ ДОГОВОР:</strong>
+                    неопределено време
+                </p>
+
+                <p>
+                    <strong>ДРУГИ:</strong>
+                    Договор със срок на изпитване по чл. 70 от КТ
+                </p>
+
+                <p>
+                    <strong>Необходими документи:</strong><br>
+                    Заявление за заемане на длъжността<br>
+                    Професионална автобиография<br>
+                    Копие от документа удостоверяващ завършена степен на образование и квалификация<br>
+                    Справка за придобития стаж и професионален опит –
+                    препис-извлечение от трудова книжка или трудова книжка /копие/ –
+                    за придобит опит до 1 юни 2025 г. и единен електронен трудов запис
+                    от регистъра на заетостта за опит, натрупан след юни 2025 г.
+                </p>
+
+                <p>
+                    <strong>Срок за кандидатстване:</strong>
+                    До обявяване на позицията за заета.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="job-item">
+
+            <button type="button" class="job-title" onclick="toggleJob(this)">
+
+                <span>
+                    Учител по информационни технологии
+                </span>
+
+                <span class="arrow">⌄</span>
+
+            </button>
+
+
+            <div class="job-details">
+                
+                <h3>Позицията е заета</h3>
+                <br>
+
+                <p>
+                    <strong>Длъжност:</strong>
+                    Учител по информационни технологии, КМИТ V-XII клас
+                </p>
+
+                <p>
+                    <strong>БРОЙ СВОБОДНИ МЕСТА:</strong>
+                    1
+                </p>
+
+                <p>
+                    <strong>МЯСТОТО Е СВОБОДНО, СЧИТАНО ОТ:</strong>
+                    19.08.2026 г.
+                </p>
+
+                <p>
+                    <strong>МЯСТО НА РАБОТА:</strong>
+                    СУ „Недялка Шилева“ град Съединение, ул. „Баба Исака Скачкова“ №3
+                </p>
+
+                <p>
+                    <strong>ИЗИСКВАНИЯ ЗА ЗАЕМАНЕ НА ДЛЪЖНОСТТА:</strong>
+                </p>
+
+                <p>
+                    <strong>ОБРАЗОВАНИЕ:</strong>
+                    висше – бакалавър
+                </p>
+
+                <p>
+                    <strong>СПЕЦИАЛНОСТИ И КВАЛИФИКАЦИЯ:</strong>
+                    Учител по информационни технологии
+                </p>
+
+                <p>
+                    <strong>ТРУДОВ СТАЖ:</strong>
+                    Не се изисква
+                </p>
+
+                <p>
+                    <strong>РАБОТНО ВРЕМЕ:</strong>
+                    Пълно работно време
+                </p>
+
+                <p>
+                    <strong>ВИД ТРУДОВ ДОГОВОР:</strong>
+                    Неопределено време
+                </p>
+
+                <p>
+                    <strong>ДРУГИ:</strong>
+                    Договор със срок на изпитване по чл. 70 от КТ
+                </p>
+
+                <p>
+                    <strong>Необходими документи:</strong><br>
+                    Заявление за заемане на длъжността<br>
+                    Професионална автобиография<br>
+                    Копие от документа удостоверяващ завършена степен на образование и квалификация<br>
+                    Справка за придобития стаж и професионален опит –
+                    препис-извлечение от трудова книжка или трудова книжка /копие/ –
+                    за придобит опит до 1 юни 2025 г. и единен електронен трудов запис
+                    от регистъра на заетостта за опит, натрупан след юни 2025 г.
+                </p>
+
+                <p>
+                    <strong>Срок за кандидатстване:</strong>
+                    До обявяване на позицията за заета.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="job-item">
+
+            <button type="button" class="job-title" onclick="toggleJob(this)">
+
+                <span>
+                    Учител по математика
+                </span>
+
+                <span class="arrow">⌄</span>
+
+            </button>
+
+
+            <div class="job-details">
+
+                <h3>Позицията е заета</h3>
+                <br>
+
+                <p>
+                    <strong>Длъжност:</strong>
+                    Учител по математика V-XII клас
+                </p>
+
+                <p>
+                    <strong>БРОЙ СВОБОДНИ МЕСТА:</strong>
+                    1
+                </p>
+
+                <p>
+                    <strong>МЯСТОТО Е СВОБОДНО, СЧИТАНО ОТ:</strong>
+                    19.08.2026 г.
+                </p>
+
+                <p>
+                    <strong>МЯСТО НА РАБОТА:</strong>
+                    СУ „Недялка Шилева“ град Съединение, ул. „Баба Исака Скачкова“ №3
+                </p>
+
+                <p>
+                    <strong>ИЗИСКВАНИЯ ЗА ЗАЕМАНЕ НА ДЛЪЖНОСТТА:</strong>
+                </p>
+
+                <p>
+                    <strong>ОБРАЗОВАНИЕ:</strong>
+                    висше – бакалавър
+                </p>
+
+                <p>
+                    <strong>СПЕЦИАЛНОСТИ И КВАЛИФИКАЦИЯ:</strong>
+                    Учител по математика
+                </p>
+
+                <p>
+                    <strong>ТРУДОВ СТАЖ:</strong>
+                    не се изисква
+                </p>
+
+                <p>
+                    <strong>РАБОТНО ВРЕМЕ:</strong>
+                    Пълно работно време
+                </p>
+
+                <p>
+                    <strong>ВИД ТРУДОВ ДОГОВОР:</strong>
+                    неопределено време
+                </p>
+
+                <p>
+                    <strong>ДРУГИ:</strong>
+                    Договор със срок на изпитване по чл. 70 от КТ
+                </p>
+
+                <p>
+                    <strong>Необходими документи:</strong><br>
+                    Заявление за заемане на длъжността<br>
+                    Професионална автобиография<br>
+                    Копие от документа удостоверяващ завършена степен на образование и квалификация<br>
+                    Справка за придобития стаж и професионален опит –
+                    препис-извлечение от трудова книжка или трудова книжка /копие/ –
+                    за придобит опит до 1 юни 2025 г. и единен електронен трудов запис
+                    от регистъра на заетостта за опит, натрупан след юни 2025 г.
+                </p>
+
+                <p>
+                    <strong>Срок за кандидатстване:</strong>
+                    До обявяване на позицията за заета.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="job-item">
+
+            <button type="button" class="job-title" onclick="toggleJob(this)">
+
+                <span>
+                    Учител по английски език в начален, прогимназиален и гимназиален етап
+                </span>
+
+                <span class="arrow">⌄</span>
+
+            </button>
+
+
+            <div class="job-details">
+
+                <h3>Позицията е заета</h3>
+                <br>
+                <p>
+                    <strong>Длъжност:</strong>
+                    Учител по английски език в начален, прогимназиален и гимназиален етап
+                </p>
+
+                <p>
+                    <strong>БРОЙ СВОБОДНИ МЕСТА:</strong>
+                    2
+                </p>
+
+                <p>
+                    <strong>МЯСТОТО Е СВОБОДНО, СЧИТАНО ОТ:</strong>
+                    19.08.2026 г.
+                </p>
+
+                <p>
+                    <strong>МЯСТО НА РАБОТА:</strong>
+                    СУ „Недялка Шилева“ град Съединение, ул. „Баба Исака Скачкова“ №3
+                </p>
+
+                <p>
+                    <strong>ИЗИСКВАНИЯ ЗА ЗАЕМАНЕ НА ДЛЪЖНОСТТА:</strong>
+                </p>
+
+                <p>
+                    <strong>ОБРАЗОВАНИЕ:</strong>
+                    висше – бакалавър
+                </p>
+
+                <p>
+                    <strong>СПЕЦИАЛНОСТИ И КВАЛИФИКАЦИЯ:</strong>
+                    Учител по английски език; Английска филология
+                </p>
+
+                <p>
+                    <strong>ТРУДОВ СТАЖ:</strong>
+                    не се изисква
+                </p>
+
+                <p>
+                    <strong>РАБОТНО ВРЕМЕ:</strong>
+                    Пълно работно време
+                </p>
+
+                <p>
+                    <strong>ВИД ТРУДОВ ДОГОВОР:</strong>
+                    неопределено време
+                </p>
+
+                <p>
+                    <strong>ДРУГИ:</strong>
+                    Договор със срок на изпитване по чл. 70 от КТ
+                </p>
+
+                <p>
+                    <strong>Необходими документи:</strong><br>
+                    Заявление за заемане на длъжността<br>
+                    Професионална автобиография<br>
+                    Копие от документа удостоверяващ завършена степен на образование и квалификация<br>
+                    Справка за придобития стаж и професионален опит –
+                    препис-извлечение от трудова книжка или трудова книжка /копие/ –
+                    за придобит опит до 1 юни 2025 г. и единен електронен трудов запис
+                    от регистъра на заетостта за опит, натрупан след юни 2025 г.
+                </p>
+
+                <p>
+                    <strong>Срок за кандидатстване:</strong>
+                    До обявяване на позицията за заета.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="job-item">
+
+            <button type="button" class="job-title" onclick="toggleJob(this)">
+
+                <span>
+                    Учител, начален етап на основното образование
+                </span>
+
+                <span class="arrow">⌄</span>
+
+            </button>
+
+
+            <div class="job-details">
+
+                <h3>Позицията е заета</h3>
+                <br>
+                <p>
+                    <strong>Длъжност:</strong>
+                    Учител, начален етап на основното образование
+                </p>
+
+                <p>
+                    <strong>БРОЙ СВОБОДНИ МЕСТА:</strong>
+                    1
+                </p>
+
+                <p>
+                    <strong>МЯСТОТО Е СВОБОДНО, СЧИТАНО ОТ:</strong>
+                    19.08.2026 г.
+                </p>
+
+                <p>
+                    <strong>МЯСТО НА РАБОТА:</strong>
+                    СУ „Недялка Шилева“ град Съединение, филиал с. Царимир, ул. „Георги Димитров“ №4
+                </p>
+
+                <p>
+                    <strong>ИЗИСКВАНИЯ ЗА ЗАЕМАНЕ НА ДЛЪЖНОСТТА:</strong>
+                </p>
+
+                <p>
+                    <strong>ОБРАЗОВАНИЕ:</strong>
+                    висше – бакалавър
+                </p>
+
+                <p>
+                    <strong>СПЕЦИАЛНОСТИ И КВАЛИФИКАЦИЯ:</strong>
+                    ПНУП, НУП
+                </p>
+
+                <p>
+                    <strong>ТРУДОВ СТАЖ:</strong>
+                    Над 2 години
+                </p>
+
+                <p>
+                    <strong>РАБОТНО ВРЕМЕ:</strong>
+                    Пълно работно време
+                </p>
+
+                <p>
+                    <strong>ВИД ТРУДОВ ДОГОВОР:</strong>
+                    За определен срок
+                </p>
+
+                <p>
+                    <strong>ДРУГИ:</strong>
+                    Договор със срок на изпитване по чл. 70 от КТ, до завръщане на титуляра
+                </p>
+
+                <p>
+                    <strong>Необходими документи:</strong><br>
+                    Заявление за заемане на длъжността<br>
+                    Професионална автобиография<br>
+                    Копие от документа удостоверяващ завършена степен на образование и квалификация<br>
+                    Справка за придобития стаж и професионален опит –
+                    препис-извлечение от трудова книжка или трудова книжка /копие/ –
+                    за придобит опит до 1 юни 2025 г. и единен електронен трудов запис
+                    от регистъра на заетостта за опит, натрупан след юни 2025 г.
+                </p>
+
+                <p>
+                    <strong>Срок за кандидатстване:</strong>
+                    До обявяване на позицията за заета.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="job-item">
+
+            <button type="button" class="job-title" onclick="toggleJob(this)">
+
+                <span>
+                    Учител, начален етап на основното образование
+                </span>
+
+                <span class="arrow">⌄</span>
+
+            </button>
+
+
+            <div class="job-details">
+
+                <h3>Позицията е заета</h3>
+                <br>
+                <p>
+                    <strong>Длъжност:</strong>
+                    Учител, начален етап на основното образование
+                </p>
+
+                <p>
+                    <strong>БРОЙ СВОБОДНИ МЕСТА:</strong>
+                    1
+                </p>
+
+                <p>
+                    <strong>МЯСТОТО Е СВОБОДНО, СЧИТАНО ОТ:</strong>
+                    04.09.2026 г.
+                </p>
+
+                <p>
+                    <strong>МЯСТО НА РАБОТА:</strong>
+                    СУ „Недялка Шилева“ град Съединение, ул. „Васил Левски“ №4
+                </p>
+
+                <p>
+                    <strong>ИЗИСКВАНИЯ ЗА ЗАЕМАНЕ НА ДЛЪЖНОСТТА:</strong>
+                </p>
+
+                <p>
+                    <strong>ОБРАЗОВАНИЕ:</strong>
+                    висше – бакалавър
+                </p>
+
+                <p>
+                    <strong>СПЕЦИАЛНОСТИ И КВАЛИФИКАЦИЯ:</strong>
+                    ПНУП, НУП
+                </p>
+
+                <p>
+                    <strong>ТРУДОВ СТАЖ:</strong>
+                    Над 2 години
+                </p>
+
+                <p>
+                    <strong>РАБОТНО ВРЕМЕ:</strong>
+                    Пълно работно време
+                </p>
+
+                <p>
+                    <strong>ВИД ТРУДОВ ДОГОВОР:</strong>
+                    неопределено време
+                </p>
+
+                <p>
+                    <strong>ДРУГИ:</strong>
+                    V ПКС; Договор със срок на изпитване по чл. 70 от КТ
+                </p>
+
+                <p>
+                    <strong>Необходими документи:</strong><br>
+                    Заявление за заемане на длъжността<br>
+                    Професионална автобиография<br>
+                    Копие от документа удостоверяващ завършена степен на образование и квалификация<br>
+                    Справка за придобития стаж и професионален опит –
+                    препис-извлечение от трудова книжка или трудова книжка /копие/ –
+                    за придобит опит до 1 юни 2025 г. и единен електронен трудов запис
+                    от регистъра на заетостта за опит, натрупан след юни 2025 г.
+                </p>
+
+                <p>
+                    <strong>Срок за кандидатстване:</strong>
+                    До обявяване на позицията за заета.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="job-item">
+
+            <button type="button" class="job-title" onclick="toggleJob(this)">
+
+                <span>
+                    Учител ГЦОУД
+                </span>
+
+                <span class="arrow">⌄</span>
+
+            </button>
+
+
+            <div class="job-details">
+
+                <h3>Позицията е заета</h3>
+                <br>
+                <p>
+                    <strong>Длъжност:</strong>
+                    Учител ГЦОУД I-IV клас
+                </p>
+
+                <p>
+                    <strong>БРОЙ СВОБОДНИ МЕСТА:</strong>
+                    2
+                </p>
+
+                <p>
+                    <strong>МЯСТОТО Е СВОБОДНО, СЧИТАНО ОТ:</strong>
+                    19.08.2026 г.
+                </p>
+
+                <p>
+                    <strong>МЯСТО НА РАБОТА:</strong>
+                    СУ „Недялка Шилева“ град Съединение, филиал с. Царимир, ул. „Георги Димитров“ №4
+                </p>
+
+                <p>
+                    <strong>ИЗИСКВАНИЯ ЗА ЗАЕМАНЕ НА ДЛЪЖНОСТТА:</strong>
+                </p>
+
+                <p>
+                    <strong>ОБРАЗОВАНИЕ:</strong>
+                    висше – бакалавър
+                </p>
+
+                <p>
+                    <strong>СПЕЦИАЛНОСТИ И КВАЛИФИКАЦИЯ:</strong>
+                    ПНУП, НУП
+                </p>
+
+                <p>
+                    <strong>ТРУДОВ СТАЖ:</strong>
+                    не се изисква
+                </p>
+
+                <p>
+                    <strong>РАБОТНО ВРЕМЕ:</strong>
+                    Пълно работно време
+                </p>
+
+                <p>
+                    <strong>ВИД ТРУДОВ ДОГОВОР:</strong>
+                    неопределено време
+                </p>
+
+                <p>
+                    <strong>ДРУГИ:</strong>
+                    Договор със срок на изпитване по чл. 70 от КТ
+                </p>
+
+                <p>
+                    <strong>Необходими документи:</strong><br>
+                    Заявление за заемане на длъжността<br>
+                    Професионална автобиография<br>
+                    Копие от документа удостоверяващ завършена степен на образование и квалификация<br>
+                    Справка за придобития стаж и професионален опит –
+                    препис-извлечение от трудова книжка или трудова книжка /копие/ –
+                    за придобит опит до 1 юни 2025 г. и единен електронен трудов запис
+                    от регистъра на заетостта за опит, натрупан след юни 2025 г.
+                </p>
+
+                <p>
+                    <strong>Срок за кандидатстване:</strong>
+                    До обявяване на позицията за заета.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="job-item">
+
+            <button type="button" class="job-title" onclick="toggleJob(this)">
+
+                <span>
+                    Учител ГЦОУД
+                </span>
+
+                <span class="arrow">⌄</span>
+
+            </button>
+
+
+            <div class="job-details">
+
+                <h3>Позицията е заета</h3>
+                <br>
+                <p>
+                    <strong>Длъжност:</strong>
+                    Учител ГЦОУД I-IV клас
+                </p>
+
+                <p>
+                    <strong>БРОЙ СВОБОДНИ МЕСТА:</strong>
+                    1
+                </p>
+
+                <p>
+                    <strong>МЯСТОТО Е СВОБОДНО, СЧИТАНО ОТ:</strong>
+                    10.09.2026 г.
+                </p>
+
+                <p>
+                    <strong>МЯСТО НА РАБОТА:</strong>
+                    СУ „Недялка Шилева“ град Съединение, ул. „Чардафон Велики“ №24
+                </p>
+
+                <p>
+                    <strong>ИЗИСКВАНИЯ ЗА ЗАЕМАНЕ НА ДЛЪЖНОСТТА:</strong>
+                </p>
+
+                <p>
+                    <strong>ОБРАЗОВАНИЕ:</strong>
+                    висше – магистър
+                </p>
+
+                <p>
+                    <strong>СПЕЦИАЛНОСТИ И КВАЛИФИКАЦИЯ:</strong>
+                    ПНУП, НУП
+                </p>
+
+                <p>
+                    <strong>ТРУДОВ СТАЖ:</strong>
+                    Над 2 години
+                </p>
+
+                <p>
+                    <strong>РАБОТНО ВРЕМЕ:</strong>
+                    Пълно работно време
+                </p>
+
+                <p>
+                    <strong>ВИД ТРУДОВ ДОГОВОР:</strong>
+                    неопределено време
+                </p>
+
+                <p>
+                    <strong>ДРУГИ:</strong>
+                    V ПКС; Договор със срок на изпитване по чл. 70 от КТ
+                </p>
+
+                <p>
+                    <strong>Необходими документи:</strong><br>
+                    Заявление за заемане на длъжността<br>
+                    Професионална автобиография<br>
+                    Копие от документа удостоверяващ завършена степен на образование и квалификация<br>
+                    Справка за придобития стаж и професионален опит –
+                    препис-извлечение от трудова книжка или трудова книжка /копие/ –
+                    за придобит опит до 1 юни 2025 г. и единен електронен трудов запис
+                    от регистъра на заетостта за опит, натрупан след юни 2025 г.
+                </p>
+
+                <p>
+                    <strong>Срок за кандидатстване:</strong>
+                    До обявяване на позицията за заета.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="application-box">
+
+        <h3>
+            ДОКУМЕНТИ ЗА КАНДИДАТСТВАНЕ ЩЕ СЕ ПРИЕМАТ
+        </h3>
+
+        <h4>
+            В СГРАДА НА:
+        </h4>
+
+        <p>
+            СУ „Недялка Шилева“, град Съединение, община Съединение
+        </p>
+
+        <h4>
+            АДРЕС:
+        </h4>
+
+        <p>
+            ул. „Баба Исака Скачкова“ №3
+        </p>
+
+    </div>
+
+
+    <div class="application-box">
+
+        <h3>
+            Нямаме подходяща позиция?
+        </h3>
+
+        <p>
+            Ако в момента няма публикувана свободна позиция,
+            можете да следите страницата за нови обяви.
+        </p>
+
+        <p>
+            При необходимост от допълнителна информация
+            можете да се свържете с училището на:
+        </p>
+
+        <p>
+            <strong>☎ 0879600898, 0318/22032</strong>
+        </p>
+
+        <p>
+            <strong>✉ info-1600035@edu.mon.bg</strong>
+        </p>
+
+    </div>
+
+
+</main>
+
+
+<footer id="contacts">
+
+    <div class="footer-grid">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                СУ „Недялка Шилева“
+            </h2>
+
+            <p>
+                Знание, традиции и вдъхновение.
+                Заедно изграждаме бъдещето на нашите деца.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Навигация
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Начало
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        За нас
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Галерия
+                    </a>
+                </li>
+
+                <li>
+                    <a href="news.html">
+                        Новини
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Полезно
+            </h3>
+
+            <ul>
+
+                <li>
+                    СУ „Недялка Шилева“ –
+                    град Съединение
+                </li>
+
+                <li>
+                    Нова образователна институция,
+                    образувана на 15.09.2025 г.
+                    чрез сливане на съществуващите
+                    училища на територията на община
+                    Съединение.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Контакти
+            </h3>
+
+            <ul>
+
+                <li>
+                    📍 4190, гр. Съединение,
+                    обл. Пловдивска,
+                    ул. „Баба Исака Скачкова” № 3
+                </li>
+
+                <li>
+                    ☎ 0879600898, 0318/22032
+                </li>
+
+                <li>
+                    ✉ info-1600035@edu.mon.bg
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 СУ „Недялка Шилева“
+        • Всички права запазени
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleJob(button) {
+
+    const jobItem = button.parentElement;
+
+    jobItem.classList.toggle("open");
+
+}
+
+</script>
+
+
+</body>
+</html>

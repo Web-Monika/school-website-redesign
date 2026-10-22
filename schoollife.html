@@ -1,0 +1,4865 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Училищен живот | СУ „Недялка Шилева“</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #faf7f1;
+            color: #30332f;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #fffdf8;
+            border-bottom: 1px solid #e7ded3;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            width: min(1400px, 94%);
+            margin: auto;
+
+            min-height: 105px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            text-decoration: none;
+            color: #28553d;
+        }
+
+        .logo-symbol {
+            width: 78px;
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+        }
+
+        .logo-symbol img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+        }
+
+        .brand-text {
+            line-height: 1.05;
+        }
+
+        .brand-text .school {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #28553d;
+        }
+
+        .brand-text .name {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: #8e2928;
+        }
+
+        .brand-text .motto {
+            font-size: 9px;
+            letter-spacing: 2px;
+            margin-top: 6px;
+            color: #777;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            padding: 11px 13px;
+
+            border-radius: 8px;
+
+            transition: 0.25s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #f2e7df;
+            color: #8e2928;
+        }
+
+        .job-button {
+            margin-left: 8px;
+
+            background: #8e2928 !important;
+            color: white !important;
+
+            padding: 12px 17px !important;
+        }
+
+        .job-button:hover {
+            background: #722120 !important;
+        }
+
+         .all-link {
+            color: #8e2928;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .page-hero {
+            min-height: 380px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(40, 85, 61, 0.91),
+                    rgba(40, 85, 61, 0.96)
+                );
+        }
+
+        .page-hero::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    transparent 0,
+                    transparent 30px,
+                    rgba(255,255,255,0.035) 30px,
+                    rgba(255,255,255,0.035) 31px
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(900px, 90%);
+        }
+
+        .hero-small {
+            color: #e6d6c7;
+
+            text-transform: uppercase;
+            letter-spacing: 4px;
+
+            font-size: 12px;
+
+            margin-bottom: 16px;
+        }
+
+        .page-hero h1 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(52px, 7vw, 85px);
+
+            line-height: 0.95;
+
+            color: #fffdf8;
+
+            margin-bottom: 22px;
+        }
+
+        .page-hero p {
+            color: #eee7dd;
+
+            font-size: 16px;
+            line-height: 1.8;
+
+            font-weight: 300;
+        }
+
+        main {
+            width: min(1250px, 92%);
+            margin: auto;
+
+            padding: 80px 0 100px;
+        }
+
+        .life-navigation {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 75px;
+        }
+
+        .life-navigation a {
+            text-decoration: none;
+
+            border: 1px solid #d9cec1;
+
+            color: #28553d;
+
+            background: #fffdf9;
+
+            padding: 13px 22px;
+
+            border-radius: 30px;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .life-navigation a:hover {
+            background: #28553d;
+            color: white;
+            border-color: #28553d;
+        }
+
+        .life-section {
+            margin-bottom: 110px;
+            scroll-margin-top: 130px;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .section-kicker {
+            color: #8e2928;
+
+            text-transform: uppercase;
+            letter-spacing: 3px;
+
+            font-size: 11px;
+            font-weight: 600;
+
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(40px, 5vw, 62px);
+
+            line-height: 1;
+
+            color: #28553d;
+
+            margin-bottom: 15px;
+        }
+
+        .section-heading p {
+            max-width: 750px;
+            margin: auto;
+
+            color: #666;
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .section-decoration {
+            width: 100px;
+            height: 3px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    #8e2928 33%,
+                    #d8c5b3 33%,
+                    #d8c5b3 66%,
+                    #28553d 66%
+                );
+
+            margin: 25px auto 0;
+        }
+
+        .section-count {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 18px;
+
+            padding: 7px 13px;
+
+            background: #f0ebe3;
+
+            color: #777;
+
+            border-radius: 20px;
+
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .life-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            gap: 25px;
+        }
+
+        .life-card {
+            background: #fffdf9;
+
+            border: 1px solid #e5dbd0;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 8px 28px rgba(55, 44, 35, 0.055);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .life-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 38px rgba(55, 44, 35, 0.10);
+        }
+
+        .card-top {
+            padding: 27px 28px 20px;
+
+            display: flex;
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .card-number {
+            width: 43px;
+            height: 43px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #28553d;
+
+            color: white;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 21px;
+            font-weight: 700;
+        }
+
+        .card-heading {
+            flex: 1;
+        }
+
+        .card-tag {
+            display: inline-block;
+
+            margin-bottom: 8px;
+
+            padding: 5px 9px;
+
+            border-radius: 15px;
+
+            background: #f1e6de;
+
+            color: #8e2928;
+
+            font-size: 9px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.2px;
+
+            font-weight: 600;
+        }
+
+        .card-heading h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 29px;
+
+            line-height: 1.12;
+
+            color: #8e2928;
+
+            font-weight: 700;
+        }
+
+        .card-short {
+            padding: 0 28px 22px;
+
+            color: #5e5e5e;
+
+            font-size: 13px;
+
+            line-height: 1.8;
+        }
+
+        .card-info {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            padding: 0 28px 22px;
+        }
+
+        .info-item {
+            padding: 7px 10px;
+
+            background: #f5f1eb;
+
+            border-radius: 7px;
+
+            color: #686868;
+
+            font-size: 10px;
+        }
+
+        .info-item strong {
+            color: #28553d;
+        }
+
+        .card-full {
+            display: none;
+
+            border-top: 1px solid #eee4d9;
+
+            padding: 25px 28px 28px;
+
+            color: #5c5c5c;
+
+            font-size: 13px;
+
+            line-height: 1.9;
+        }
+
+        .card-full p {
+            margin-bottom: 15px;
+        }
+
+        .card-full p:last-child {
+            margin-bottom: 0;
+        }
+
+        .life-card.open .card-full {
+            display: block;
+        }
+
+        .read-more {
+            width: 100%;
+
+            border: 0;
+            border-top: 1px solid #eee4d9;
+
+            background: transparent;
+
+            padding: 15px 28px;
+
+            text-align: left;
+
+            color: #8e2928;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .read-more:hover {
+            background: #faf4ee;
+        }
+
+        .read-more .arrow {
+            display: inline-block;
+
+            margin-left: 6px;
+
+            transition: transform 0.25s ease;
+        }
+
+        .life-card.open .read-more .arrow {
+            transform: rotate(180deg);
+        }
+
+        .big-divider {
+            height: 1px;
+
+            background: #d9cec1;
+
+            margin: 20px 0 110px;
+
+            position: relative;
+        }
+
+        .big-divider::before {
+            content: "✦";
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #faf7f1;
+
+            color: #8e2928;
+
+            font-size: 18px;
+        }
+
+        #competitions .card-number {
+            background: #8e2928;
+        }
+
+        #competitions .card-tag {
+            background: #e9eee9;
+            color: #28553d;
+        }
+
+        #competitions .card-heading h3 {
+            color: #28553d;
+        }
+
+        footer {
+            background: #233d30;
+
+            color: #e9e4da;
+
+            padding: 60px 0 25px;
+        }
+
+        .footer-inner {
+            width: min(1250px, 92%);
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1.4fr 1fr 1fr;
+
+            gap: 50px;
+        }
+
+        .footer-brand h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 35px;
+
+            color: white;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            color: #c9d0ca;
+
+            max-width: 430px;
+        }
+
+        .footer-column h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 23px;
+
+            color: white;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            text-decoration: none;
+
+            color: #c9d0ca;
+
+            font-size: 13px;
+
+            margin-bottom: 9px;
+
+            transition: 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            width: min(1250px, 92%);
+            margin: 45px auto 0;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.12);
+
+            text-align: center;
+
+            font-size: 11px;
+
+            color: #aeb8b0;
+        }
+
+        @media (max-width: 1100px) {
+
+            .header-inner {
+                flex-direction: column;
+
+                padding: 18px 0;
+            }
+
+            nav {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+
+        @media (max-width: 800px) {
+
+            .life-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-heading h3 {
+                font-size: 27px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .folk-border {
+                display: none;
+            }
+
+            .header-inner {
+                min-height: auto;
+            }
+
+            .brand-text .school {
+                font-size: 23px;
+            }
+
+            .brand-text .name {
+                font-size: 20px;
+            }
+
+            .logo-symbol {
+                width: 65px;
+                height: 65px;
+            }
+
+            nav a {
+                font-size: 12px;
+
+                padding: 8px 9px;
+            }
+
+            .job-button {
+                margin-left: 0;
+            }
+
+            .page-hero {
+                min-height: 320px;
+            }
+
+            main {
+                width: 94%;
+
+                padding-top: 55px;
+            }
+
+            .life-section {
+                margin-bottom: 80px;
+            }
+
+            .section-heading {
+                margin-bottom: 38px;
+            }
+
+            .card-top {
+                padding: 22px 20px 17px;
+            }
+
+            .card-short {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .card-info {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .card-full {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .read-more {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="header-inner">
+
+
+            <a href="index.html" class="brand">
+
+                <div class="logo-symbol">
+
+                    <img
+                        src="logo.png"
+                        alt="Лого на СУ „Недялка Шилева“"
+                    >
+
+                </div>
+
+
+                <div class="brand-text">
+
+                    <div class="school">
+                        Средно училище
+                    </div>
+
+                    <div class="name">
+                        „Недялка Шилева“
+                    </div>
+
+                    <div class="motto">
+                        ЗНАНИЕ • ТРАДИЦИИ • БЪДЕЩЕ
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <nav>
+
+                <a href="index.html">
+                    Начало
+                </a>
+
+                <a href="about.html">
+                    За нас
+                </a>
+
+                <a href="news.html">
+                    Новини
+                </a>
+
+                <a href="gallery.html">
+                    Галерия
+                </a>
+
+                <a href="contacts.html">
+                    Контакти
+                </a>
+
+                <a href="school-life.html" class="active">
+                    Училищен живот
+                </a>
+
+                <a href="jobs.html" class="job-button">
+                    ♡ Търсите ли работа?
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <section class="page-hero">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                Животът извън учебника
+            </div>
+
+
+            <h1>
+                Училищен живот
+            </h1>
+
+
+            <p>
+                Място за интереси, творчество, знания,
+                състезателен дух и незабравими преживявания.
+                Тук събираме част от дейностите,
+                инициативите и успехите на нашите ученици.
+            </p>
+
+        </div>
+
+    </section>
+
+    <main>
+
+        <div class="life-navigation">
+
+            <a href="#activities">
+                Занимания по интереси
+            </a>
+
+            <a href="#competitions">
+                Конкурси и състезания
+            </a>
+
+        </div>
+
+        <section
+            class="life-section"
+            id="activities"
+        >
+
+            <div class="section-heading">
+
+                <div class="section-kicker">
+                    2025 / 2026
+                </div>
+
+
+                <h2>
+                    Занимания по интереси
+                </h2>
+
+
+                <p>
+                    Разнообразни дейности, които дават възможност
+                    на учениците да развиват своите таланти,
+                    интереси и умения извън задължителните
+                    учебни часове.
+                </p>
+
+
+                <div class="section-decoration"></div>
+
+
+                <div class="section-count">
+                    Занимания през учебната 2025/2026 година
+                </div>
+
+            </div>
+
+
+
+            <div class="life-grid">
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            01
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                „В ЧУДНИЯ СВЯТ НА ДУМИТЕ“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Ръководител: Николинка Генчева; Участници: Ученици от първи клас.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Учениците от 1 в клас навлизат в интересния и необятен свят на българския език, на четенето и писането. Запознават се с видовете произведения- приказки, гатанки, римушки, произведенията на български и чужди автори. Срещат се с различни по характер герои и техните постъпки. Четат текст с разбиране, ориентират се в четене по роли. Драматизират народни приказки.  Изграждат самостоятелност, увереност и положително отношение към ученето.  
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            02
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                                Коледни вълнения в чудния свят на думите! 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Учениците от 1.в клас от група по интереси „В чудния свят на думите“ преживяха истинско коледно вълшебство със своята публична изява! С много усмивки, игриви думи и празнично настроение малките словотворци се потопиха в заниманието „Коледни вълнения“.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 17.12.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            Учениците работят по различни задачи
+                            и проекти, като постепенно развиват
+                            самостоятелност и умения за работа
+                            в екип.
+                        </p>
+
+                        <p>
+                            Под вещото и вдъхновяващо ръководство на г-жа Николинка Генчева и с неотменната помощ на г-жа Антоанета Митова, думите танцуваха, буквите се усмихваха, а Коледата надникна в класната стая .Имаше смях, творчество и щипка коледна магия – защото когато децата и думите са заедно, чудесата са сигурни!  Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgA7eBvjHA_fSpydL0fzfIDSAQLtriM9YeyFeaB8Q5YssIw?e=S8esQp" class="all-link">тук</a>.
+                        </p>
+
+                        <p>28.11.2025 Г. – В седмицата на БДП учениците от клуб „В чудния свят на думите“ проведохме занимание по БДП.</p>
+                        <p>Б- Бъди внимателен!<br>
+                        Д-Движи се правилно!<br>
+                        П-Пази се!</p>
+                        <p>Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/Eh112kHTlt1NuVUX8WKx4KgB-0McZ2ndYBY3iG69W4Qqjw?e=kTCbac" class="all-link">тук</a>.</p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            03
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                                „МАЛКА КОМПЮТЪРНА АКАДЕМИЯ“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Ръководител: Стефка Цилиова; Участници: Ученици от втори клас.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            Работата в групата „Малка компютърна академия“ има пропедевтичен характер и е насочена към формиране на първоначални представи за работа с компютър. В процеса на обучение се обогатяват представите на учениците за компютъра като техническо устройство и основните части на компютърната система, формират се уменията за използване на програми за обработка на графика, звук, текст и анимация при изпълнение на достъпни учебни задачи, създават се условия за плавен преход към изучавания в 3. клас учебен предмет „Компютърно моделиране“.Използвани програми: MS Paint, MS Word.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            04
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                                Благовещение – традиция и творчество в едно!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        По повод Благовещение – светъл пролетен празник на вярата и надеждата, учениците от 2.А клас при СУ „Недялка Шилева“ отбелязаха деня с тържествена изява в храм „Свети Атанасий“.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 27.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            Чрез съвременните дигитални средства учениците сами изработиха поканите за своето тържество в заниманията на клуб „Малка компютърна академия“ с ръководител г-жа Стефка Цилиова. Децата приложиха знанията си за работа с програмите Paint и Word. Оцветиха, подбраха подходящ стил за надписване и оформиха стила на поканите, използвайки възможностите на съвременните технологии. Поздравления! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgBZ_TY4neV8Q4VZL7y9-6rgARBjdxZz9aiZpzFqSjtpa4U?e=XuEgyo" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            05
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                                ПРОЕКТ КОЛЕДНИ КЪСМЕТЧЕТА НА МАЛКА КОМПЮТЪРНА АКАДЕМИЯ ВЪВ 2-А КЛАС
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        В часовете по ЗИ второкласниците имаха важна мисия.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 25.12.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            Използвайки знанията си за набиране и форматиране на текст, както и копиране на изображение в текстови документ, те сами изработиха коледни късметчета, с които зарадваха своите съученици и учители в празничния ден. Пожелаха на всички здраве, късмет и повече усмивки през предстоящата година!  Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgD_ouk6JHvBQLmHKSaPhdpRAfwKTkQt66R4dOREwvq6_VA?e=dglcnm" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            06
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                                „С БЪЛГАРИЯ В СЪРЦЕТО“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Ръководител: Цветелина Трайкова; Участници: Ученици от втори и четвърти клас.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            Основната цел е утвърждаване на национално-патриотичните ценности и идеали сред учениците и съхраняване на българската идентичност и облик в Европейския съюз. Темите имат за цел учениците да развият своята емоционална интелигентност, както и да спомогнат за получаването на нови знания и полезна информация. Като по този начин те да повишават своя интерес и мотивация за познавателна дейност, да допринасят за формиране и развитие на интелектуалните им умения в избраното направление. Възпитаване на любов у учениците към тяхното семейство, дом, училище, роден град, към България и вярност към родовите корени и традиции. Съхраняване на изконно присъщите местни традиции и традиционните за българина нравствени добродетели.  Развитие на интереса към българските занаяти и народно творчество.Формиране на светоглед, жизнена позиция, гражданско поведение, гражданска съвест и отговорност. Формирането на толерантност, чувство за уважение към другите народи, към техните традиции. Изграждане на навици за грижа и опазване на българското училище.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            07
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                ПРОФЕСИЯТА НА МОИТЕ РОДИТЕЛИ
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        ПРОФЕСИЯТА НА МОИТЕ РОДИТЕЛИ
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Учениците от клуб по интереси „С България в сърцето“ с чест представиха проекти, представящи професиите на родителите им. Всички се включиха с интерес и в беседа по темата за значимостта на всяка една професия. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDrmBwkt5AxQreMQl0HzNXpAfaVbthxFzSKzcwPRtljvdo?e=EbjgPY" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            08
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                „Ние сме Левски! Ние сме България!“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Поклон, Апостоле, поклон! Ти винаги ще светиш в детските очи! Ти винаги ще се прераждаш в нашите души! 
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 19.02.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                           Едно вълнуващо превъплъщение на учениците от групата по интереси „С България в сърцето“ и клуб „Млади възрожденци“, изпълнено с пламък и преклонение пред делото на Васил Левски. Днес всички почувствахме как Апостола пламти в детските очи! Учениците и учителите от начален етап подготвиха и кът посветен на  Левски. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgCmV0xyxjUaSZcO-j3DQyMDAfdvike0PvkmQOVmS9LCs5c?e=dPmQZH" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            09
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                Тържествено общоградско поклонение в памет на Васил Левски
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Днес в нашия град се проведе тържествено общоградско поклонение по повод годишнината от гибелта на Васил Левски – Апостола на свободата.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 19.02.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Представители на местната власт, институции, ученици и граждани сведоха глави в знак на признателност към неговото велико дело и саможертва.
+                        </p>
+
+                        <p>
+                            В знак на почит бяха поднесени венци и цветя пред паметната плоча на Левски в центъра на гр. Съединение. С едноминутно мълчание присъстващите отдадоха заслужена почит към паметта на героя.
+                            В програмата се включиха ученици от нашето училище – СУ „Недялка Шилева“, които изпълниха патриотични песни и рецитираха стихотворения, посветени на живота и делото на Апостола. Със своите изпълнения те внесоха тържественост и емоция в събитието.
+                            От името на училището бе връчен поздравителен адрес на председателя на Общинския комитет „Васил Левски“ – г-н Кръстю Манчев, като израз на благодарност за съвместната работа и подкрепата му към образователната общност.
+                        </p>
+
+                        <p>
+                            Поклонението завърши с чувство на гордост и отговорност – да пазим жив спомена за Васил Левски и да следваме неговия пример в делата си. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDMcxnYCq7yR7mHqnCAz4P6AVTBGdzMFZhkcwS8DxN-mVQ?e=ZT0tvm" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            10
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                ДОБРИЯТ ПРИМЕР ВИНАГИ ПОМАГА!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Когато училището е дом, а героите ни живеят в нас… празникът се случва в сърцето и остава с делата.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 06.01.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Дейността на учениците от група по интереси „С България в сърцето“ е обагрена от редица инициативи, няколко от тях са публични изяви, други стаени сред стените на класната стая, но винаги изпълнени с трепет любознателност и желание за още и още преживявания в света на знанието и уменията. Всички те се включват във всяка дейност на училището, но инициираха и свои такива.Заедно със своите съученици и учители проведоха състезанието“Левски скок“, посветено на Апостола.Подготвиха и дариха заедно със семействата си и своите учители множество вкусотии и интересни артикули, с които се включиха в коледния базар.
+                        </p>
+
+                        <p>
+                            По идея на учениците от групата, към дарителската кампанията на момчетата и момичетата от Ученически съвет при СУ „Недялка Шилева“, децата оформиха кът с лични играчки, които всяка дете донесе, за да дари.Като част от дейността на групата е и грижата за училището ни… винаги с много желание и вярата, че за да ни е хубаво, трябва и ние да помагаме.
+                        </p>
+
+                        <p>Добрият пример винаги помага! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDLAtnIP8CeSKUBzPmd2ZubAdb7u1f1hBvTMDzksN9d4Fk?e=IEh4Li" class="all-link">тук</a>.</p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            11
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                178 ГОДИНИ БЕЗСМЪРТЕН БОТЕВ!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        На 6 януари 2026г. България отбелязва 178 години от рождението на Христо Ботев – национален герой, поет и революционер.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 06.01.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Ботев – символ на безсмъртието в българската национална памет.Днес не просто си спомняме за него, а се вдъхновяваме от неговата смелост, непримирим дух и гениалност.Учениците от група по интереси „С България в сърцето“ прочетоха на свои съученици част от стихотворенията на поета.Запознаха се с информационни материали и проведоха беседа за величието на героя.
+                        </p>
+
+                        <p>Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgCJfR6zu9p1SLL53pB2wzCtAd9e74sHOrOOmBX3RBYbhCc?e=piLZzl" class="all-link">тук</a>.</p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            12
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                КАЛЕНДАРИ ЗА МЛАДИТЕ ВЪЗРОЖДЕНЦИ
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        КАЛЕНДАРИ ЗА МЛАДИТЕ ВЪЗРОЖДЕНЦИ
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 18.12.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Учениците от клуб „Млади възрожденци“ при СУ „Недялка Шилева“ в гр. Съединение благодарят за невероятните календари, подарък от Общобългарския комитет „Васил Левски“. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgBVCZHrbBegQpJX1oLc_RuWAaIsLv6qODoeQrG08I80F9w?e=aKNsOE" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            13
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                Почитаме Чардафон Велики – герой на Съединението!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        На 22 ноември 1906 година умира Продан Тишков – Чардафон.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 22.11.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Дълбок поклон! И възпитаваме децата на патриотична мисъл, уважение към героите и почит към делото им! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/Et8EcRLWRe9Ft1EsKs8YzHEB3l3GOvtN0zJzazK7h9EkTQ?e=Qi0dWj" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            14
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                И се учим от деца на важните неща…
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        И се учим от деца на важните неща…
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 01.11.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Една инициатива на ученици, които участват в група по интереси „С България в сърцето“ към СУ „Недялка Шилева“ и клуб „Млади възрожденци“ към Общински комитет „Васил Левски“. Видео <a href="https://e.pcloud.link/publink/show?code=kZSu1IZI0mqeDE2MQfHet2Rl9ChUhvfzpWV" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            15
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                „МАТЕМАТИЧЕСКИ ФОЛКЛОР“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Ръководител: Мария Енчева; Участници: Ученици от трети клас.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Цели: Да се формира у учениците интерес към математиката чрез опознаване на богатството на българския фолклор и традиции,като се развиват логическото мислене , творческите умения и национално самосъзнание. Да се открие връзката между математиката и фолклора – чрез числата,ритмите,мерките,използвани в народните традиции. Да се създаде положително отношение към математиката като част от културното наследство.Да се развият умения за наблюдение, сравнение, броене и изчисляване чрез практически и творчески дейности. Да се обогати речниковият запас на учениците чрез запознаване със „забравени думи“ и народни изрази. Да се стимулира колективната работа и уважението към българските традиции-песни,танци,обичаи,кухня.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            16
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                ПУБЛИЧНА ИЗЯВА  – ОТКРИВАНЕ НА СТЕМ ЦЕНТЪР И ФИЗКУЛТУРЕН САЛОН 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        ПУБЛИЧНА ИЗЯВА  – ОТКРИВАНЕ НА СТЕМ ЦЕНТЪР И ФИЗКУЛТУРЕН САЛОН 
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 15.01.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Учениците взеха участие в откриването на новия физкултурен салон център, където официален гост беше министърът на образованието и науката г-н Красимир Вълчев. Изявата на децата се състоеше в народен танц при тържественото откриване. Снимки от публичната изява <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgC9lyWaXtUcQKXu5be4mQVCARIewDxzzsDOGnF1cgHWhPU?e=AOwDWZ" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            17
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                Тържествено закрихме Коледното градче в град Съединение!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Днес с песни, коледари, танци, хоро и детски усмивки бе закрито Коледното градче в град Съединение.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 23.12.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Празничната програма беше изпълнена от учениците от 3 клас на СУ „Недялка Шилева“:<br>
+                          ВГ „Пеещо поточе“ с ръководител г-жа Петя Арабаджийска<br>
+                          ВГ „Пеещо поточе“ с ръководител г-жа Петя Арабаджийска<br>
+                          Кметът на община Съединение г-н Георги Руменов отправи сърдечен поздрав и най-добри пожелания към всички присъстващи за предстоящите празници. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAy6broncSOQbb-3LRZwRFtAbg5F44eiQH8tn1YSyNjnKE?e=LNVMF9" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            18
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                „МЛАДИ ВЪЗРОЖДЕНЦИ“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Ръководител: Светлозара Карабелова; Участници: Ученици от четвърти клас.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Утвърждаване на национално-патриотичните ценности и идеали сред учениците и съхраняване на българската идентичност. Формиране и развиване на социални качества и умения свързани с обществената дейност: любознателност, трудолюбие, търпение, родолюбие, работа в екип.· Усъвършенстване усета към изразителна, правилна и чиста българска реч. Проучване на миналото на родния край. Организиране и участие в празници на национално-патриотична тематика. Развиване на умение за артистично интерпретиране и за влизане в образи на герои при драматизации. Разширяване и задълбочаване на връзките с институциите, които имат важно място в изследователската дейност – библиотека, музей, обществени организации. Възпитаване в дух на родолюбие и уважение към националните традиции и култура.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            19
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                „Ние сме Левски! Ние сме България!“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Поклон, Апостоле, поклон! Ти винаги ще светиш в детските очи! Ти винаги ще се прераждаш в нашите души! 
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 19.02.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Едно вълнуващо превъплъщение на учениците от групата по интереси „С България в сърцето“ и клуб „Млади възрожденци“, изпълнено с пламък и преклонение пред делото на Васил Левски. Днес всички почувствахме как Апостола пламти в детските очи! Учениците и учителите от начален етап подготвиха и кът посветен на  Левски. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgCmV0xyxjUaSZcO-j3DQyMDAfdvike0PvkmQOVmS9LCs5c?e=dPmQZH" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            20
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                СВОБОДАТА В СЪРЦЕТО!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Учениците от клуб „Млади възрожденци“ при 4.а клас почетоха Апостола на свободата с поредица от вдъхновяващи дейности:
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 18.02.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                        Изследвахме: Чрез презентации и четене на книги се потопихме в живота на Васил Левски.<br>
+                        • Творихме: Изработихме богато информационно табло и лапбуци, събиращи историята и заветите на Дякона.<br>
+                        • Учихме: С работни листове за четене с разбиране анализирахме неговата смелост и самообладание.<br>
+                        • Славихме: С гордост рецитирахме стихове за безсмъртния подвиг на героя.<br>
+                        </p>
+
+                        <p>
+                            Най-вълнуващият момент беше споделянето на наученото. Нашите четвъртокласници посетиха всички класове от началния етап и подариха на всеки клас ръчно изработен лапбук.
+                        </p>
+
+                        <p>Вярваме, че родолюбието се предава от сърце на сърце! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDFFoHfD0ROSbuIgfW2WRIgAVB0TqMOx021MLRqjd134fY?e=hHGFwS" class="all-link">тук</a>.</p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            21
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                            Пътешествие в славното минало на Съединението
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        В клуб „Млади възрожденци“ от IVа клас продължаваме нашето вълнуващо пътешествие в славното минало на България.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 11.12.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Тази седмица се превърнахме в „Горди потомци“ и насочихме погледа си към един от най-великите дни – Съединението от 1885 г.
+                        </p>
+
+                        <p>
+                        Запознахме се с вдъхновяващия живот и дейност на дейците на Съединението. Научихме, че те са работили заедно със смелост и ум, за да направят мечтата на всички българи реалност – Обединена България.
+                        </p>
+
+                        <p>
+                            Децата участваха в забавна викторина „Познай героя“ и разбраха, че най-големият урок от онези времена е, че когато сме единни, сме непобедими.
+                        </p>
+
+                        <p>
+                            Нека пазим България чиста и силна – така, както са ни завещали нашите герои!<br>
+                            С любов и родолюбие,
+                        </p>
+
+                        <p>
+                            Клуб „Млади възрожденци“ (IVа клас) Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAJAQ37efwMT5a3cM4T_9_cAfzPzC3T2YxIVk8DFih9gLk?e=fUJN4m" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            22
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                            „МЛАД ПРИРОДОЛЮБИТЕЛ“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Ръководител: Розалия Георгиева; Участници: Ученици от 5,7,8,9,10 клас.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Цели: формиране на положително отношение към природата и изграждане на навици за нейното опазване. Възпитание на чувство на отговорност и съпричастност към екологичните проблеми.Развитие на познавателен интерес  към растенията,животните и природните явления.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            23
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                Клуб „Млад природолюбител“ участва в екоконкурса „Зелена трансформация на училищната среда“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Клуб „Млад природолюбител“ с ръководител Розалия Георгиева се включи в екоконкурса „Зелена трансформация на училищната среда“ с вдъхновяващо и устойчиво проектно предложение.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 18.02.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Проектът предвижда закупуване на рециклируеми вани за събиране на дъждовна вода, която впоследствие ще се използва за напояване на растенията в двора на училището.
+                        </p>
+
+                        <p>
+                            Чрез тази инициатива учениците ще насърчат разумното използване на природните ресурси и ще дадат личен пример за отговорно отношение към околната среда.
+                        </p>
+
+                        <p>
+                            В допълнение, клубът предлага закупуване на уред за измерване замърсяването на въздуха, който ще помогне за проследяване качеството на въздуха в района на училището. Така учениците ще имат възможност да събират реални данни, да анализират резултатите и да повишат информираността на училищната общност по темата за чистия въздух.
+                        </p>
+
+                        <p>
+                        С участието си в конкурса младите природолюбители доказват, че грижата за природата започва от малките, но значими стъпки.<br>
+                        Пожелаваме им успех и проектът им да бъде одобрен и реализиран! Видео <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgBGJ5BlqQJITYnAYLpeA7LmAfapIMbkVBTHAQBfWmkF1pA?e=szFaX2" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            24
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                Млад природолюбител в действие!  
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Учениците от групата по занимания по интереси „Млад природолюбител“ с ръководител Розалия Георгиева проведоха вълнуващи опити в новия STEM кабинет по химия:
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 20.01.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          “Шумяща проба”,  „Танц на капките олио“,  „Капките бягат една от друга“ С голямо любопитство и истинско вълнение децата наблюдаваха химичните реакции, задаваха въпроси и откриваха тайните на природата чрез практика. Вдъхновени и развълнувани, младите природолюбители показаха, че ученето може да бъде истинско приключение, когато знанието се съчетае с опит и творчество!
+                        </p>
+
+                        <h4>
+                        ОПИТ “ШУМЯЩА ПРОБА“
+                        </h4>
+
+                        <p>
+                            Необходими материали: бутилка, бехерова чаша, балон, оцетна киселина, сода бикарбонат и свещ. Начин на работа: В бутилка поставяме 150 мл. оцетна киселина (оцет), предварително измерваме 7 гр. сода бикарбонат и поставяме содата в балона. След това закрепяме балона на отвора на бутилката и изсипваме содата в бутилката. Събраният газ е въглероден диоксид. След това го изсипваме върху за запалена свещ. Този газ не подържа горенето, следователно ще изгаси пламъка.
+                        </p>
+
+                        <h4>
+                            ОПИТ “ТАНЦЪТ НА КАПКИТЕ ОЛИО”
+                        </h4>
+
+                        <p>
+                            Необходими материали: Ерленмайрова колба, бехерова чаша, оцветител, таблетка аспирин и вода. Начин на работа: 100 мл вода смесваме с оцветител. В ерленмайрова колба добавяме 100 мл олио в колбата. Поставяме таблетката аспирин в колбата и наблюдаваме.
+                        </p>
+
+                        <h4>
+                        ОПИТ “КАПКИТЕ БЯГАТ ЕДНА ОТ ДРУГА“
+                        </h4>
+
+                        <p>
+                            Необходими материали: Ерленмайрова колба, бехерова чаша, оцветител, таблетка аспирин и вода. Начин на работа: В ерленмайрова колба добавяме 100 мл вода. Поставяме 100 мл олио в колбата и след това внимателно накапваме с пипета капки оцветител. Внимателно поставяме таблетката аспирин в колбата. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgD7FEiH-gzoQ4-p-_BDcMNDAXKZ5Pr6-l-D0cEWwtrR-dw?e=s3Wp5h" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            25
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                ПУБЛИЧНА ИЗЯВА  – ОТКРИВАНЕ НА СТЕМ ЦЕНТЪР И ФИЗКУЛТУРЕН САЛОН 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        ПУБЛИЧНА ИЗЯВА  – ОТКРИВАНЕ НА СТЕМ ЦЕНТЪР И ФИЗКУЛТУРЕН САЛОН 
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 15.01.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Учениците взеха участие в откриването на новия физкултурен салон център, където официален гост беше министърът на образованието и науката г-н Красимир Вълчев. Изявата на децата се състоеше в представяне на опити в кабинета СТЕМ химия. Снимки от публичната изява <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgC9lyWaXtUcQKXu5be4mQVCARIewDxzzsDOGnF1cgHWhPU?e=AOwDWZ" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            26
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                „БЪДЕЩИ ШАМПИОНИ“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Ръководител: Костадин Апостолов; Участници: Ученици от 8,9,10 клас
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Клуб „Бъдещи шампиони“ е за ученици от 8. до 10. клас, които имат интерес към футбола и желаят да развиват своите спортни умения, отборен дух и дисциплина. В рамките на клуба учениците ще участват в редовни тренировки, мини турнири и занимания, насочени към подобряване на физическата подготовка и игровата тактика. Цели на клуба: Стимулиране на активен и здравословен начин на живот; Развитие на технически и тактически умения във футбола; Насърчаване на екипната работа, спортсменство и лидерски качества; Подготовка за участие в училищни и междуучилищни състезания.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            27
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              СЕДМИЦА НА СПОРТА – “ДА ИГРАЕМ ЗАЕДНО!”
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        СПОРТЪТ ОБЕДИНЯВА В СУ „НЕДЯЛКА ШИЛЕВА“ – СЪЕДИНЕНИЕ!
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 27,28,29.05.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          В рамките на националната кампания „Да играем заедно!“ и Европейската футболна седмица #EFW2026, СУ „Недялка Шилева“ – гр. Съединение се включи активно в глобалната инициатива на Спешъл Олимпикс България „Приобщаването е революцията“, организирана в партньорство с UEFA, EFDN и iCoachKids. На 27, 28 и 29 май 2026 г. училището ни се превърна в сцена на спорт, приятелство, емоции и истинско приобщаване. Проведоха се футболен турнир и турнир по народна топка със смесени отбори от ученици със и без специални образователни потребности на възраст от 8 до 18 години.
+                        </p>
+
+                         <p>
+                          Организатори на събитието бяха г-жа Николинка Иванова, г-жа Лиляна Попова и г-н Костадин Апостолов, които с много ентусиазъм, отдаденост и сърце превърнаха инициативата в истински празник на спорта и добротата. В надпреварата се включиха учениците от техните клубове по НП „Заедно в изкуствата и в спорта“ и ЗИ. В народната топка победител стана зеленият отбор с капитан Даяна Масленишка, а футболните срещи донесоха много емоции, спортсменство и незабравими мигове за всички участници.
+                        </p>
+
+                         <p>
+                          Директорът г-жа Величка Кирова връчи медали на учениците, което ги направи истински щастливи и озари лицата им с усмивки. СУ „Недялка Шилева“ продължава да отстоява ценностите на уважението, приятелството, равните възможности и приобщаването, защото вярваме, че спортът е за всички и именно чрез него децата се учат да бъдат по-добри, по-силни и по-единни. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgD_BICSrTAoT5TI3EWAeQ_2AfRagRQ5dFVTGJd6ZS14VR8?e=xTsYRW" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            28
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                Заедно в играта – заедно към успеха! 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                    Заедно в играта – заедно към успеха! 
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 05.11.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                        Усмивки, ентусиазъм и спортен хъс изпълват футболното игрище, където учениците от 8–10 клас от клуб по ЗИ “Бъдещи шампиони” и техните по-малки съученици от Клуб “Футбол 5-7 клас” по НП  “Заедно в изкуствата и в спорта” се впускат в поредица от вълнуващи занимания по футбол.Всяка тренировка започва с енергична загрявка, водена от треньора г-н Костадин Апостолов. Той демонстрира различни упражнения за бързина и координация, а участниците с желание ги изпълняват стегнато и дисциплинирано, подготвяйки се за предстоящата игра. След това идва най-очакваният момент — оспорваните двубои, които  преминават в дух на приятелско съревнование и взаимно уважение. Всеки мач носи нови емоции, повече увереност и сплотеност между участниците.Учениците не само усъвършенстват футболните си умения, но и се учат на дисциплина, работа в екип и спортсменство. По-големите играчи впечатляват с точни пасове и тактическо мислене, докато по-малките не отстъпват по желание и борбеност. Играчите се учат един от друг — по-големите предават опит, а по-малките напомнят, че играта трябва да е радост. Учениците показват, че с постоянство, упоритост и работа в екип могат да постигнат всичко. Така, стъпка по стъпка, тези млади футболисти доказват, че са не просто участници в тренировките, а “бъдещи шампиони”– на терена и в живота. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/EhVwbUwaU4JEhx52Ia_k4SUBejeI_s-NExO_Fo2ZKIFYwg?e=O2hKjN" class="all-link">тук</a>. 
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            29
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                                „МЛАД ПРЕДПРИЕМАЧ“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Ръководител: Тонка Мирчева; Участници: Ученици от  8,11,12 клас.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          С участието си в клуб „Млад Предприемач“ учениците от 11 и 12 клас ще формират предприемаческа култура и компетентности,ще проучат качествата на предприемача  чрез срещи с местния бизнес ще проучат и ще анализират силните и слабите им страни в управлението и планирането на дейностите им, ще проучат нуждите на местно равнище и ще предложат алтернативи за решаването на проблема, ще генерират предприемачески идеи като отчетат и рисковете, ще се запознаят с кариерното ориентиране, което ще им е в полза след приключване на обучението си. Ще развият творческа креативност, отговорности и сътрудничество като част от екип.  Учениците  ще се подготвят за стартиране на собствен бизнес, след като анализират бизнес средата. У тях ще се формират нестандартно мислене, което ще им позволи да действат като бъдещи добри предприемачи или специалисти от маркетинга.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            30
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                               Предприемачите на гости на ЕТ „БИТ“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Учениците от клуб „Млад предприемач“ проведоха поредната си среща с представител на местния бизнес – фирма ЕТ „БИТ – Борислав Тафров“, гр. Съединение.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 03.12.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Те имаха възможност лично да се запознаят със собственика Борислав Тафров, който разказа за своя път в предприемачеството. Фирмата развива дейност в областта на търговията с железария, промишлени стоки и строителни материали.  Учениците получиха ценни знания за спецификата и предизвикателствата в този бранш. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/ElXFOeOzfIZHrsLaHVXVUDEBFys9cIcYaCz1oCW0N4xfMw?e=hWlx5w" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            31
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              „Етичните предприемачи“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      Един видеоклип на учениците от 11. клас: Злата Славова, Лаура Бакалска, Габриела Ангелова, Стоянка Евтимова, Венислава Михайлова, Георги Попов.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 28.11.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Видео проект, създаден от тях за интегрирания урок „Моралът в бизнеса – мисия възможна“, в който показаха:- разликата между манипулативен и честен подход-значението на доверието- как се печели аудитория, клиенти и уважение- как моралът се превръща в истински капитал. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/EvnbIFQ6SbtJkzLJeYuYbs0BXfbF6FPCRBIkq4ov2ErVLA?e=UpdWKX" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            32
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                               ПРЕДПРИЕМАЧИТЕ ОТНОВО НА СРЕЩА С „КОСТОВИ – ЕМК“ ООД
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      Учениците от клуб „Млад предприемач“ към СУ „Недялка Шилева“ – град Съединение, с ръководител г-жа Тонка Мирчева, продължават своята вдъхновяваща инициатива, подкрепена от местния бизнес и сдружение „За Съединение“.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 28.11.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          В рамките на проекта младежите се срещат с представители на различни фирми от града, за да се запознаят отблизо с реалната бизнес среда и ежедневието на местните предприемачи.
+                        </p>
+
+                        <p>
+                            След първата си среща с фирма „ВУКИ“ ООД, учениците проведоха втората среща от инициативата – този път в училище, със собственика на мандра „Съединение“, г-н Стоил Костов. Той представи дейността на мандрата, разказа за историята ѝ, за предизвикателствата в млечния сектор и за пътя на продукцията – от суровината до крайния продукт.
+                        </p>
+
+                        <p>
+                           Младежите имаха възможност да научат повече за реалните процеси, които стоят зад успешното управление на едно малко предприятие – изготвяне на бизнес планове, финансово планиране, контрол на качеството, логистика и маркетинг. Срещата протече с активен диалог, а учениците зададоха множество въпроси, показвайки жив интерес към темата. 
+                        </p>
+
+                        <p>
+                            Тази втора среща им даде ценен практически поглед върху работата на устойчив местен производител и затвърди стремежа им да развиват собствените си предприемачески умения. Инициативата продължава, а пред учениците предстоят още вдъхновяващи срещи с представители на бизнеса от Съединение. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/EpQ4eBjSCR9HqgnAXgDLl84Bbg8ty_bNyLroJ3A8yLy7Dg?e=7zUFkz" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            33
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              Заключително събитие на клуб „Млад предприемач“ – Демо час
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      На 23.06.2026 г. се проведе заключителното събитие на клуб „Млад предприемач“ с ръководител г-жа Тонка Мирчева под формата на демо час, по време на който участниците представиха резултатите от своята работа през учебната година.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 24.06.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Учениците презентираха разработени от тях бизнес планове за реализиране на предприемачески идеи, както и рекламни материали – флаери и визитни картички на различни бизнеси. Бяха представени креативни решения, демонстриращи знания, умения и предприемаческо мислене.
+                        </p>
+
+                        <p>
+                            В рамките на събитието бяха раздадени сертификати за участие на всички членове на клуба. Представени и анализирани бяха резултатите от проведена анонимна анкета за удовлетвореността от дейностите в клуба, както и предложенията на учениците за неговото развитие през следващата учебна година. Специални гости на събитието бяха Директорът на училището г-жа Величка Кирова, учители, служители и ученици, които с интерес се запознаха с постигнатите резултати и подкрепиха младите предприемачи.
+                        </p>
+
+                        <p>
+                           Финалът на събитието премина в празнична атмосфера с торта, украсена с логото на клуба– символичен „хепи енд“ на една успешна и ползотворна учебна година. Благодарим на всички участници, гости и партньори за подкрепата и активното участие! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgBTemwTwPxyT5wg8TSOWjmFAX6lOoFjF-YuVRiYbRoEQcc?e=AgTfAp" class="all-link">тук</a>. 
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            34
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              „ЗАБАВНА МАТЕМАТИКА“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      Ръководител: Мария Христева; Участници: Ученици от  1 клас.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 2025/2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Цел: Целта на настоящата група по интереси е учениците да упражнят и надградят своите знания от основния учебен материал по математика. Да изградят устойчив интерес към математиката и да се формира положителна мотивация за нейното изучаване. Да се осъществяват междупредметни връзки между математиката и останалите учебни дисциплини чрез решаване на задачи с разнообразно сюжетно съдържание. Да се приобщят родителите към училищния живот. Очаквани резултати:Надградена задължителна подготовка; Усъвършенствани основни математически знания и умения в нестандартни за учениците ситуации; Развити творчески възможности; Повишен интерес и съпричастност у родителите към обучението на техните деца.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            35
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                             ЗАБАВЛЯВАМЕ СЕ С МАТЕМАТИКА!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      На 30.04.2026 г.  първи „Г“ клас показаха, че математиката може да бъде истинско забавление!
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 30.04.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          В рамките на заниманията по интереси „Забавна математика“ нашите малки ученици представиха своите умения и знания пред по-големите каки и батковци от 2., 3. и 4. клас. С много усмивки, игри и логически предизвикателства те доказаха, че ученето може да бъде интересно, вдъхновяващо и… забавно! Браво на първи „Г“ клас за смелостта и старанието!  Продължавайте да откривате магията на числата! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAOUxZXLgEbQYKMtXzDVrFVAUoeOaGxewzz7mhdNJsihgc?e=Q5uafR" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            36
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              В ЦАРСТВОТО НА МАТЕМАТИКАТА
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      В Клуба Забавна математика, първокласниците прекрачват прага на едно вълшебно царство, в което числата, фигурите и задачите оживяват.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 05.12.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Чрез игри, загадки и творчески дейности децата се учат да откриват ред, логика и красота в света на математиката.
+                        </p>
+
+                        <p>
+                            В атмосфера на уважение, любознателност и приказно вдъхновение, всеки малък ученик прави своите първи уверени стъпки към знанието. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/Esz_ANmEBJlMvykdOJGhUfkBlKoWAh68yORU-9G4ntUt8Q?e=NcpePV" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <div class="big-divider"></div>
+
+        <section
+            class="life-section"
+            id="competitions"
+        >
+
+            <div class="section-heading">
+
+                <div class="section-kicker">
+                    2025/2026
+                </div>
+
+
+                <h2>
+                    Конкурси и състезания
+                </h2>
+
+
+                <p>
+                    Място за представяне на участията,
+                    постиженията и успехите на учениците
+                    в различни конкурси, олимпиади,
+                    състезания и инициативи.
+                </p>
+
+
+                <div class="section-decoration"></div>
+
+
+                <div class="section-count">
+                    Участия • Постижения • Отличия
+                </div>
+
+            </div>
+
+
+
+            <div class="life-grid">
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            01
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                                Имаме шампион по български език и литература! 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        На 22 юни в СУ „Черноризец Храбър“ – гр. Пловдив се състоя тържественото награждаване на отличените участници в състезанието по български език и литература „Свети Иван Рилски“.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong>23.06.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            С гордост споделяме, че Цветомир Куцаров от II „А“ клас на СУ „Недялка Шилева“ – гр. Съединение беше отличен с ПЪРВО МЯСТО за своя блестящ резултат.
+                        </p>
+
+                        <p>
+                        Признание получи и неговият учител Павлина Генчева, чиято всеотдайна работа, професионализъм и вдъхновение стоят зад този заслужен успех.
+                        Поздравяваме Цветомир и г-жа Генчева за високото постижение! Пожелаваме им още много поводи за гордост, нови знания и бъдещи победи! Гордеем се с вас! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgCsYwMzLKVvTI4EOnno3qHmAYKtL5D6bgxDI36F_fPpIL4?e=aOVxvO" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            02
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                               ПЪРВО МЯСТО В КОНКУРС ЗА РЕПОРТАЖНА СТАТИЯ
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                    Разнообразни са интересите на учениците от IV в клас.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong>15.06.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            Впечатлени от работата на ветеринарните лекари, те приеха предизвикателството на Националния конкурс: „Ветеринарният лекар – лечител на човечеството“ на НПГВМ „Иван Павлов“ – град Стара Загора.
+                            В категория „Репортажна статия“ Веселина Аромова и Фани Алексиева спечелиха първо място. Двете четвъртокласнички се срещнаха с доктор Саво Стайков, който отговори на предварително подготвени от тях въпроси. Лично получиха сертификатите си от зам.-директора на гимназията доктор Блажева. За награда момичетата посетиха зоологическата градина в Стара Загора. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgC-MP2yKv83So4-e16tEytkAbr4A-_xVEK9nXnKYY3I3Wc?e=qL5JXf" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            03
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                                Поклон пред героизма и паметта!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        По покана на кмета на с. Драгомир г-жа Генка Игнатова ученици от 3. а клас на СУ „Недялка Шилева“ посетиха местността „Свети Георги“, където се поклониха пред паметника на загиналите летци от Авиобаза Граф Игнатиево – майор Георги Русев и капитан Сашо Николов, които на 2 юни 1999 г. жертват живота си, за да спасят жителите на селото.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong>02.06.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            По време на срещата децата научиха повече за подвига на двамата летци и отдадоха почит към паметта им с поднасяне на цветя. Особено вълнуващ момент бе отличаването на нашата ученичка Никол Тонкова, която получи сертификат от Фондация „Майор Георги Русев“ за отлични академични постижения, целеустременост и достойно поведение. Освен признанието, Никол бе удостоена и с парична награда. Госпожа Росица Русева- представител на фондацията и съпруга на починалия майор Русев обяви, че това отличие ще се превърне в традиция и всяка година един изявен ученик ще бъде награждаван за своите успехи, трудолюбие и принос към училищната общност. Благодарим на организаторите за възможността нашите ученици да се докоснат до историята, да съхраняват паметта за героите и да се вдъхновяват от примери за смелост, отговорност и родолюбие.
+                        </p>
+
+                        <p>
+                        Награди на Никол Радославова Тонкова – ученичка 3.А клас<br>
+                        1. Национален конкурс „Урок по история. Покажи ми България“ – община Бургас и сдружение „Усмивка“ – специална награда на журито<br> 
+                        2. Рецитал по повод 150 години от Априлското въстание – НЧ „Съединение 1875 г.“ – специална награда<br>
+                        3. Конкурс „Вълшебният свят на книгите“- община Асеновград и НЧ „Св. преп. Паисий Хилендарски“ – първо място със стихотворението „България в четири сезона“ <br>
+                        4.Сребърен медал от състезанията на СБНУ <br>
+                        5.Конкурс за химн на СУ “Недялка Шилева“, гр. Съединение – първо място <br>
+                        6.Конкурс за девиз на СУ „Недялка Шилева“, гр. Съединение – трето място <br>
+                        7. Класирана за областен кръг на Националното състезание по КМ. <br>
+                        8.Конкурс за калиграфия „ Изкуството да пишем красиво“ –община Димитровград – първо място в първа възрастова група.
+                        </p>
+
+                        <p>Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgBG_DjIjYtVSLHybDp1IYsrAbhaYGQKZaxPjV6rGJIiPsw?e=nF850A" class="all-link">тук</a>.</p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            04
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                              Учениците от нашето училище постигнаха изключителен успех във финалното национално състезание на СБНУ! 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Учениците от нашето училище постигнаха изключителен успех във финалното национално състезание на СБНУ! 
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 21.05.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                           С гордост споделяме, че тази година нашите участници завоюваха 5 златни медала и 24 сребърни медала – признание за техния труд, старание и постоянство през цялата учебна година. Поздравления за всички наградени ученици, както и за техните учители и родители, които ги подкрепят и насърчават да вярват в себе си. Браво, деца! Продължавайте да мечтаете, да учите и да постигате високи върхове!
+                        </p>
+
+                        <p>
+                            Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgC3NWvNe2ApQIWwPMhnyR6gAWpqz_cAxof_sR_uBZ1GJes?e=0pR6xj" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            05
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                                Петокласниците на СУ „Недялка Шилева“ – трето място в оспорваната надпревара на областния кръг „Млад спасител“!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        На 21 май ученици от 5. клас на СУ „Недялка Шилева“ взеха участие в областния кръг на състезанието „Млад спасител“, където след оспорвана надпревара завоюваха почетното трето място!
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong>21.05.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            Състезанието имаше за цел да развива знанията и практическите умения на учениците за реакция при бедствия, аварии и извънредни ситуации. Участниците преминаха през различни практически задачи, свързани с оказване на помощ, действия при пожар, работа със спасителни средства и правилна реакция в кризисни ситуации.Нашите ученици показаха отлична подготовка, бърза реакция, дисциплина и силен екипен дух, като достойно се наредиха сред най-добрите отбори в областта. За успеха им допринесоха всеотдайната подготовка и подкрепа на Костадин Апостолов, Николинка Иванова, медицинската сестра Петрунка Лапкова и Таня Къцова от Община Съединение. Поздравления за достойното представяне и заслуженото отличие! Гордеем се с вас и ви пожелаваме още много бъдещи успехи! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgCsAI8sfvwLSK0xwdBysdEGAVCk1KQ_58RkWuBTZq0bxUM?e=Eav9Ou" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            06
+                        </div>
+
+
+                        <div class="card-heading">
+
+                            <h3>
+                                УЧИТЕЛЯТ, КОЙТО МЕ ВДЪХНОВЯВА
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Уважаеми ученици, Ученическият съвет Ви кани да се включите в анкета за избор на „Любим учител“  5-12 клас в нашето училище.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong>15.05.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                            Вашето мнение е изключително важно, защото чрез него ще покажем признателност към учителите, които ни вдъхновяват, мотивират и ни помагат да се развиваме. Попълването на анкетата ще ни помогне да откроим добрите практики в преподаването и отношението към учениците.
+                        </p>
+
+                        <p>
+                           Можете да попълните анкетата до 15 май. На 24 май – Деня на българската просвета и култура  и наш патронен празник– ще бъде тържествено отличен.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            07
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              “Млад отличник на БЧК“! 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Днес, 8 май, се отбелязва Световният ден на Червения кръст и Червения полумесец!
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 08.05.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Горди сме да споделим, че нашите ученички Теодора Турсунска (10. А клас) и Злата Славова (11. А клас) бяха официално отличени с престижната награда „Млад отличник на БЧК“! Поздравяваме момичетата за тяхната отдаденост, хуманност и активна доброволческа работа. Вие сте пример за това как доброто и грижата към другите променят света около нас. Продължавайте да вдъхновявате! Гордеем се с вас! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAnXeUgAyrmQ7hUBh3zsbl_AYHQi9Zjuk-uTOOwrNwyCBU?e=PIyhhu" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            08
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              НАГРАДИ В КОНКУРСА „С ОЧИТЕ СИ ВИДЯХ БЕДАТА“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Нашите таланти блеснаха в общинския кръг на „С очите си видях бедата“!
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 29.04.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          С голямо вълнение споделяме успехите на нашите ученици в общинския етап на конкурса за детска рисунка “ С очите си видях бедата“.
+                        </p>
+
+                        <p>
+                            Тази година младите ни художници показаха не само талант, но и изключителна гражданска отговорност, пресъздавайки важни и сериозни теми.<br>
+                            В творбите си децата преплетоха изкуството с познанията за безопасност, като основните акценти бяха върху:<br>
+                            -Борбата с пожарите: смелостта на огнеборците и защитата на природата;<br>
+                            -Природните бедствия: действия при наводнения, земетресения и бури;<br>
+                            -Мисията „Спасител“: работата на екипите и оказването на първа помощ;<br>
+                            Екологичното съзнание: последиците от човешката дейност и грижата за планетата.
+                        </p>
+
+                        <p>
+                           Ето и нашите класирани участници, които продължават към областния кръг:<br> 
+                        </p>
+
+                        <p>
+                            I възрастова група :<br>
+                            Аспарух Конарски – 3.б клас, Първо място<br>
+                            Стефи Чуткина – 3.б клас, Второ място<br>
+                            Виктор Кабашки – 4.а клас, Трето място
+                        </p>
+
+                        <p>
+                            II възрастова група :<br>
+                            Лили Пенелова – 5.б клас, Първо място<br>
+                            Михаела Чилингирян – 5.б клас, Второ място<br>
+                            Иво Салапатийски – 5.а клас, Трето място
+                        </p>
+
+                        <p>
+                            III възрастова група :<br>
+                            Славена Славова – 10.а клас, Първо място<br>
+                            Вера Иванова – 7.а клас, Второ място
+                        </p>
+                        
+                        <p>
+                            Поздравяваме наградените за тяхната креативност и за това, че успяха да направят „бедата“ по-разбираема и преодолима чрез своите цветове и идеи.
+                        </p>
+
+                        <p>
+                            Благодарим на учителите по изобразително изкуство за вдъхновението и на всички участници за ентусиазма!
+                        </p>
+
+                        <p>
+                            Стискаме палци на нашите финалисти за следващия етап на конкурса! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAoCA1GsnbdS6Tz52tUzfMlAY22dELIWIybmmRru0FL8RQ?e=fHic7f" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            09
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                               5-то място в „Млад огнеборец“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       На 24 април 2025 г. ученици от 5., 6., 7. клас на СУ „Недялка Шилева“ – гр. Съединение взеха участие в районния етап на състезанието „Млад огнеборец 2025“, проведено в Пловдив, където заеха почетното 5-то място.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 24.04.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Поздравления за участниците и техните ръководители – г-н Костадин Апостолов, г-жа Николинка Иванова, г-н Ивайло Димитров, г-жа Таня Къцова (специалист ГЗ и ОМП).
+                        </p>
+
+                        <p>
+                            С много ентусиазъм, отборен дух и желание за изява учениците се включиха в надпреварата, където премериха сили с връстници от други училища. Те се състезаваха в атрактивни и динамични дисциплини като „Бойно разгръщане“ и „400 метра щафетно бягане с препятствия“ – изпитания, които изискват бързина, сръчност, дисциплина и отлична работа в екип.
+                        </p>
+
+                        <p>
+                            Състезанието „Млад огнеборец“ е част от дългогодишна инициатива, насочена към изграждане на умения за реакция при пожари и бедствия, както и към възпитаване на отговорност, смелост и взаимопомощ сред младите хора.
+                        </p>
+
+                        <p>
+                            Гордеем се с вашето старание, смелост и вдъхновение. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgA7B3ma0Y8VQIODS_Y0fpywAR9RirXHvx3AHafV1e3BrU0?e=DQupmz" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            10
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              С гордост споделяме прекрасна новина!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Никол Тонкова, ученичка от 3.а клас от нашето училище, спечели първо място в конкурса „Вълшебният свят на книгите“, посветен на 2 април- Международен ден на детската книга , организиран от Община Асеновград, в категория “ Стихотворение “ 1-4 клас !
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 23.04.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Със своя талант, въображение и любов към четенето Никол успя да впечатли журито със своето стихотворение „България в четири сезона“ и да се отличи сред всички участници. Нейният успех е доказателство, че книгите отварят врати към нови светове и вдъхновяват младите хора да мечтаят и творят. Поздравяваме Никол за заслуженото отличие и ѝ пожелаваме още много бъдещи успехи, вдъхновение и покорени върхове! Гордеем се с теб! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAu6s1NRdmmQJ0P6D24UMglATN-y8b1F7hZL5kIQZVLhrI?e=7wC3Np" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            11
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                             1-во МЯСТО В „МЛАД СПАСИТЕЛ“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Петокласници – победители в състезанието „Млад спасител“!
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 21.04.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          На 21 април ученици от 5. клас (Сияна, Лили, Виктор, Костадин) на СУ “Недялка Шилева” взеха участие в състезанието „Млад спасител“ – районен кръг, проведено в гр. Пловдив.
+                        </p>
+
+                        <p>
+                           Инициативата имаше за цел да развива у учениците знания и практически умения за реакция при бедствия и извънредни ситуации, както и да затвърди тяхната подготовка чрез разнообразни практически задачи. 
+                        </p>
+
+                        <p>
+                            По време на състезанието участниците преминаха през различни предизвикателства – работа с противогази, разпознаване и разделяне на радиоактивно замърсени плодове и зеленчуци, използване на пожарогасители, действия при гасене на пожар и работа със спасителни лодки. Учениците демонстрираха и знания за правилна реакция при земетресение, включително къде да застанат за безопасност, както и показаха отлична подготовка чрез безгрешно изпълнение на теоретична част в началото.
+                        </p>
+
+                        <p>
+                            Нашите ученици се представиха блестящо и завоюваха първо място, като станаха победители в надпреварата. Те демонстрираха отлични знания, бърза реакция, дисциплина и силен екипен дух.<br>
+                            Тяхната подготовка беше осъществена с отдаденост и професионализъм от: Костадин Апостолов, Николинка Иванова, мед. сестра Петрунка Лапкова,  Таня Къцова от Община Съединение.<br>
+                            Поздравления за заслужената победа и отличното представяне!<br>
+                            Гордеем се с вас и ви пожелаваме още много бъдещи успехи! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAyR_XKqkk5R7cJzmUo70JlAelNo2nrZHygmcnOStqfDbE?e=RGRpIH" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            12
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              СРЕБЪРЕН МЕДАЛ ПО АЕ!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Днес директорът г-жа Величка Кирова поздрави Константин Танкишев от 7. Б клас по повод неговото отлично представяне в олимпиади Кингс по английски език.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 21.04.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Той се представи достойно сред участниците и получи сребърен медал, което е признание за неговите знания, труд и постоянство, както и повод за гордост на преподавателя му – г-жа Марияна Петкова. Пожелаваме му още много бъдещи успехи, вдъхновение и нови постижения в областта на английския език и образованието като цяло! Браво! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgD17s5dSJU2SbrJXmJ_g77eAdCQXg056Sj2RMErznA8SKg?e=HtfR0j" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            13
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                             УСПЕХ, ДАНИ!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Пожелаваме успех на Йорданка Парнарова от 12. клас на СУ „Недялка Шилева“ и на целия национален отбор на България (девойки до 19 г.) на европейските квалификации в Малта! 
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 09.04.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Дани е състезател на ФК „Пълдин“ Пловдив и е част от отбора, който ще се изправи срещу: Казахстан, Малта и Израел. Успех и достойно представяне! Гордеем се с теб и стискаме палци за победа във всяка среща ! Националният отбор на България за девойки до 19 години започна по отличен начин участието си във втория кръг на европейските квалификации, след като постигна убедителна победа с 5:1 срещу Казахстан. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAqHyP3y3wnTpHWSq8yVyxZAeky3lyJAR3xlUe-tiVaEaE?e=cMjVgk" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            14
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                               Вдъхновени от историята – успех за учениците от СУ „Недялка Шилева“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      Над 50 ученици от СУ „Недялка Шилева“ се включиха в конкурса за презентации, организиран от НЧ „Съединение 1875“ по повод Априлското въстание.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 03.04.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          С вдъхновение и творчески подход те представиха своите знания и отношение към едно от най-значимите събития в българската история.
+                        </p>
+
+                        <p>
+                            Днес всички участници получиха грамоти за участие, връчени от председателя на читалището Анета Атанасова, а най-добрите проекти- награди.Сред отличените се откроиха Венислава Михайлова от 11. клас, Анита Янкова от 11. клас и Петьо Ликов от 10. клас. Поздравления и за техните учители по информационни технологии и компютърно моделиране и информационни технологии, които с отдаденост ги подготвят и вдъхновяват в учебния процес. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgBMYCYbMvK7RII9g5KK8Z_BAXzIA3-pw7Mfx8DB-R6yu_8?e=eNfMnq" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            15
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              Слово за България – ученици представят Перущица на английски език!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Ученици от СУ „Недялка Шилева“ взеха участие в конкурса „Млад екскурзовод“, посветен на Априлското въстание.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 31.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          В инициативата се включиха три деца от 5. Клас – Галя Ненкова, Марияна Манчева, Далия Иванова, които представиха на английски език пет забележителности от района на Перущица. Бяха наградени от кмета на община Перущица Николай Баков.
+                        </p>
+
+                        <p>
+                            Учениците бяха подготвени от своите преподаватели – Дора Кошева по история, Марияна Петкова по английски език и Светлана Манчева по география.
+                        </p>
+
+                        <p>
+                            Събитието се проведе на 31 март в Исторически музей – Перущица. Участниците бяха поканени от Лалка Христова, директор на ОУ „Петър Берон“.
+                        </p>
+
+                        <p>
+                            По време на представянето бяха разгледани следните обекти:<br>
+                            Неолитното селище (6200–4850 г. пр. Хр.), разположено в близост до Червената църква;<br>
+                            Червената църква – раннохристиянски храм от IV–VI век;<br>
+                            Крепостта Перистица (XI–XII век), разположена в Родопите;<br>
+                            Църквата Свети Архангел Михаил (1847–1849 г.), значим паметник от Възраждането;<br>
+                            Дановото училище (1849–1850 г.), един от важните образователни центрове в миналото.<br>
+                        </p>
+
+                        <p>
+                            Учениците успешно представиха историческото наследство на града, демонстрирайки знания, увереност и умения за изразяване на английски език. Поздравления! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgD7KQ5rzusbRriMGVAztMCJAcWMZFce-dg9-pVaMrx1PdI?e=VaeEkb" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            16
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                               ПРОЛЕТНО ПРЕДИЗВИКАТЕЛСТВО ЗА СМЕЛИ УМОВЕ 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      Обичаш ли загадки? Обичаш ли да работиш в екип?<br>
+                      Готов ли си да приемеш мисия, която ще тества твоето търпение, логика и бързина?
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 27.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                        Училищната библиотека те предизвиква!<br>
+                        Сформирайте отбор (2–4 ученици) и се включете в
+                        „Пролетна пъзел мисия: Събери картината!“<br>
+                        Вземане на пъзелите: 3 април (петък)<br>
+                        От училищната библиотека<br>
+                        За прогимназиален етап – пъзели от 500 части<br>
+                        За гимназиален етап – пъзели от 1000 части
+                        </p>
+
+                        <p>
+                        Вашата мисия:<br>
+                        Да подредите пъзела си по време на пролетната ваканция и да докажете, че сте най-добрият отбор!<br>
+                        Как да участвате?<br>
+                        Направете снимка на готовия пъзел.<br>
+                        Изпратете я или я донесете в библиотеката след ваканцията.<br>
+                         Най-бързите и най-организираните отбори ще получат награди!
+                        </p>
+
+                        <p>
+                            Внимание:<br>
+                            Тази мисия изисква търпение, отборен дух и остро око!<br>
+                            Само най-упоритите ще стигнат до края!<br>
+                            Ограничен брой пъзели.<br>
+                            Готов ли си да приемеш предизвикателството?<br>
+                            Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgCBfijK4ChNT5-4yzJuxc5OAQf3e10qoEefWxKQVktIgzY?e=UqCLgo" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            17
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                             КОНКУРС ЗА РЕЦИАТОР
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      С гордост споделяме, че учениците от начален взеха участие в рецитаторския конкурс, организиран от НЧ „Съединение 1875“, посветен на 150-годишнината от Априлското въстание – една свята дата в българската история.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 24.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Децата представиха силни и емоционални изпълнения, чрез които почетоха паметта на героите и показаха уважение към борбата за свобода. Със своите рецитации те успяха да пресъздадат духа на Април 1876 г. и да вдъхнат нов живот на безсмъртните стихове, посветени на подвига.
+                        </p>
+
+                        <p>
+                        Благодарим на организаторите за възможността, а на нашите ученици и учители – за вдъхновението, труда и достойното представяне.<br>
+                        Гордеем се с вас! Нека заедно продължаваме да пазим живо наследството и паметта за българските герои. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgD_xycpUTRRQpHgBtrLYp9AAS3_ATVLW36HRHNcL71XKbQ?e=vPBHig" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            18
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              Олимпиада KINGS по английски език – Пролет 2026 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      Олимпиадата KINGS Кингс България/Kings Bulgaria е международно състезание, което дава възможност на учениците да покажат знанията си по различни предмети.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 24.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Нашите ученици традиционно се включват активно и достойно, постигайки отлични резултати!<br>
+                        С гордост споделяме, че ученици от 5., 6.,7.,8. и 9. клас взеха участие в квалификационния кръг на олимпиадата – сезон Пролет 2026 по английски език.
+                        </p>
+
+                        <p>
+                        Всички участници се класираха за финалния кръг!<br>
+                        Те показаха отлична подготовка, мотивация и много добри резултати!<br>
+                        Специални поздравления за:<br>
+                        Аника Елиа (6. клас) –  100% резултат (без грешка!)<br>
+                        Деян Колев (9. клас) – 87% отличен резултат<br>
+                        Златко Маринов (8. клас) – 93.3%  
+                        </p>
+
+                        <p>
+                        Поздравления и за преподавателя по английски език Марияна Петкова, която получи сертификат за активно участие и сътрудничество при организацията на олимпиадата! Гордеем се с всички наши ученици и им пожелаваме успех на финалния кръг! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgADYF9xpIU-TIYon28f3a9eAdOPqELh40N9LdB5vewmIME?e=aEAxd7" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            19
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              ЗЛАТНИТЕ МОМЧЕТА НА СУ „НЕДЯЛКА ШИЛЕВА“: ГОРДОСТ ЗА ГРАД СЪЕДИНЕНИЕ!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       С огромно вълнение и гордост споделяме изключителните успехи на двама наши възпитаници, които прославиха името на училището и общината ни със своите забележителни постижения!
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 23.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          ГЕОРГИ ГИШИН от 1. Б клас завоюва ЗЛАТЕН МЕДАЛ в престижното състезание по ментална аритметика и увлекателна математика Купа „Витошко лале“, провело се на 21-22.03.2026 г. в гр.София. Със своята бърза мисъл и математически талант, той доказа, че за знанието граници няма!
+                        </p>
+
+                        <p>
+                            АСПАРУХ КОНАРСКИ от 3. Б клас постигна невероятен триумф на Международния плувен турнир в гр. Бургас, като спечели цели 4 ЗЛАТНИ МЕДАЛА и грабна ЗЛАТНАТА КУПА за най-добър състезател при 10-годишните момчета. Неговата дисциплина и воля са пример за всички нас!
+                        </p>
+
+                        <p>
+                            Директорът на училището г-жа Величка Кирова лично награди шампионите и ги увери, че училището ще продължи активно да подкрепя тяхното развитие и да създава условия за бъдещите им победи. Тези деца са живото доказателство, че в СУ „Недялка Шилева“ растат таланти от световна величина. Поздравявам Георги и Аспарух за техния труд и пожелаваме на семействата им да бъдат все така тяхна опора! Браво, момчета! Вие сте гордостта на град Съединение! Продължавайте да покорявате нови върхове по пътя на знанието и спорта! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgB3BfCt8Xx3SbXn6iA46RfVAT0rbjoOGBC8ZHCSbn_cAF8?e=Pat3PH" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            20
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                             ИГРАТА „Преоткрий Съединение“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       На 21 март от 10:00 ч. на площад „Съединение“ се проведе градската игра „Преоткрий Съединение“ с участието на Торино и Пашата.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 21.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         В надпреварата се включиха 6 отбора, които чрез QR кодове откриваха локации в града и решаваха загадки, а след това преминаха и през тест, свързан с историята, културата, образованието и спорта на Съединение.
+                        </p>
+
+                        <p>
+                        Победител стана отбор „ТАДАСАНА“<br>
+                        Второ място – „Златните“ (7.,10.,11. клас)<br>
+                        Трето място – „Пандите1312“ (6. клас)
+                        </p>
+
+                        <p>
+                        Събитието премина изключително емоционално и вълнуващо, изпълнено с много пролетно настроение и отборен дух. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDvpOprifXHSrp7qLtzItqdAQMyqcoTVlbbeAal8FSToiM?e=l5BcjP" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            21
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                             Сърца, които даряват радост
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                     С малко закъснение, но с много топлина и благодарност – при нас вече е и сертификатът за дарение.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 17.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Искаме от сърце да благодарим на всички деца и родители с добри сърца, които се включиха и показаха съпричастност. Заедно успяхме да зарадваме деца в неравностойно положение по време на Коледа и да им подарим усмивки и надежда. Този сертификат е не просто признание, а истинската награда за нашия общ труд и добрина. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDEYLmgRltwRKJy1CtWSc6yAcAIaouwLQUH9qAysZ5pyys?e=SriZgm" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            22
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              Когато музиката срещне душата: Една златна приказка на дансинга! 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      Има моменти, в които времето спира, за да направи път на красотата, грацията и нежността! 
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 16.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Марилена Димова, златното момиче на СУ „Недялка Шилева“, покори жури и публика и извоюва първото място в латиноамериканските танци и трето място в стандартните танци на националния турнир по спортни танци и европейската купа по латиноамерикански и стандартни танци. Браво, звездна Марилена! Покорявай с твоята харизма и грация на всяко състезание! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAJPa0PZEgzQplekz-WpBBUAdqUaYM0IsC6Vp415nDkJsI?e=ivAMNL" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            23
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                             ТРЕТО МЯСТО В КОНКУРС ЗА КУКЕРСКА МАСКА
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                     Всяка кукерска маска, направена от детски ръце, е святата памет на предците ни.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 16.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                          Общо 300 деца и ученици от над 50 населени места в цялата страна взеха участие във Втория национален конкурс за изработка на кукерски маски „Сирни Заговезни“, организиран от ОУ „Д-р Петър Берон“ в казанлъшкото село Овощник.
+                        </p>
+
+                        <p>
+                            Учениците от СУ „Недялка Шилева“, взели участие в конкурса, са наградени с диплом за достойно представяне в изработването на кукерски маски.
+                        </p>
+
+                        <p>
+                            Специални поздравления за ученика Радослав Величков, който е отличен с трето място в националния конкурс!  Творбите ще бъдат включени в изложба в Дом на Културата,,Арсенал“, гр. Казанлък, по време на празника на розата. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgA4hErmV3yfRq_iYjixsx6VAe5GUZtVhvkUKwVoPuA_Jmo?e=oZCV83" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            24
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              Трето място в България!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                      С гордост споделяме , че нашият ученик Петко Кирилов Христакиев от 3. клас, с ръководител г-жа Чудомира Алова, се представи блестящо на националния кръг, проведен в гр. Шумен, и заслужено донесе този голям успех за училището.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 15.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                        Той спечели трето място в България на Националното състезание по компютърно моделиране! Това е повод за гордост за СУ „Недялка Шилева“, за град Съединение и за цялата ни общност.<br>
+                        Поздравления за Петко и неговия учител! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDW49-dlhssTriIT3ZyK4S4AdMnT3XFzgSwP4uDGW09hfY?e=4nNML2" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            25
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                             Отлично представяне на учениците от СУ „Недялка Шилева“ в Международната олимпиада КИНГС! 
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                     С гордост споделяме успехите на нашите ученици в Международната дистанционна ученическа олимпиада „Кингс“, която дава възможност на ученици от различни държави да проверят знанията си и да се състезават на високо академично ниво.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 05.03.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Олимпиадата се провежда в два етапа – квалификационен кръг и финален кръг, като тази година учениците от СУ „Недялка Шилева“ се включиха изключително активно и се представиха впечатляващо по няколко учебни предмета.
+                        </p>
+
+                        <p>
+                          Според официалните резултати:<br>
+                          Нашето училище е сред най-активните участници и постига отлични резултати, като:<br>
+                          • е в ТОП 50 за България по брой ученици, участвали във финалния кръг по математика<br>
+                          • е в ТОП 30 за България по брой ученици, получили дипломи I и II степен по български език<br>
+                          • е в ТОП 10 за област Пловдив по брой ученици, участвали във финалния кръг по английски език 
+                        </p>
+
+                        <p>
+                        Всички участници получиха:<br>
+                        диплома за постигнато ниво на знания от финалния кръг<br>
+                        грамота за успешно преминат квалификационен кръг<br>
+                        Английски език<br>
+                        В олимпиадата се включиха ученици от 5., 7., 9., 11. и 12. клас, които за пореден път показаха много добро ниво и отлични резултати.<br>  
+                        </p>
+
+                        <p>
+                         Особено се отличи:<br>
+                        Константин Танкишев от 7 клас , който взе участие в Кралска лига и завоюва пореден златен медал.<br>
+                        Преподавател: Марияна Петкова<br>
+                        Математика<br>
+                        Учениците от 5. клас се включиха активно и постигнаха много добри резултати.<br>   
+                        </p>
+
+                        <p>
+                        Особено се отличиха:<br> 
+                        Сияна Валенцова – 7 място в България за възрастовата група<br> 
+                        Марияна Манчева – 10 място в България<br> 
+                        Преподавател: Иванка Пъкова<br> 
+                        Български език и литература<br> 
+                        5. клас – активен клас с чудесно представяне и отличия<br> 
+                        Преподавател: Генка Дребчева 
+                        </p>
+
+                        <p>
+                        Най-активни участници:<br> 
+                        Галя Ненкова – награда клавиатура от Кингс<br> 
+                        Александра Митова – награда геймърски слушалки<br> 
+                        Георги Гладийски – награда оптична мишка<br> 
+                        6. клас също се включиха активно в олимпиадата по български език и се представиха много добре.<br> 
+                        Преподавател: Ваня Ликова
+                        </p>
+
+                        <p>
+                        Човек и природа<br>
+                        Ученици от 5. клас показаха отлична подготовка и активно участие.<br>
+                        Преподавател: Розалия Георгиева<br>
+                        Освен учениците, училището и преподавателите също получиха специални грамоти за активно участие и за подготовката на талантливите финалисти в олимпиадите „Кингс“.
+                        </p>
+
+                        <p>
+                            Директорът на училището, г-жа Кирова, лично поздрави и награди всички участници, като изрази своята гордост от техните постижения и усилия.
+                        </p>
+
+                        <p>
+                            Благодарим и за подкрепата на училището, което поe част от таксите за финалния кръг на учениците от 5. клас, защото вярваме, че желанието за знания трябва да се насърчава и подкрепя.<br>
+                            Изказваме своята благодарност и към организаторите на олимпиадите Кингс България/Kings Bulgaria , които предоставят на учениците възможност да развиват знанията си, да се състезават на международно ниво и да откриват радостта от ученето и постиженията.<br>
+                            Гордеем се с нашите ученици и техните учители!<br>
+                        </p>
+
+                        <p>
+                            Пожелаваме им още много бъдещи успехи и вдъхновение по пътя на знанието! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgB22YYcLMIITaIRzbHaIvekATsTry24p09vCXbqoKh7Oi8?e=HuAkEE" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            26
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                            ГРАМОТИ „ВИВА МАТЕМАТИКА“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                     Учениците от нашето училище Никол Тонкова и Деница Влашка участваха в състезанието „Вива математика с компютър“, организирано от Институт по математика и информатика към Българска академия на науките.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 23.02.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Те се представиха достойно, постигайки резултати от 65 и 70 точки.
+                        </p>
+
+                        <p>
+                         Поздравяваме ги за отличното представяне и им пожелаваме успех във втория кръг! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAKPY3V8kWZS4b-m0vyt7cBAbnHjuwt49i3yoeszZlIgxw?e=vcUDJC" class="all-link">тук</a>.   
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            27
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                             ГРАМОТИ ЗА „АЗ И ЧИСЛАТА“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       ГРАМОТИ ЗА „АЗ И ЧИСЛАТА“
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 20.02.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Малките ни математици получиха своите грамоти за участието си в състезанието „Аз и числата“, организирано от СБНУ. Радваме се за техните успехи и им пожелаваме много бъдещи такива! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDTlj98f0CBS4dGgOHhwiYXAcAQrC8gRJf-95_Z3-hRkZU?e=MW9Wju" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            28
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                              ОБЛАСТЕН КРЪГ КМ!
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Гордеем се с нашите малки шампиони!
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 15.02.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                        На 15.02.2026 година ученици от 3. и 4. клас взеха участие в областния кръг на Националното състезание по Компютърно моделиране и се представиха достойно, с много хъс, старание и усмивки!<br>
+                        Сега са нетърпение очакваме резултатите и стискаме палци за отлични постижения!
+                        </p>
+
+                        <p>
+                        Поздравления за всички участници за смелостта и труда им!<br>
+                        Благодарим и на техните ръководители и родители за подкрепата!<br>
+                        Продължавайте да мечтаете и да покорявате нови върхове! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDAp1G4dV7rR473EY2MMQwRAXe_jRKswFnA3NC3cjhqbZQ?e=94V0PJ" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            29
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                            ГРАМОТИ ЗА „ЗНАМ И МОГА“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                    Днес учениците от 4.а и 4.б клас, които взеха участие в общинския кръг на Националната олимпиада „Знам и мога“, получиха своите грамоти за участие.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 09.02.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Мария Куцарова от 4.а клас се класира за Областния кръг на олимпиадата. Пожелаваме и успех! Поздравяваме всички участници за усърдието, любознателността и стремежа им към знанието! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgD9pVrwA2ZjR4FaOn7PXDQuAWfLnDKRYUQKM4riB85s6g8?e=mXafkq" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            30
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                            ГРАМОТИ „АЗ, ПРИРОДАТА И СВЕТЪТ“
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                        Учениците от начален етап получиха своите грамоти от състезанието „Аз, природата и светът“, организирано от СБНУ.
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 19.01.2026
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                         Те показаха отлични знания, любознателност и отговорно отношение към опазването на природата. Поздравяваме ги за постигнатите резултати! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDBLRw_9VmQTJq7R9XBGfUvAaoW51_h1S7p8hE0BFRE-no?e=8IaKgl" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+                    <article class="life-card">
+
+                    <div class="card-top">
+
+                        <div class="card-number">
+                            31
+                        </div>
+
+
+                        <div class="card-heading">
+                            <h3>
+                            ПОБЕДИ В ОЛИМПИАДИ KINGS
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-short">
+                       Нашите ученици отново блеснаха на Международната дистанционна ученическа олимпиада KINGS по английски език!
+                    </div>
+
+
+                    <div class="card-info">
+
+                        <div class="info-item">
+                            <strong>Период:</strong> 29.10.2025
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-full">
+
+                        <p>
+                        С гордост споделяме, че през май 2025 г. наши ученици от 5., 6., 7., 9., 10., 11. и 12. клас се включиха във финалния кръг на престижната олимпиада KINGS Bulgaria, показвайки впечатляващи знания, мотивация и амбиция!
+                        </p>
+
+                        <p>
+                            За постигнатите отлични резултати учениците получиха дипломи от висока степен, а училището ни е отличено в ТОП 5 за област Пловдив и в ТОП 30 за България по брой ученици, които са получили диплома от финалния кръг с първа и втора степен за ниво на знания. Учителят им по английски език – Марияна Петкова бе отличена с грамота за изключителен принос и успешно организиране на олимпиадата. 
+                        </p>
+
+                        <p>
+                           Сред най-забележителните постижения са:<br>
+                            Калин Паликрушев (7. клас) – 100% верни отговори на финалния кръг и 8-мо място в България!<br>
+                            Бияна Митева (12. клас) – Първа степен и 11-то място в България!<br> 
+                            Учениците от 7. клас (общо 15 участници) се представиха блестящо като „активен клас“ и спечелиха специални награди за екипна работа и мотивация!<br>
+                            Йоан Чакъров – второ място в класа<br>
+                            Десислава Бозвелийска – трето място в класа<br>
+                        </p>
+
+                        <p>
+                            Официалното награждаване се състоя в нашето училище, като отличията бяха връчени лично от директора г-жа Кирова.<br>
+                            Всеки ученик получи диплом, награди и заслужени аплодисменти от своите съученици и учители!
+                        </p>
+
+                        <p>
+                            Отбелязваме и отличното представяне на Ива-Дара Захариева (7. клас), която се яви на олимпиадата по български език с преподавател г-жа Чудомира Атанасова и също се представи отлично!
+                        </p>
+
+                        <p>
+                           Гордеем се с всички наши участници — доказахте, че знанието, постоянството и желанието да се развивате винаги водят до успех! Снимки <a href="https://e.pcloud.link/publink/show?code=kZR7WIZhMbaKOB6SHRvLEovNiESuRwkptbV" class="all-link">тук</a>. 
+                        </p>
+
+                    </div>
+
+
+                    <button class="read-more">
+                        Прочети повече
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-inner">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    СУ „Недялка Шилева“
+                </h2>
+
+                <p>
+                    Официалният сайт на Средно училище
+                    „Недялка Шилева“ – град Съединение.
+                    Място за знание, традиции, развитие
+                    и бъдеще.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Навигация
+                </h3>
+
+                <a href="index.html">
+                    Начало
+                </a>
+
+                <a href="about.html">
+                    За нас
+                </a>
+
+                <a href="news.html">
+                    Новини
+                </a>
+
+                <a href="gallery.html">
+                    Галерия
+                </a>
+
+                <a href="contacts.html">
+                    Контакти
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Училищен живот
+                </h3>
+
+                <a href="#activities">
+                    Занимания по интереси
+                </a>
+
+                <a href="#competitions">
+                    Конкурси и състезания
+                </a>
+
+                <a href="students.html">
+                    Ученици
+                </a>
+
+                <a href="projects.html">
+                    Проекти
+                </a>
+
+                <a href="calendar.html">
+                    Календар
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            © 2026 СУ „Недялка Шилева“ – град Съединение.
+            Всички права запазени.
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        const readMoreButtons =
+            document.querySelectorAll(".read-more");
+
+
+        readMoreButtons.forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                const card =
+                    this.closest(".life-card");
+
+
+                card.classList.toggle("open");
+
+
+                if (card.classList.contains("open")) {
+
+                    this.childNodes[0].textContent =
+                        "Скрий информация ";
+
+                } else {
+
+                    this.childNodes[0].textContent =
+                        "Прочети повече ";
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+
+</html>

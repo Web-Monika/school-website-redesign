@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>СУ „Недялка Шилева“</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #faf7f1;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 105px;
+            background: #fffdf8;
+            border-bottom: 1px solid #e8dfd2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-symbol {
+        width: 115px;
+        height: 115px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+.logo-symbol img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+        .logo-text h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            line-height: 1;
+            color: #151515;
+        }
+
+        .logo-text p {
+            margin-top: 7px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #6c675f;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252525;
+            font-size: 14px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #8e2928;
+        }
+
+        nav a.active {
+            color: #8e2928;
+        }
+
+        nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #8e2928;
+        }
+
+        .header-button {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            background: #8e2928;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: "Inter";
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .header-button:hover {
+            background: #6f2020;
+            transform: translateY(-2px);
+        }
+
+        .school-banner {
+        width: 100%;
+        height: auto;
+        display: block;
+}
+
+        .hero {
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(30, 25, 18, 0.9) 0%,
+                    rgba(30, 25, 18, 0.55) 45%,
+                    rgba(30, 25, 18, 0.25) 100%
+                ),
+                url("school.jpg");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            width: 90%;
+            max-width: 1250px;
+            margin: auto;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .hero-quote {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 40px;
+            font-style: italic;
+            max-width: 560px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero-author {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            background: #a52d2b;
+            padding: 14px 27px;
+            border-radius: 30px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: #c03a37;
+            transform: translateY(-2px);
+        }
+
+        .quick-links {
+            max-width: 1425px;
+            margin: -1px auto 0;
+            padding: 35px 20px;
+
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 1px;
+
+            background: #e1d8ca;
+        }
+
+        .quick-card {
+            background: #fffdf8;
+            padding: 28px 15px;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .quick-card:hover {
+            background: #f5eee4;
+            transform: translateY(-4px);
+        }
+
+        .quick-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #8e2928;
+        }
+
+        .quick-card h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+            margin-bottom: 7px;
+        }
+
+        .quick-card p {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .section {
+            max-width: 1250px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 38px;
+            color: #171717;
+        }
+
+        .section-title h2::before {
+            content: "✦";
+            color: #8e2928;
+            margin-right: 12px;
+            font-size: 22px;
+        }
+
+        .all-link {
+            color: #8e2928;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .news-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 35px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .news-card {
+            background: #fffdf8;
+            border: 1px solid #e8dfd2;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(70, 45, 25, 0.1);
+        }
+
+        .news-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 17px;
+        }
+
+        .news-date {
+            font-size: 11px;
+            color: #8e2928;
+            margin-bottom: 8px;
+        }
+
+        .news-card h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+
+        .news-card p {
+            font-size: 12px;
+            color: #707070;
+        }
+
+        .mission {
+            background: #efe5d5;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mission::after {
+            content: "❖";
+            position: absolute;
+            right: 25px;
+            top: 20px;
+            font-size: 50px;
+            color: #8e2928;
+            opacity: 0.25;
+        }
+
+        .mission h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .mission h2::before {
+            content: "✦";
+            color: #8e2928;
+            margin-right: 8px;
+        }
+
+        .mission p {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .mission-small {
+            font-size: 13px !important;
+            font-family: "Inter" !important;
+            color: #6d665d;
+        }
+
+        .mission-button {
+            display: inline-block;
+            background: #28553d;
+            color: white;
+            text-decoration: none;
+            padding: 12px 23px;
+            border-radius: 25px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .mission-button:hover {
+            background: #1c3d2c;
+        }
+
+        footer {
+            background: #233d30;
+            color: white;
+            padding: 55px 6% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1250px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            color: #d7d7d0;
+            font-size: 13px;
+            max-width: 300px;
+        }
+
+        footer h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #d7d7d0;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1250px;
+            margin: 45px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            text-align: center;
+            font-size: 11px;
+            color: #bfc6c0;
+        }
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 15px;
+            }
+
+            .quick-links {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .news-layout,
+            .calendar-box {
+                grid-template-columns: 1fr;
+            }
+
+            .library-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-button {
+                display: none;
+            }
+
+            .folk-border {
+                display: none;
+            }
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero-quote {
+                font-size: 32px;
+            }
+
+            .quick-links {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 20px;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .library-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+
+            <div class="logo-symbol">
+            <img src="logo.png" alt="Лого на училището">
+            </div>
+
+            <div class="logo-text">
+                <h1>Средно училище<br>„Недялка Шилева“</h1>
+                <p>ЗНАНИЕ • ТРАДИЦИИ • БЪДЕЩЕ</p>
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html" class="active">Начало</a>
+            <a href="about.html">За нас</a>
+            <a href="contacts.html">Контакти</a>
+            <a href="oppk.html">Обществени поръчки-профил на купувача</a>
+
+        </nav>
+
+
+        <a href="rabota.html" class="header-button">
+            ♡ Търсите ли работа?
+        </a>
+
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-quote">
+                Добре дошли в официалния сайт на СУ „Недялка Шилева“ – град Съединение!
+            </div>
+
+            <div class="hero-author">
+                Съединени в знанието,<br>
+                силни в делата!
+             </div>
+
+        </div>
+
+    </section>
+
+    <section class="quick-links" id="education">
+
+        <a href="documents.html" class="quick-card">
+            <div class="quick-icon">⊟</div>
+            <h3>Училищни документи</h3>
+        </a>
+
+        <a href="students.html" class="quick-card">
+            <div class="quick-icon">♧</div>
+            <h3>Ученици</h3>
+        </a>
+
+        <a href="schoollife.html" class="quick-card">
+            <div class="quick-icon">♙</div>
+            <h3>Училищен живот</h3>
+        </a>
+        
+        <a href="projects.html" class="quick-card">
+            <div class="quick-icon">☆</div>
+            <h3>Проекти</h3>
+        </a>
+
+         <a href="parents.html" class="quick-card">
+            <div class="quick-icon">👨‍👩‍👧‍👦</div>
+            <h3>За родители</h3>
+        </a>
+
+        <a href="calendar.html" class="quick-card">
+            <div class="quick-icon">▦</div>
+            <h3>Календар</h3>
+        </a>
+
+        <a href="gallery.html" class="quick-card">
+            <div class="quick-icon">▧</div>
+            <h3>Галерия</h3>
+        </a>
+
+    </section>
+
+    <section class="section" id="news">
+
+        <div class="section-title">
+
+            <h2>Последни новини</h2>
+
+            <a href="news.html" class="all-link">
+                Всички новини →
+            </a>
+
+        </div>
+
+
+        <div class="news-layout">
+
+            <div class="news-grid">
+
+                <article class="news-card">
+
+                    <img
+                        class="news-image"
+                        src="2509 ФЛАЕР.png"
+                        alt="Ученици"
+                    >
+
+                    <div class="news-content">
+
+                        <div class="news-date">
+                            25 СЕПТЕМВРИ 2026
+                        </div>
+
+                        <h3>
+                            ЕВРОПЕЙСКИ ДЕН НА СПОРТА
+                        </h3>
+
+                        <p>
+                            ПЪРВО УЧАСТИЕ – ЕДИН ПРЕКРАСЕН СПОРТЕН ДЕН!
+                        </p>
+
+                        <p>
+                            С радост и вълнение СУ „Недялка Шилева“ – гр. Съединение ще се включи за първи път в инициативата „Европейски ден на спорта в училище“! 
+                        </p>
+
+                        <p>
+                            Тази година ще обединим спорта, екологията, безопасното придвижване и движението през географското пространство в един ден, изпълнен с енергия, усмивки и настроение!
+                        </p>
+
+                        <p>
+                            1- „Идваме активно на училище“ – пеша с родител;<br>
+                            2- „Моят маршрут до училище“ – маршрутна карта от дома до училище;<br>
+                            3- Класово предизвикателство – спорт, движение и грижа за природата;<br>
+                            4- „Съединени в движение“ – пешеходна обиколка за здраве, активен начин на живот и безопасно придвижване.
+                        </p>
+
+                        <p>
+                           Защото спортът не е само състезание и победа – той е движение, приятелство, екипност, грижа за природата и удоволствие от активния начин на живот!  Движим се! Спортуваме! Пазим природата! Забавляваме се заедно!<br>
+                           Снимки  
+                           <a href="https://1drv.ms/f/c/a33ad915f83e713a/IgDF1xPNgLFxSbirwDWjHfGeAQaP4OpvnYJAWd1Aw7S0ulk?e=kbemrC" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <img
+                        class="news-image"
+                        src="26092026 (1).jpg"
+                        alt="Училищна класна стая"
+                    >
+
+                    <div class="news-content">
+
+                        <div class="news-date">
+                            26 СЕПТЕМВРИ 2026
+                        </div>
+
+                        <h3>
+                           НЕЗАБРАВИМО ФУТБОЛНО ПРЕЖИВЯВАНЕ! 
+                        </h3>
+
+                        <p>
+                            Децата, които тренират във футболните отбори на община Съединение и са ученици на СУ „Недялка Шилева“, имаха възможността заедно да преживеят една незабравима футболна вечер на стадиона на ПФК “Ботев” в Пловдив. 
+                        </p>
+
+                        <p>
+                            Заедно гледахме мача България – Люксембург и усетихме отблизо атмосферата, емоцията и магията на големия стадион.
+                        </p>
+
+                        <p>За малки и големи това беше много повече от футболен мач – беше преживяване, което вдъхновява, обединява и оставя красив спомен!<br>
+                            Благодарим на Община Съединение и на всички, които направиха тази среща с големия футбол възможна! Благодарим на децата за тяхната енергия и ентусиазъм, на треньорите, на г-н Д.Козарев и на всички, които подкрепят младите футболисти! Съединени в спорта, съединени в емоцията!
+                        Снимки <a href="https://1drv.ms/f/c/a33ad915f83e713a/IgDMnDL6Z8cNRqXgFxkMqnCIAclHVUjX_0K7Uykq8Zih1D8?e=muo8iU" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <img
+                        class="news-image"
+                        src="ЙОРДАНКА ПАРНАРОВА.jpeg"
+                        alt="Ученици"
+                    >
+
+                    <div class="news-content">
+
+                        <div class="news-date">
+                            27 СЕПТЕМВРИ 2026
+                        </div>
+
+                        <h3>
+                           ГОРДОСТ ЗА НАС!
+                        </h3>
+
+                        <p>
+                            В навечерието на новата академична година с гордост представяме петима от тазгодишните зрелостници на СУ „Недялка Шилева“, които вече са студенти във висши учебни заведения и продължават своя път към знанието и развитието.  Те ни разказват за своите успехи, мечти и следващи стъпки. Браво!  Те са пример, че когато човек има желание и цел, с усилие, труд и знание може да постигне мечтите си. Гордеем се с вас и ви пожелаваме смело да вървите напред!  Запознайте се с тях -Йорданка, Марин, Сашко, Петя, Янко.  Представяне и снимки <a href="https://1drv.ms/f/c/a33ad915f83e713a/IgAdbZSKZBjBTbw7nfR6Sq7NARyDyHnvvfYS50lP1oDsAWo?e=bDg2WQ" class="all-link">тук</a>.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <aside class="mission">
+
+                <h2>Нашата мисия</h2>
+
+                <p>
+                    Да изграждаме знаещи, добри и
+                    отговорни личности, които пазят
+                    българските традиции и градят
+                    по-добро бъдеще.
+                </p>
+
+                <p class="mission-small">
+                    С обич към знанието
+                    и българските корени!
+                </p>
+
+            </aside>
+
+        </div>
+
+    </section>
+
+     <img src="банер24052026.png" class="school-banner">
+
+    <footer id="contacts">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <h2>СУ „Недялка Шилева"</h2>
+
+                <p>
+                    Знание, традиции и вдъхновение.
+                    Заедно изграждаме бъдещето на нашите деца.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Навигация</h3>
+
+                <ul>
+                    <li><a href="index.html">Начало</a></li>
+                    <li><a href="about.html">За нас</a></li>
+                    <li><a href="gallery.html">Галерия</a></li>
+                    <li><a href="news.html">Новини</a></li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Полезно</h3>
+
+                <ul>
+                    <li>СУ „Недялка Шилева“ – град Съединение</li>
+                    <li>Нова образователна институция, образувана на 15.09.2025 г.
+                     чрез сливане на съществуващите училища на територията на община Съединение: 
+                     НУ „Любен Каравелов“ и СУ „Христо Ботев“ със Заповед № РД-14-43 от 15.07.2025 г. 
+                     на Министъра на МОН Красимир Вълчев.</li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Контакти</h3>
+
+                <ul>
+                    <li>📍4190, гр. Съединение, обл. Пловдивска,ул. „Баба Исака Скачкова” № 3</li>
+                    <li>☎ 0879600898, 0318/22032</li>
+                    <li>✉ info-1600035@edu.mon.bg</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+            © 2026 СУ „Недялка Шилева“ • Всички права запазени
+        </div>
+
+    </footer>
+
+
+</body>
+</html>

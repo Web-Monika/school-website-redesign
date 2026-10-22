@@ -1,0 +1,2733 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>За нас | СУ „Недялка Шилева“</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background: #233d30;
+        }
+
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #faf7f1;
+            color: #252525;
+            line-height: 1.6;
+
+            width: 100%;
+            min-width: 0;
+            min-height: 100vh;
+
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            flex-direction: column;
+
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            min-height: 105px;
+
+            background: #fffdf8;
+
+            border-bottom: 1px solid #e8dfd2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            flex-shrink: 0;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        .logo-symbol {
+            width: 115px;
+            height: 115px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .logo-symbol img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        .logo-text h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            line-height: 1;
+            color: #151515;
+        }
+
+
+        .logo-text p {
+            margin-top: 7px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #6c675f;
+        }
+
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: #252525;
+            font-size: 14px;
+
+            position: relative;
+
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+            color: #8e2928;
+        }
+
+
+        nav a.active {
+            color: #8e2928;
+        }
+
+
+        nav a.active::after {
+            content: "";
+
+            position: absolute;
+
+            bottom: -10px;
+            left: 0;
+
+            width: 100%;
+            height: 2px;
+
+            background: #8e2928;
+        }
+
+
+        .header-button {
+            background: #8e2928;
+            color: white;
+
+            border: none;
+
+            padding: 13px 22px;
+
+            border-radius: 30px;
+
+            cursor: pointer;
+
+            font-family: "Inter";
+            font-size: 13px;
+
+            transition: 0.3s;
+
+            text-decoration: none;
+        }
+
+
+        .header-button:hover {
+            background: #6f2020;
+            transform: translateY(-2px);
+        }
+
+        .page-hero {
+            width: 100%;
+            min-height: 360px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(35, 61, 48, 0.95),
+                    rgba(35, 61, 48, 0.78),
+                    rgba(35, 61, 48, 0.55)
+                ),
+                url("school.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            flex-shrink: 0;
+        }
+
+
+        .page-hero-content {
+            width: 90%;
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 60px 20px;
+
+            color: white;
+        }
+
+
+        .page-hero-content .small-title {
+            font-size: 13px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 12px;
+
+            color: #eadbc3;
+        }
+
+
+        .page-hero-content h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 58px;
+
+            line-height: 1;
+
+            margin-bottom: 20px;
+        }
+
+
+        .page-hero-content p {
+            max-width: 650px;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            color: #f1ece4;
+        }
+
+
+        .page-decoration {
+            position: absolute;
+
+            right: 7%;
+            bottom: 35px;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 32px;
+
+            font-style: italic;
+
+            color: white;
+
+            transform: rotate(-5deg);
+
+            text-align: center;
+        }
+
+
+        .all-link {
+            color: #8e2928;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .intro {
+            width: 100%;
+
+            margin: auto;
+
+            padding: 70px 20px 40px;
+
+            text-align: center;
+        }
+
+
+        .intro h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .intro h2::before {
+            content: "✦";
+
+            color: #8e2928;
+
+            margin-right: 10px;
+
+            font-size: 22px;
+        }
+
+
+        .intro h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+
+        .intro h4 {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+
+        .intro p {
+            color: #706b64;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+
+            margin-bottom: 12px;
+        }
+
+        .school-card-section {
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+
+            padding: 25px 20px 80px;
+        }
+
+
+        .school-card {
+            width: 100%;
+            max-width: 1200px;
+
+            min-height: 450px;
+
+            position: relative;
+
+            perspective: 1200px;
+
+            cursor: pointer;
+        }
+
+
+        .school-card-inner {
+            width: 100%;
+            min-height: 350px;
+
+            position: relative;
+
+            transition: transform 0.7s ease;
+
+            transform-style: preserve-3d;
+        }
+
+
+        .school-card.flipped .school-card-inner {
+            transform: rotateY(180deg);
+        }
+
+
+        .school-card-front,
+        .school-card-back {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            min-height: 350px;
+
+            padding: 50px;
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            border: 1px solid #e4dacd;
+
+            border-radius: 4px;
+
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+
+            overflow: hidden;
+        }
+
+
+        .school-card-front {
+            background: #fffdf8;
+        }
+
+
+        .school-card-back {
+            background: #efe5d5;
+
+            transform: rotateY(180deg);
+        }
+
+
+        .school-card-front::after,
+        .school-card-back::after {
+            content: "❖";
+
+            position: absolute;
+
+            right: 25px;
+            top: 15px;
+
+            font-size: 65px;
+
+            color: #8e2928;
+
+            opacity: 0.07;
+        }
+
+
+        .school-card:hover .school-card-front,
+        .school-card:hover .school-card-back {
+            border-color: #a52d2b;
+
+            box-shadow:
+                0 15px 35px rgba(70, 45, 25, 0.10);
+        }
+
+
+        .school-card-icon {
+            width: 75px;
+            height: 75px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #efe5d5;
+
+            border-radius: 50%;
+
+            font-size: 35px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .school-card-front h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 36px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .school-card-link {
+            color: #8e2928;
+
+            font-size: 14px;
+
+            font-weight: 500;
+        }
+
+
+        .school-card-back h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 31px;
+
+            color: #8e2928;
+
+            margin-bottom: 20px;
+        }
+
+
+        .school-card-back p {
+            max-width: 900px;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            color: #5f5a53;
+
+            margin-bottom: 20px;
+        }
+
+        .useful-section {
+            width: 100%;
+
+            background: #f1e9dd;
+
+            padding: 70px 20px;
+        }
+
+
+        .useful-container {
+            width: 100%;
+
+            margin: auto;
+        }
+
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        .section-title h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .jobs-list {
+            width: 100%;
+
+            margin: 0 auto;
+        }
+
+
+        .job-item {
+            background: #fffdf8;
+
+            border: 1px solid #e4dacd;
+
+            margin-bottom: 15px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+
+        .job-item:hover {
+            border-color: #c9b9a5;
+        }
+
+
+        .job-title {
+            width: 100%;
+
+            border: none;
+
+            background: transparent;
+
+            padding: 23px 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            cursor: pointer;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            color: #252525;
+
+            text-align: left;
+
+            transition: 0.3s;
+        }
+
+
+        .job-title:hover {
+            color: #8e2928;
+
+            background: #faf7f1;
+        }
+
+
+        .arrow {
+            font-family: "Inter", sans-serif;
+
+            font-size: 25px;
+
+            color: #8e2928;
+
+            transition: transform 0.3s;
+        }
+
+
+        .job-item.open .arrow {
+            transform: rotate(180deg);
+        }
+
+
+        .job-details {
+            max-height: 0;
+
+            overflow: hidden;
+
+            padding: 0 28px;
+
+            background: #faf7f1;
+
+            transition:
+                max-height 0.4s ease,
+                padding 0.4s ease;
+        }
+
+
+        .job-item.open .job-details {
+            max-height: 1000px;
+
+            padding: 25px 28px 30px;
+
+            border-top: 1px solid #e4dacd;
+        }
+
+
+        .job-details p {
+            font-family: "Inter", sans-serif;
+
+            font-size: 13px;
+
+            color: #666;
+
+            margin-bottom: 12px;
+        }
+
+
+        .job-details p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .job-details strong {
+            color: #252525;
+        }
+
+        .quote-section {
+            width: 100%;
+
+            background: #28553d;
+
+            color: white;
+
+            padding: 65px 20px;
+
+            text-align: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .quote-section::before {
+            content: "❖";
+
+            position: absolute;
+
+            left: 8%;
+
+            top: 20px;
+
+            font-size: 80px;
+
+            opacity: 0.08;
+        }
+
+
+        .quote-section::after {
+            content: "❖";
+
+            position: absolute;
+
+            right: 8%;
+
+            bottom: 20px;
+
+            font-size: 80px;
+
+            opacity: 0.08;
+        }
+
+
+        .quote-section blockquote {
+            width: 850px;
+            max-width: 100%;
+
+            margin: auto;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 34px;
+
+            font-style: italic;
+
+            line-height: 1.4;
+        }
+
+
+        .quote-section span {
+            display: block;
+
+            margin-top: 18px;
+
+            font-size: 12px;
+
+            letter-spacing: 2px;
+
+            color: #ded6ca;
+        }
+
+        .year-section {
+            width: 100%;
+
+            margin-bottom: 100px;
+
+            padding: 0 20px;
+        }
+
+
+        .year-heading {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .year-heading::before,
+        .year-heading::after {
+            content: "";
+
+            height: 1px;
+
+            background: #d8c9ba;
+
+            flex: 1;
+        }
+
+
+        .year-heading h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 58px;
+
+            font-weight: 700;
+
+            color: #28553d;
+
+            text-align: center;
+        }
+
+
+        .year-heading span {
+            display: block;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 11px;
+
+            font-weight: 500;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #8e2928;
+
+            text-align: center;
+
+            margin-top: 4px;
+        }
+
+
+        .year-sections {
+            width: 100%;
+        }
+
+
+        .news-card {
+            width: 100%;
+
+            background: #fffdf9;
+
+            border: 1px solid #e6ddd2;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow: 0 8px 30px rgba(54, 44, 36, 0.06);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .news-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 15px 40px rgba(54, 44, 36, 0.10);
+        }
+
+
+        .news-top {
+            padding: 28px 30px 22px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+            gap: 25px;
+        }
+
+
+        .news-category {
+            display: inline-block;
+
+            padding: 6px 11px;
+
+            border-radius: 20px;
+
+            background: #eef1e9;
+
+            color: #28553d;
+
+            font-size: 10px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            font-weight: 600;
+
+            margin-bottom: 12px;
+        }
+
+
+        .news-title {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 31px;
+
+            line-height: 1.15;
+
+            color: #8e2928;
+
+            font-weight: 700;
+        }
+
+
+        .news-date {
+            flex-shrink: 0;
+
+            font-size: 11px;
+
+            color: #777;
+
+            padding-top: 6px;
+        }
+
+
+        .news-short {
+            padding: 0 30px 25px;
+
+            color: #555;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        .news-full {
+            display: none;
+
+            padding: 0 30px 30px;
+
+            border-top: 1px solid #eee5db;
+
+            color: #555;
+
+            font-size: 14px;
+
+            line-height: 1.9;
+        }
+
+
+        .news-full-inner {
+            padding-top: 25px;
+        }
+
+
+        .news-full p {
+            margin-bottom: 16px;
+        }
+
+
+        .news-full p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .read-more {
+            border: 0;
+
+            border-top: 1px solid #eee5db;
+
+            width: 100%;
+
+            background: transparent;
+
+            padding: 16px 30px;
+
+            text-align: left;
+
+            font-family: "Inter", sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.5px;
+
+            color: #8e2928;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+
+        .read-more:hover {
+            background: #faf4ee;
+        }
+
+
+        .read-more .arrow {
+            display: inline-block;
+
+            margin-left: 6px;
+
+            transition: transform 0.25s ease;
+        }
+
+
+        .news-card.open .news-full {
+            display: block;
+        }
+
+
+        .news-card.open .read-more .arrow {
+            transform: rotate(180deg);
+        }
+
+        footer {
+            width: 100%;
+            max-width: none;
+
+            margin: auto 0 0 0;
+
+            padding: 55px 6% 25px;
+
+            background: #233d30;
+
+            color: white;
+
+            position: relative;
+
+            display: block;
+
+            flex: 0 0 auto;
+
+            align-self: stretch;
+
+            box-sizing: border-box;
+
+            overflow: hidden;
+
+            clear: both;
+        }
+
+
+        .footer-grid {
+            width: 100%;
+            max-width: 1250px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+
+            gap: 50px;
+
+            align-items: start;
+        }
+
+
+        .footer-brand h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .footer-brand p {
+            color: #d7d7d0;
+
+            font-size: 13px;
+
+            max-width: 300px;
+        }
+
+
+        footer h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 21px;
+
+            margin-bottom: 15px;
+        }
+
+
+        footer ul {
+            list-style: none;
+        }
+
+
+        footer li {
+            margin-bottom: 8px;
+
+            color: #d7d7d0;
+
+            font-size: 13px;
+
+            overflow-wrap: anywhere;
+        }
+
+
+        footer a {
+            color: #d7d7d0;
+
+            text-decoration: none;
+
+            font-size: 13px;
+        }
+
+
+        footer a:hover {
+            color: white;
+        }
+
+
+        .copyright {
+            width: 100%;
+            max-width: 1250px;
+
+            margin: 45px auto 0;
+
+            padding-top: 20px;
+
+            border-top: 1px solid rgba(255,255,255,0.15);
+
+            text-align: center;
+
+            font-size: 11px;
+
+            color: #bfc6c0;
+        }
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 15px;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+
+            .school-card {
+                max-width: 900px;
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 20px;
+
+                flex-direction: column;
+
+                gap: 20px;
+            }
+
+
+            nav {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .header-button {
+                display: none;
+            }
+
+
+            .page-hero-content h2 {
+                font-size: 43px;
+            }
+
+
+            .page-decoration {
+                display: none;
+            }
+
+
+            .school-card-section {
+                padding: 20px 15px 60px;
+            }
+
+
+            .school-card {
+                min-height: 400px;
+            }
+
+
+            .school-card-inner {
+                min-height: 400px;
+            }
+
+
+            .school-card-front,
+            .school-card-back {
+                min-height: 400px;
+
+                padding: 30px 20px;
+            }
+
+
+            .school-card-front h3 {
+                font-size: 30px;
+            }
+
+
+            .school-card-back h3 {
+                font-size: 25px;
+            }
+
+
+            .school-card-back p {
+                font-size: 13px;
+            }
+
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+
+                gap: 30px;
+            }
+
+
+            .footer-brand h2 {
+                font-size: 30px;
+            }
+
+
+            .year-heading {
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+
+            .year-heading::before,
+            .year-heading::after {
+                width: 100%;
+
+                flex: none;
+            }
+
+
+            .year-heading h2 {
+                font-size: 40px;
+            }
+
+
+            .news-top {
+                flex-direction: column;
+            }
+
+
+            .news-date {
+                padding-top: 0;
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-symbol">
+
+            <img src="logo.png" alt="Лого на училището">
+
+        </div>
+
+        <div class="logo-text">
+
+            <h1>
+                Средно училище<br>
+                „Недялка Шилева“
+            </h1>
+
+            <p>
+                ЗНАНИЕ • ТРАДИЦИИ • БЪДЕЩЕ
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Начало
+        </a>
+
+        <a href="about.html" class="active">
+            За нас
+        </a>
+
+        <a href="news.html">
+            Новини
+        </a>
+
+        <a href="gallery.html">
+            Галерия
+        </a>
+
+        <a href="contacts.html">
+            Контакти
+        </a>
+
+    </nav>
+
+
+    <a href="rabota.html" class="header-button">
+        ♡ Търсите ли работа?
+    </a>
+
+</header>
+
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <div class="small-title">
+            СУ „Недялка Шилева“
+        </div>
+
+        <h2>
+            За нас
+        </h2>
+
+        <p>
+            Всичко важно и полезно за ученици,
+            родители, учители и бъдещи членове
+            на нашето училищно семейство.
+        </p>
+
+    </div>
+
+
+    <div class="page-decoration">
+
+        Заедно<br>
+        учим и растем ♡
+
+    </div>
+
+</section>
+
+
+<section class="intro">
+
+    <h2>
+        Добре дошли!
+    </h2>
+
+</section>
+
+
+<section class="school-card-section">
+
+    <div class="school-card" 
+     onclick="flipSchoolCard(this)" 
+     tabindex="0" 
+     role="button" 
+     aria-label="Разгледайте повече"
+     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flipSchoolCard(this);}">
+
+        <div class="school-card-inner">
+
+            <div class="school-card-front">
+
+                <div class="school-card-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    ДЕВИЗ:
+                </h3>
+
+                <span class="school-card-link">
+                    Разгледайте →
+                </span>
+
+            </div>
+
+
+            <div class="school-card-back">
+
+                <h3>
+                    „СЪЕДИНЕНИ В ЗНАНИЕТО, СИЛНИ В ДЕЛАТА!“
+                </h3>
+
+                <span class="school-card-link">
+                    ← Назад
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="school-card-section">
+
+    <div class="school-card" 
+     onclick="flipSchoolCard(this)" 
+     tabindex="0" 
+     role="button" 
+     aria-label="Разгледайте повече"
+     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flipSchoolCard(this);}">
+
+        <div class="school-card-inner">
+
+            <div class="school-card-front">
+
+                <div class="school-card-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    ХИМН:
+                </h3>
+
+                <span class="school-card-link">
+                    Разгледайте →
+                </span>
+
+            </div>
+
+
+            <div class="school-card-back">
+
+                <h3>
+                    Текст – Никол Тонкова, Музика-Димитър Милев
+                </h3>
+
+                <p>
+                    В нашето училище любимо знанието е необходимо.
+                    <br>
+                    Учим се да бъдем по-добри, в сърцата ни мечтата да гори.
+                </p>
+
+                <p>
+                    Припев:
+                </p>
+
+                <p>
+                    Недялка Шилева е с нас, споменаваме я в този час.<br>
+                    Тя знамето е везала с любов и чест, за да ни води към успехи днес.<br>
+                    Ние бъдещето ще творим, заедно в екип ний ще вървим.<br>
+                    С наука и със воля ще успеем, Недялка Шилева със нас да се гордее.<br>
+                    Подавайки ръка ще си помагаме, към успеха ний ще се изкачваме.<br>
+                    В един отбор сме всички ние заедно и силно вярваме един във друг.<br>
+                    Училището наше ний ще славим, никога не ще го ний забравим.<br>
+                    С чест и със достойнство във сърцата завета пазим ний на княгиня свята.
+                </p>
+
+                <span class="school-card-link">
+                    ← Назад
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="school-card-section">
+
+   <div class="school-card" 
+     onclick="flipSchoolCard(this)" 
+     tabindex="0" 
+     role="button" 
+     aria-label="Разгледайте повече"
+     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flipSchoolCard(this);}">
+
+        <div class="school-card-inner">
+
+            <div class="school-card-front">
+
+                <div class="school-card-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    НИЕ имаме СТРАТЕГИЯ!
+                </h3>
+
+                <span class="school-card-link">
+                    Разгледайте →
+                </span>
+
+            </div>
+
+
+            <div class="school-card-back">
+
+                <p>
+                    НИЕ – Стимулираме и мотивираме учениците да мислят и изразяват свободно своето мнение.
+                </p>
+
+                <p>
+                    НИЕ – Стимулираме учениците да учат и работят с убеждението, че вършат нещо полезно за себе си, за училището и за обществото.
+                </p>
+
+                <p>
+                    НИЕ – Стимулираме и развиваме творческия потенциал на учениците.
+                </p>
+
+                <p>
+                    НИЕ – Издигаме качеството на обучение по общообразователните и профилираните учебни дисциплини.
+                </p>
+
+                <p>
+                    НИЕ – Засилваме компютърната подготовка на ученика, за да е постоянно в ритъма на модернизираните съвременни информационни технологии.
+                </p>
+
+                <span class="school-card-link">
+                    ← Назад
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="school-card-section">
+
+    <div class="school-card" 
+     onclick="flipSchoolCard(this)" 
+     tabindex="0" 
+     role="button" 
+     aria-label="Разгледайте повече"
+     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flipSchoolCard(this);}">
+
+        <div class="school-card-inner">
+
+            <div class="school-card-front">
+
+                <div class="school-card-icon">
+                    ◈
+                </div>
+
+                <h3>
+                    Поставили сме си ЦЕЛИ:
+                </h3>
+
+                <span class="school-card-link">
+                    Разгледайте →
+                </span>
+
+            </div>
+
+
+            <div class="school-card-back">
+
+                <p>
+                    ДА формираме самодисциплина у учениците, за да постигнат хармония в общуването със себе си и със света.
+                </p>
+
+                <p>
+                    ДА изградим у учениците личности, които да се реализират успешно, и да продължат да се развиват в синхрон със законите на природата и ценностите на обществото.
+                </p>
+
+                <p>
+                    ДА овладеем знанията и уменията на учениците и да ги развием творчески и идейно.
+                </p>
+
+                <p>
+                    ДА разширим подготовката на учениците, предлагайки им засилено обучение на профилирани предмети и съвременни информационни технологии.
+                </p>
+
+                <p>
+                    ДА издигнем още качеството на учебно-възпитателния процес.
+                </p>
+
+                <span class="school-card-link">
+                    ← Назад
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="school-card-section">
+
+    <div class="school-card" 
+     onclick="flipSchoolCard(this)" 
+     tabindex="0" 
+     role="button" 
+     aria-label="Разгледайте повече"
+     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();flipSchoolCard(this);}">
+
+        <div class="school-card-inner">
+
+            <div class="school-card-front">
+
+                <div class="school-card-icon">
+                    🏫
+                </div>
+
+                <h3>
+                    За училището
+                </h3>
+
+                <span class="school-card-link">
+                    Разгледайте →
+                </span>
+
+            </div>
+
+
+            <div class="school-card-back">
+
+                <h3>
+                    СУ „НЕДЯЛКА ШИЛЕВА“ – ГРАД СЪЕДИНЕНИЕ
+                </h3>
+
+                <p>
+                    Нова образователна институция, образувана на 15.09.2025 г.
+                    чрез сливане на съществуващите училища на територията на община Съединение:
+                    НУ „Любен Каравелов“ и СУ „Христо Ботев“ със Заповед № РД-14-43 от 15.07.2025 г.
+                    на Министъра на МОН Красимир Вълчев.
+                </p>
+
+                <span class="school-card-link">
+                    ← Назад
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="year-section">
+
+    <div class="year-heading">
+
+        <div>
+
+            <h2>
+                Обучения на педагогически специалисти
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <section class="year-sections">
+
+           <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                29-31.07.2026
+                            </span>
+
+                            <h4 class="news-title">
+                               Квалификационно обучение в гр.Банкя
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                        Учителят по български език и литература Петя Дончева Дончева от СУ „Недялка Шилева“ – гр. Съединение
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                               Тя успешно участва в квалификационно обучение, организирано от Националния център за повишаване на квалификацията на педагогическите специалисти към МОН. Обучението се проведе присъствено в периода 29–31 юли 2026 г., с продължителност 16 академични часа, по тема: „Съвременни методи и подходи за развитие на логическо, творческо и критично мислене в учениците. Преход от преподаване на знания към изграждане на ключови компетентности в контекста на компетентностния подход“. За успешно завършеното обучение е присъден 1 квалификационен кредит. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDoRZrwreTrTquOyydB_WF3AQQ6aR8D6lmXwXbCSHMq-Go?e=fQRcn1" class="all-link">тук</a>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                        <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                03.07.2026
+                            </span>
+
+                            <h4 class="news-title">
+                                Обучение по проект “Училище без агресия”
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                       Колективът на СУ „Недялка Шилева“ – гр. Съединение премина обучение по проект „Училище без агресия“ на тема „Как да работим с родителите – стратегии за ефективно взаимодействие между училището и семейството“.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                              Обучението беше водено от Ренета Венева-Паунчева от „Евро Клас Консулт“ ЕООД. По време на работните сесии бяха разгледани ролята на семейството и училището във възпитанието, предизвикателствата в съвместната работа с родителите, ефективни модели за партньорство и съвременни подходи за изграждане на успешна комуникация в подкрепа на всяко дете.
+                            </p>
+
+                            <p>
+                             Заедно продължаваме да надграждаме знанията и уменията си, защото доброто сътрудничество между училището и семейството е ключът към успешното развитие на нашите ученици. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAAG0PxcI5qQ7YOqmZilQJ9AccbG-CTciYOD8TjG__3nHQ?e=Sde7Ev" class="all-link">тук</a>.   
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                       <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                12.06.2026
+                            </span>
+
+                            <h4 class="news-title">
+                              Участие на СУ „Недялка Шилева“, гр. Съединение в двудневно обучение по проект „Eco-Civic Awareness“
+                            </h4>
+			
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                     Представителите на СУ „Недялка Шилева“, гр. Съединение – г-жа Красимира Богданова и г-жа Стоянка Мазнева, взеха активно участие в двудневен практически семинар, организиран от Фондация „Просвета-София“ и съфинансиран от Европейския съюз.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                             В рамките на интензивната програма по проект „Eco-Civic Awareness“ (програма „Еразъм+“ – училищно образование), нашите колеги преминаха през поредица от теоретични и практически модули, насочени към иновациите в учебния процес.
+                            </p>
+
+                            <p>
+                               По време на обучението нашите учители успяха да: 
+                            </p>
+
+                            <p>–Усвоят иновативни обучителни методи от неформалното образование и да участват в дейности за изграждане на екипен дух и сътрудничество.</p>
+
+                            <p>– Наблюдават и изпробват енергизиращи упражнения и практики, лесно приложими в пряката работа с учениците в класната стая.</p>
+
+                            <p>– Разучат функционалностите на платформата и разработените по проекта дигитални продукти. Всички образователни материали предстои да бъдат официално достъпни в платформата през септември.</p>
+
+                            <p>–Надградят знанията си по модул „Социална и гражданска осъзнатост“ чрез лекциите на доц. д-р Силвия Цветанска (СУ „Св. Климент Охридски“) по темите „Идентичност – Моето Аз“ и „Право на изразяване на мнение“.</p>
+
+                            <p>
+                            Се запознаят с модул „Екологична осъзнатост“ чрез темата „Изследване на биоразнообразието: Биокуб“ и да дискутират как да се изгражда успешно сътрудничество извън училището чрез екологични теми.<br>
+                            Двудневният форум завърши с ползотворни дискусии и обмен на ценен практически опит. Нашите учители се завръщат готови да приложат наученото в начален етап на обучение, подпомагайки развитието на гражданското и екологичното образование, които са от изключителна важност за съвременното училище. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAG8fRy1ubDRrxfwOY-Y34fAUhRJDkfuu9RBiesCbe8aus?e=VN1mQe" class="all-link">тук</a>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                        <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                30.04.2026
+                            </span>
+
+                            <h4 class="news-title">
+                             Обучение по ЗБУТ в подкрепа на професионалното образование
+                            </h4>
+			
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                       Двама учители от СУ „Недялка Шилева“, гр. Съединение – Цветанка Къцова и Розалия Георгиева, взеха участие в обучение по здравословни и безопасни условия на труд (ЗБУТ), проведено в София.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                               Основната цел на обучението беше свързана с подготовката и осигуряването на квалифицирани кадри във връзка с обучението на ученици в новите две професионални паралелки в 8. клас. Повишаването на знанията и уменията в тази област е от съществено значение за създаването на сигурна и подкрепяща училищна среда. Придобитите компетентности ще бъдат активно прилагани в учебния процес, като ще допринасят за изграждането на култура на безопасност и отговорно поведение у учениците. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAYhlSOCmSXQJEFsfVXMqEMAccSGopmW9aNR5nY4pXd93U?e=f4f3KV" class="all-link">тук</a>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                        <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                16.04.2026
+                            </span>
+
+                            <h4 class="news-title">
+                              „ГОСТ ЗА ЕДИН ДЕН“
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                    С вдъхновение и много положителни емоции участвахме в инициативата „Гост за един ден“ в СУ „Черноризец Храбър“ – гр. Пловдив, организирана г-жа Васка Атанасова-ст.експерт по началното образование.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                            Темата на участието беше „Мотивиране на учениците за учене чрез създаване на добра комуникационна и информационна среда в училищната общност „.Госпожа Любляна Кюпова и госпожа Стоянка Мазнева от СУ „Недялка Шилева“ – гр.Съединение имаха възможността да наблюдават интересни уроци с игрови елементи, които ангажираха учениците и направиха ученето истинско преживяване.Включиха се и в различни мисии, които трябваше да изпълняват – забавно, динамично и много вдъхновяващо!Срещнаха страхотни колеги, обмениха идеи и добри практики, които с радост ще приложат в работата си. Благодарим за топлото посрещане и вдъхновението! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDcp7gT5ksfRaAywiVmNKtSAYysxOynmS06pjaKXYDPt3c?e=uQ8jPc" class="all-link">тук</a>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                        <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                25.02.2026
+                            </span>
+
+                            <h4 class="news-title">
+                             ОТКРИТА ПЕДАГОГИЧЕСКА ПРАКТИКА
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                     С гордост споделяме, че учители от нашето училище  Виктория Станчева и Раделина Шилева взеха участие в открита педагогическа практика по предмета „Компютърно моделиране и информационни технологии“, проведена в ОУ „Петър Бонев“ – гр. Перущица.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                            По време на посещението колегите ни наблюдаваха открит урок в 6. клас, който впечатли с иновативния си подход и прилагането на съвременни методи в обучението. Особено вдъхновяващ беше начинът, по който в учебния процес бяха активно включени и ученици със специални образователни потребности с подкрепата на допълнителен учител. Урокът показа как чрез екипна работа, разбиране и професионализъм всяко дете може да бъде пълноценна част от образователната среда.
+                            </p>
+
+                            <p>
+                                Обмяната на добри практики и споделеният опит са ценна възможност за професионално развитие и усъвършенстване на преподаването. Благодарим на домакините за топлото посрещане, откритостта и вдъхновението!
+                            </p>
+
+                            <p>
+                               Продължаваме да работим с грижа за всяко дете и с мисъл за модерно и приобщаващо образование. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgBoDkwyMktFT6Cw3bPzbUzAAQayCM1GJ2kw6Cgx81Ik5g0?e=HCq215" class="all-link">тук</a>. 
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                       <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                18-20.02.2026
+                            </span>
+
+                            <h4 class="news-title">
+                             „ПРЕПОДАВАНЕ В СТЕМ СРЕДА“
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                      По проект „ Подобряване на качеството на общото образование чрез ефективно прилагане на компетентностен модел“ към Национален СТЕМ център в периода 19-21.02.2026 г. в СУ „Пейо Яворов“ – гр.Пловдив взеха участие Розалия Георгиева, Филип Джумаков, Емилиян Минов.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                               Направления: „Природни науки и зелени технологии“, „Математика и роботика 5-12 клас“, „Дизайн и 3Д прототипиране и природни науки 5-12 клас“.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                        <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                02.02.2026
+                            </span>
+
+                            <h4 class="news-title">
+                              Зимен ден за вдъхновение: Учителите твориха с Canva и изкуствен интелект
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                     В снежния ваканционен ден, когато училищните дворове притихват, а учениците се наслаждават на заслужена почивка между двата срока, учителите отново доказаха, че духът им за развитие не познава ваканции.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                             Сред уюта на зимния ден и бялата тишина навън, учителите надградиха своята дигитална компетентност чрез вътрешноинституционална квалификация на тема “Работа с електронни ресурси с Canva и използване на изкуствен интелект в образованието“.
+                            </p>
+
+                            <p>
+                              С много идеи, креативност и професионален устрем, преподавателите се запознаха с възможностите на изкуствения интелект, приложим в различни насоки – за създаване на атрактивни учебни материали, презентации, визуални ресурси и иновативни образователни практики, които ще направят ученето по-интересно и вдъхновяващо.  
+                            </p>
+
+                            <p>
+                               Всяко усилие днес е бъдещ успех в класната стая утре! Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgCiAqwUpjwmT7D_4z_upgZLATiv9i2ddhjBo5oIPMsVKOg?e=oTXRbt" class="all-link">тук</a>. 
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                        <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                01-02.12.2025
+                            </span>
+
+                            <h4 class="news-title">
+                              „Предизвикателствата пред нас“
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                     На 01 и 02 декември в СУ „Недялка Шилева“ се проведе вътрешноинституционална квалификация на педагогическите специалисти, водена от директора на училището г-жа Величка Кирова.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                            Темата на обучението беше „Предизвикателствата пред нас – инспектиране на училищата“, като основен фокус бе поставен върху изискванията на Наредба №18 и трите ключови етапа на процеса по инспектиране.
+                            </p>
+
+                            <p>
+                              По време на квалификацията бяха разгледани подробно:<br>
+                              Първи етап – Подготовка, включващ анализ на документацията, стратегическите и плановите документи на училището и готовността за представянето им;<br>
+                              Втори етап – Оценяване на място, акцентиращ върху наблюденията на учебни часове, интервютата с екипа и събирането на доказателства;<br>
+                              Трети етап – Обратна връзка и доклад, чрез който се формира цялостната оценка и се определят препоръки за развитие.  
+                            </p>
+
+                            <p>
+                                Особено внимание беше обърнато на основните индикатори за качество, културата на споделяне на добри практики, проследяването на напредъка на учениците и ефективното планиране. Обучението допринесе за по-добра информираност и увереност на екипа в подготовката за бъдещи инспекции.
+                            </p>
+
+                            <p>
+                                Тема на обучението: „Интерактивни технологии и техники на обучението по БДП“
+                            </p>
+
+                            <p>
+                                Място на провеждане: СУ „Недялка Шилева“, дистанционна форма
+                            </p>
+
+                            <p>
+                                Период на провеждане: 01.10.2025 – 01.12.2025 год.
+                            </p>
+
+                            <p>
+                                Наименование на обучителната организация: ДИДАСКО ГРУП
+                            </p>
+
+                            <p>
+                                Брой педагогически специалисти, участници в обучението: 28
+                            </p>
+
+                            <p>
+                                2 квалификационни кредита
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                       <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                19.11.2025
+                            </span>
+
+                            <h4 class="news-title">
+                              „МАЙСТОРСКИ КЛАС“
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                      В предходните два дни се проведе последната Сесия 3 от Дейността „Майсторски клас“ по НП „Квалификация на педагогическите специалисти“ 2025, на която присъстваха част от нашите начални учители.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                             Тя бе насочена към споделяне на добри практики за внедряване на изкуствения интелект като надежден съюзник в образователния процес. Основният фокус падна върху ефективното прилагане на AI за подпомагане на учителите, персонализиране на обучението и повишаване на ангажираността на учениците.
+                            </p>
+
+                            <p>
+                               На сесията присъстваха заместник-министърът Наталия Михалевска и началникът на отдел „Квалификация и кариерно развитие“ – Полина Фетфова, които поздравиха домакините и участниците, както и споделиха своите впечатления от извършващата се работа. Тяхното присъствие беше значимо и допринесе за цялостната стойност на събитието. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/EiP-IKtsvlFHv416GnyFKQUBPMJP2GmJtZmFIFBHcXW4Gg?e=CyY6gW" class="all-link">тук</a>. 
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                       <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                07.11.2025
+                            </span>
+
+                            <h4 class="news-title">
+                              Иновации в Начален Етап: Изкуственият Интелект – Нов Партньор в Класната Стая!
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                      С гордост съобщаваме за изключително успешното включване на Седмицата на демонстрациите и откритите практики , която се провежда в нашето училище от 03.11.2025 г. до 07.11.2025 г., като част от НП „Квалификация на педагогическите специалисти“ 2025 .
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                            Фокусът на седмицата беше ключовата тема: Изкуственият интелект в подкрепа на четивната грамотност и критичното мислене в обучението по природни науки (Родино, Човекът и природата, Математика, БЕЛ ) в начален етап.Учителите от начален етап проявиха огромен интерес в усвояването и прилагането на новите технологии. Чрез Майсторски клас 1 и следващото обучение за ключова компетентност, най-големият екип демонстрира позитивни нагласи и професионализъм в търсенето на иновативни пътища за подпомагане на подобряването на всяко дете.Седмицата приключва с успешни открити практики , където учителят и демонстрира направените с помощта на II идеи, показвайки как технологията се превръща в мощен инструмент.  Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/El2VnqHnqTVMlrH-JAihtL4BiP2Xy6G1_JrPgKYNBYt5tQ?e=I83AFz" class="all-link">тук</a>.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                        <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+                <br>
+                <article class="news-card">
+
+                    <div class="news-top">
+
+                        <div>
+
+                            <span class="news-category">
+                                13.11.2025
+                            </span>
+
+                            <h4 class="news-title">
+                               Ден, посветен на учене и обмен на опит!
+                            </h4>
+
+                        </div>
+
+                        <div class="news-date">
+                            2025/2026
+                        </div>
+
+                    </div>
+
+                    <div class="news-short">
+                       Част от нашия преподавателски екип посетиха СУ „Христо Г. Данов“ в град Пловдив, където участваха в съпътстващи събития относно Майсторски клас и имаха възможността да наблюдават открити уроци и добри педагогически практики на колеги.
+                    </div>
+
+                    <div class="news-full">
+
+                        <div class="news-full-inner">
+
+                            <p>
+                             Акцентът на днешния ден беше интегрирането на изкуствения интелект (AI) като помощник в учебния процес!  Нашите учители видяха как AI успешно подпомага колегите в преподаването и как децата активно си взаимодействат с тези нови инструменти.
+                            </p>
+
+                            <p>
+                               Подобни събития са изключително важни за професионалното развитие на нашите колеги и за пренасянето на най-доброто от модерното образование в нашето училище. Снимки <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/EjgD5VhwS-lLulJqspqUEysBsZdZwV94DmdZmd4m0_RA7A?e=ZymlO6" class="all-link">тук</a>. 
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <button class="read-more">
+                        <span class="label">Прочети повече</span>
+                        <span class="arrow">↓</span>
+                    </button>
+
+                </article>
+
+    </section>
+
+</section>
+
+<section class="useful-section">
+
+    <div class="useful-container">
+
+        <div class="section-title">
+
+            <h2>
+                Учителски състав
+            </h2>
+
+        </div>
+
+
+        <div class="jobs-list">
+
+            <div class="job-item">
+
+                <button class="job-title" onclick="toggleJob(this)">
+
+                    <span>
+                        Ръководство
+                    </span>
+
+                    <span class="arrow">
+                        ⬇️
+                    </span>
+
+                </button>
+
+
+                <div class="job-details">
+
+                    <p>
+                        <strong>Директор</strong>
+                        г-жа Величка Кирова
+                    </p>
+
+                    <p>
+                        <strong>Зам. Директор УД</strong>
+                        г-жа Даниела Недялкова
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="job-item">
+
+                <button class="job-title" onclick="toggleJob(this)">
+
+                    <span>
+                        Преподаватели – Начален етап
+                    </span>
+
+                    <span class="arrow">
+                        ⬇️
+                    </span>
+
+                </button>
+
+
+        <div class="job-details">
+            <p>Елица Колаксъзова – Тодорова</p>
+            <p>Радка Маринчешка, Радостина Милева-Ахмашка</p>
+            <p>Светлана Петрова, Любляна Кюпова</p>
+            <p>Николинка Генчева, Антоанета Митова</p>
+            <p>Радина Радева, Мария Христова</p>
+            <p>Павлина Генчева, Стефка Цилиова</p>
+            <p>Цветелина Трайкова, Стоянка Мазнева</p>
+            <p>Яница Лазарова-Новакова, Памела Гунчева</p>
+            <p>Чудомира Алова, Мария Енчева</p>
+            <p>Юлия Пусалска, Красимира Богданова</p>
+            <p>Стойна Симеонова, Виктория Станчева</p>
+            <p>Раделина Шилева, Паулина Коритарова</p>
+            <p>Светлозара Карабелова, Николина Алова-Аргирова</p>
+            <p>Мирослава Асенова, Лиляна Попова</p>
+            <p>Атанаска Ерева, Димитрийка Бакалска</p>
+            <p>Мартина Бакърджиева, Ивелина Пенчева</p>
+            <p>Силвия Христова – Английски език</p>
+        </div>
+
+            </div>
+
+
+            <div class="job-item">
+
+                <button class="job-title" onclick="toggleJob(this)">
+
+                    <span>
+                        Преподаватели V – XII клас
+                    </span>
+
+                    <span class="arrow">
+                        ⬇️
+                    </span>
+
+                </button>
+
+
+                <div class="job-details">
+
+                    <p><strong>Чудомира Атанасова - БЕЛ</strong></p>
+                    <p><strong>Ваня Ликова – БЕЛ</strong></p>
+                    <p><strong>Генка Дребчева / Петя Дончева - БЕЛ</strong></p>
+                    <p><strong>Цветанка Къцова - Френски език</strong></p>
+                    <p><strong>Даниела Недялкова, Пламена Янчева – ИТ</strong></p>
+                    <p><strong>Борислава Енчева – Математика и ИТ</strong></p>
+                    <p><strong>Иванка Бюйюккахраман - Математика</strong></p>
+                    <p><strong>Филип Джумаков - Физика и Математика</strong></p>
+                    <p><strong>Дора Кошева - История и цивилизации</strong></p>
+                    <p><strong>Светлана Манчева - География и икономика</strong></p>
+                    <p><strong>Тонка Мирчева - Профилирани икономически предмети</strong></p>
+                    <p><strong>Николинка Иванова - ФВС</strong></p>
+                    <p><strong>Костадин Апостолов - ФВС</strong></p>
+                    <p><strong>Петя Арабаджийска - Музика</strong></p>
+                    <p><strong>Иванка Габровска - Предприемачество и ИТ</strong></p>
+                    <p><strong>Веселин Узунов - Изобразително изкуство</strong></p>
+                    <p><strong>Мая Дилкова, Борис Ташев – Английски език</strong></p>
+                    <p><strong>Николай Югов - Биология и ЗОО</strong></p>
+                    <p><strong>Розалия Георгиева - Химия и ООС</strong></p>
+                    <p><strong>Десислав Дараджански – ИТ, Ръководител ИКТ</strong></p>
+
+                </div>
+
+            </div>
+
+
+            <div class="job-item">
+
+                <button class="job-title" onclick="toggleJob(this)">
+
+                    <span>
+                        УЧИТЕЛИ ГЦОУД
+                    </span>
+
+                    <span class="arrow">
+                        ⬇️
+                    </span>
+
+                </button>
+
+
+                <div class="job-details">
+
+                    <p><strong>Велина Балканска - 6 КЛАС</strong></p>
+                    <p><strong>Десислава Минчева, Александра Игнатова – 5 КЛАС</strong></p>
+
+                </div>
+
+            </div>
+
+
+            <div class="job-item">
+
+                <button class="job-title" onclick="toggleJob(this)">
+
+                    <span>
+                        Ресурсни учители
+                    </span>
+
+                    <span class="arrow">
+                        ⬇️
+                    </span>
+
+                </button>
+
+
+                <div class="job-details">
+
+                    <p>
+
+                        <strong>
+
+                            Станислава Тонкина<br>
+                            Мирела Иванова<br>
+                            Светлана Ходжева – психолог
+
+                        </strong>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="job-item">
+
+                <button class="job-title" onclick="toggleJob(this)">
+
+                    <span>
+                        Администрация
+                    </span>
+
+                    <span class="arrow">
+                        ⬇️
+                    </span>
+
+                </button>
+
+
+                <div class="job-details">
+
+                    <p>
+                        <strong>Главен счетоводител-</strong>
+                        Пенка Илиева
+                    </p>
+
+                    <p>
+                        <strong>Финансов контрольор-</strong>
+                        Мария Енчева
+                    </p>
+
+                    <p>
+                        <strong>Главен технически сътрудник-</strong>
+                        Пламена Иванова-Бухалска
+                    </p>
+
+                    <p>
+                        <strong>Специалист, управление на човешки ресурси-</strong>
+                        Красимира Гребчева
+                    </p>
+
+                    <p>
+                        <strong>Домакин, касиер-</strong>
+                        Иванка Попгенска
+                    </p>
+
+                    <p>
+                        <strong>Помощник на учителя-</strong>
+                        Дарина Дългърска
+                    </p>
+
+                    <p>
+                        <strong>Образователен медиатор-</strong>
+                        Кольо Стоянов
+                    </p>
+
+                    <p>
+
+                        <strong>
+                            Огняр-<br>
+                        </strong>
+
+                        Стоица Дългърски<br>
+                        Иван Зайков<br>
+
+                    </p>
+
+                    <p>
+
+                        <strong>
+                            Чистач / Хигиенист-<br>
+                        </strong>
+
+                        Радка Скачкова<br>
+                        Атанаска Попова<br>
+                        Фидана Георгиева<br>
+                        Стойка Янкова<br>
+                        Тинка Иванова Гишина<br>
+                        Нонка Мандажиева<br>
+                        Мария Гладийска<br>
+
+                    </p>
+
+                    <p>
+
+                        <strong>
+                            Медицинско лице-<br>
+                        </strong>
+
+                        Таня Дългърска<br>
+                        Петрунка Лапкова<br>
+                        Цветанка Карабелова<br>
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="quote-section">
+
+    <blockquote>
+        „Образованието не е подготовка за живота.
+        Образованието е самият живот.“
+    </blockquote>
+
+
+    <span>
+        ЗНАНИЕ • ТРАДИЦИИ • БЪДЕЩЕ
+    </span>
+
+</section>
+
+<footer id="contacts">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <h2>
+                СУ „Недялка Шилева“
+            </h2>
+
+            <p>
+                Знание, традиции и вдъхновение.
+                Заедно изграждаме бъдещето
+                на нашите деца.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Навигация
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Начало
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        За нас
+                    </a>
+                </li>
+
+                <li>
+                    <a href="news.html">
+                        Новини
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Галерия
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Полезно
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="calendar.html">
+                        Календар
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Контакти
+            </h3>
+
+            <ul>
+
+                <li>
+                    📍 4190, гр. Съединение,
+                    обл. Пловдивска,
+                    ул. „Баба Исака Скачкова” № 3
+                </li>
+
+                <li>
+                    ☎ 0879600898, 0318/22032
+                </li>
+
+                <li>
+                    ✉ info-1600035@edu.mon.bg
+                </li>
+
+            </ul>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 СУ „Недялка Шилева“ • Всички права запазени
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function flipSchoolCard(card) {
+
+    card.classList.toggle("flipped");
+
+}
+
+
+function toggleJob(button) {
+
+    const jobItem = button.parentElement;
+
+    jobItem.classList.toggle("open");
+
+}
+
+
+const buttons = document.querySelectorAll(".read-more");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        const card = this.closest(".news-card");
+
+        card.classList.toggle("open");
+
+        const label = this.querySelector(".label");
+
+        label.textContent = card.classList.contains("open")
+            ? "Скрий статията"
+            : "Прочети повече";
+
+    });
+
+});
+
+</script>
+
+
+</body>
+
+</html>

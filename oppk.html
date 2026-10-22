@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Обществени поръчки - Профил на купувача | СУ „Недялка Шилева“</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #faf7f1;
+            color: #30332f;
+            min-height: 100vh;
+        }
+
+        header {
+            background: #fffdf8;
+            border-bottom: 1px solid #e7ded3;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            width: min(1400px, 94%);
+            margin: auto;
+
+            min-height: 105px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+
+            text-decoration: none;
+        }
+
+        .logo-symbol {
+            width: 78px;
+            height: 78px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+        }
+
+        .logo-symbol img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            line-height: 1.05;
+        }
+
+        .brand-text .school {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 28px;
+            font-weight: 700;
+
+            color: #28553d;
+        }
+
+        .brand-text .name {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 24px;
+            font-weight: 600;
+
+            color: #8e2928;
+        }
+
+        .brand-text .motto {
+            font-size: 9px;
+
+            letter-spacing: 2px;
+
+            margin-top: 6px;
+
+            color: #777;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            gap: 6px;
+        }
+
+        nav a {
+            text-decoration: none;
+
+            color: #444;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            padding: 11px 13px;
+
+            border-radius: 8px;
+
+            transition: 0.25s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #f2e7df;
+            color: #8e2928;
+        }
+
+        .job-button {
+            margin-left: 8px;
+
+            background: #8e2928 !important;
+            color: white !important;
+
+            padding: 12px 17px !important;
+        }
+
+        .job-button:hover {
+            background: #722120 !important;
+        }
+
+        .page-hero {
+            min-height: 360px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(40, 85, 61, 0.92),
+                    rgba(40, 85, 61, 0.96)
+                );
+        }
+
+        .page-hero::before {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                repeating-linear-gradient(
+                    45deg,
+                    transparent 0,
+                    transparent 30px,
+                    rgba(255,255,255,0.035) 30px,
+                    rgba(255,255,255,0.035) 31px
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(950px, 90%);
+        }
+
+        .hero-small {
+            color: #e6d6c7;
+
+            text-transform: uppercase;
+
+            letter-spacing: 4px;
+
+            font-size: 11px;
+
+            margin-bottom: 16px;
+        }
+
+        .page-hero h1 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(45px, 6vw, 75px);
+
+            line-height: 1;
+
+            color: #fffdf8;
+
+            margin-bottom: 20px;
+        }
+
+        .page-hero p {
+            color: #eee7dd;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            font-weight: 300;
+        }
+
+        main {
+            width: min(1150px, 92%);
+
+            margin: auto;
+
+            padding: 80px 0 110px;
+        }
+
+        .section {
+            margin-bottom: 85px;
+        }
+
+        .section-heading {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .section-kicker {
+            color: #8e2928;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: clamp(40px, 5vw, 58px);
+
+            line-height: 1;
+
+            color: #28553d;
+        }
+
+        .section-heading p {
+            max-width: 700px;
+
+            margin: 18px auto 0;
+
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+        .section-decoration {
+            width: 100px;
+            height: 3px;
+
+            margin: 22px auto 0;
+
+            background:
+                linear-gradient(
+                    to right,
+                    #8e2928 33%,
+                    #d8c5b3 33%,
+                    #d8c5b3 66%,
+                    #28553d 66%
+                );
+        }
+
+        .buyer-card {
+            max-width: 850px;
+
+            margin: auto;
+
+            background: #fffdf9;
+
+            border: 1px solid #e4dbd0;
+
+            border-radius: 20px;
+
+            padding: 38px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+            box-shadow:
+                0 10px 35px rgba(55, 44, 35, 0.07);
+
+            transition: 0.25s ease;
+        }
+
+        .buyer-card:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 16px 42px rgba(55, 44, 35, 0.11);
+        }
+
+        .buyer-icon {
+            width: 75px;
+            height: 75px;
+
+            flex-shrink: 0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #28553d;
+
+            color: white;
+
+            font-size: 30px;
+        }
+
+        .buyer-content {
+            flex: 1;
+        }
+
+        .buyer-content h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            color: #8e2928;
+
+            font-size: 32px;
+
+            margin-bottom: 8px;
+        }
+
+        .buyer-content p {
+            color: #666;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            margin-bottom: 18px;
+        }
+
+        .main-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            text-decoration: none;
+
+            background: #8e2928;
+
+            color: white;
+
+            padding: 12px 20px;
+
+            border-radius: 8px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .main-link:hover {
+            background: #722120;
+
+            transform: translateY(-2px);
+        }
+
+        .tenders-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 22px;
+        }
+
+        .tender-card {
+            background: #fffdf9;
+
+            border: 1px solid #e4dbd0;
+
+            border-radius: 17px;
+
+            padding: 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            box-shadow:
+                0 7px 25px rgba(55, 44, 35, 0.05);
+
+            transition: 0.25s ease;
+        }
+
+        .tender-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 13px 35px rgba(55, 44, 35, 0.09);
+        }
+
+        .tender-number {
+            width: 48px;
+            height: 48px;
+
+            flex-shrink: 0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #f1e5dc;
+
+            color: #8e2928;
+
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 22px;
+
+            font-weight: 700;
+        }
+
+        .tender-content {
+            flex: 1;
+        }
+
+        .tender-content h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 25px;
+
+            color: #28553d;
+
+            margin-bottom: 5px;
+        }
+
+        .tender-content p {
+            color: #777;
+
+            font-size: 12px;
+
+            line-height: 1.6;
+        }
+
+        .tender-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            background: #28553d;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            flex-shrink: 0;
+
+            transition: 0.25s ease;
+        }
+
+        .tender-link:hover {
+            background: #1d402d;
+
+            transform: translateX(3px);
+        }
+
+        .divider {
+            width: 100%;
+
+            height: 1px;
+
+            background: #d9cec1;
+
+            margin: 20px 0 90px;
+
+            position: relative;
+        }
+
+        .divider::before {
+            content: "✦";
+
+            position: absolute;
+
+            left: 50%;
+            top: 50%;
+
+            transform: translate(-50%, -50%);
+
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #faf7f1;
+
+            color: #8e2928;
+
+            font-size: 17px;
+        }
+
+        footer {
+            background: #233d30;
+
+            color: #e9e4da;
+
+            padding: 60px 0 25px;
+        }
+
+        .footer-inner {
+            width: min(1250px, 92%);
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.4fr 1fr 1fr;
+
+            gap: 50px;
+        }
+
+        .footer-brand h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 35px;
+
+            color: white;
+
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            font-size: 13px;
+
+            line-height: 1.8;
+
+            color: #c9d0ca;
+
+            max-width: 430px;
+        }
+
+        .footer-column h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 23px;
+
+            color: white;
+
+            margin-bottom: 15px;
+        }
+
+        .footer-column a {
+            display: block;
+
+            text-decoration: none;
+
+            color: #c9d0ca;
+
+            font-size: 13px;
+
+            margin-bottom: 9px;
+
+            transition: 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+
+            padding-left: 4px;
+        }
+
+        .footer-bottom {
+            width: min(1250px, 92%);
+
+            margin: 45px auto 0;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid rgba(255,255,255,0.12);
+
+            text-align: center;
+
+            font-size: 11px;
+
+            color: #aeb8b0;
+        }
+
+
+        @media (max-width: 1100px) {
+
+            .header-inner {
+                flex-direction: column;
+
+                padding: 18px 0;
+            }
+
+            nav {
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+
+        @media (max-width: 800px) {
+
+            .tenders-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .buyer-card {
+                align-items: flex-start;
+
+                padding: 28px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .folk-border {
+                display: none;
+            }
+
+            .header-inner {
+                min-height: auto;
+            }
+
+            .brand-text .school {
+                font-size: 23px;
+            }
+
+            .brand-text .name {
+                font-size: 20px;
+            }
+
+            .logo-symbol {
+                width: 65px;
+                height: 65px;
+            }
+
+            nav a {
+                font-size: 12px;
+
+                padding: 8px 9px;
+            }
+
+            .job-button {
+                margin-left: 0;
+            }
+
+            .page-hero {
+                min-height: 320px;
+            }
+
+            main {
+                width: 94%;
+
+                padding-top: 55px;
+            }
+
+            .buyer-card {
+                flex-direction: column;
+
+                text-align: center;
+
+                align-items: center;
+
+                padding: 25px 20px;
+            }
+
+            .buyer-content h3 {
+                font-size: 28px;
+            }
+
+            .tender-card {
+                padding: 20px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="header-inner">
+
+
+            <a href="index.html" class="brand">
+
+                <div class="logo-symbol">
+
+                    <img
+                        src="logo.png"
+                        alt="Лого на СУ „Недялка Шилева“"
+                    >
+
+                </div>
+
+
+                <div class="brand-text">
+
+                    <div class="school">
+                        Средно училище
+                    </div>
+
+                    <div class="name">
+                        „Недялка Шилева“
+                    </div>
+
+                    <div class="motto">
+                        ЗНАНИЕ • ТРАДИЦИИ • БЪДЕЩЕ
+                    </div>
+
+                </div>
+
+            </a>
+
+
+
+            <nav>
+
+                <a href="index.html">
+                    Начало
+                </a>
+
+                <a href="about.html">
+                    За нас
+                </a>
+
+                <a href="news.html">
+                    Новини
+                </a>
+
+                <a href="gallery.html">
+                    Галерия
+                </a>
+
+                <a href="contacts.html">
+                    Контакти
+                </a>
+
+                <a href="parents.html">
+                    За родители
+                </a>
+
+                <a href="jobs.html" class="job-button">
+                    ♡ Търсите ли работа?
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <section class="page-hero">
+
+        <div class="hero-content">
+
+            <div class="hero-small">
+                Публична информация
+            </div>
+
+
+            <h1>
+                Обществени поръчки
+            </h1>
+
+
+            <p>
+                Профил на купувача и информация за
+                обществените поръчки и търговете на
+                СУ „Недялка Шилева“.
+            </p>
+
+        </div>
+
+    </section>
+
+    <main>
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div class="section-kicker">
+                    ЦАИС АОП
+                </div>
+
+
+                <h2>
+                    Профил на купувача
+                </h2>
+
+
+                <p>
+                    Официалният профил на купувача,
+                    публикуван в Централизираната автоматизирана
+                    информационна система „Електронни обществени
+                    поръчки“.
+                </p>
+
+
+                <div class="section-decoration"></div>
+
+            </div>
+
+
+
+            <div class="buyer-card">
+
+
+                <div class="buyer-icon">
+                    ↗
+                </div>
+
+
+                <div class="buyer-content">
+
+                    <h3>
+                        Профил на купувача – ЦАИС АОП
+                    </h3>
+
+
+                    <p>
+                        Тук можете да откриете официалната
+                        информация за обществените поръчки
+                        на СУ „Недялка Шилева“.
+                    </p>
+
+                    <a
+                        href="https://app.eop.bg/buyer/48319"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="main-link"
+                    >
+                        Отвори профила
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section">
+
+            <div class="section-heading">
+
+                <div class="section-kicker">
+                    Обществени поръчки
+                </div>
+
+
+                <h2>
+                    Търгове
+                </h2>
+
+
+                <p>
+                    Информация и документи, свързани с
+                    провеждани търгове и процедури.
+                </p>
+
+
+                <div class="section-decoration"></div>
+
+            </div>
+
+
+
+            <div class="tenders-grid">
+
+                <article class="tender-card">
+
+                    <div class="tender-number">
+                        01
+                    </div>
+
+
+                    <div class="tender-content">
+
+                        <h3>
+                           Заповед №РД-10-1798 /07.07.2026 година за обявяване на публичен търг
+                        </h3>
+
+                    </div>
+
+                    <a
+                        href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQBXs1OIYxKyQLFV15R7NmsoAWPHc34YCmQIb7bN0UCVzQ0?e=aYrSgf"
+                        class="tender-link"
+                        aria-label="Отвори Търг 1"
+                    >
+                        →
+                    </a>
+
+                </article>
+
+                <article class="tender-card">
+
+                    <div class="tender-number">
+                        02
+                    </div>
+
+
+                    <div class="tender-content">
+
+                        <h3>
+                          Тръжна документация
+                        </h3>
+
+                    </div>
+
+
+                    <a
+                        href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQCPjtIQSJdHT7ZL1RUxzpRUAbLpPL4u0KYepUjDz8A4AHM?e=AUs1Rx"
+                        class="tender-link"
+                        aria-label="Отвори Търг 2"
+                    >
+                        →
+                    </a>
+
+                </article>
+
+                <article class="tender-card">
+
+                    <div class="tender-number">
+                        03
+                    </div>
+
+
+                    <div class="tender-content">
+
+                        <h3>
+                         Бланки – заявления, декларации
+                        </h3>
+
+                    </div>
+
+
+                    <a
+                        href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQA0F2Jr_s8sS7gb8MFOtny5AeT6k8qnJLkSeEFCPOAdjes?e=RHuRck"
+                        class="tender-link"
+                        aria-label="Отвори Търг 3"
+                    >
+                        →
+                    </a>
+
+                </article>
+
+                <article class="tender-card">
+
+                    <div class="tender-number">
+                        04
+                    </div>
+
+
+                    <div class="tender-content">
+
+                        <h3>
+                        Основание за сливане на двете училища (заповед на МОН и Решение на Общински съвет)
+                        </h3>
+
+                    </div>
+
+
+                    <a
+                        href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQAb1A_W9bi7R5GRDYG9TDC-ASpCMonVWHdZDDwzg8Plx7k?e=FNdnCX"
+                        class="tender-link"
+                        aria-label="Отвори Търг 4"
+                    >
+                        →
+                    </a>
+
+                </article>
+
+                <article class="tender-card">
+
+                    <div class="tender-number">
+                        05
+                    </div>
+
+
+                    <div class="tender-content">
+
+                        <h3>
+                         Обява – процедура за публичен търг
+                        </h3>
+
+                    </div>
+
+
+                    <a
+                        href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQAVoJCPbGI1TYtgzMDLo3_WARHFLWf4nTErLxeCf8BIG9A?e=5rx0pJ"
+                        class="tender-link"
+                        aria-label="Отвори Търг 5"
+                    >
+                        →
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <div class="footer-inner">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    СУ „Недялка Шилева“
+                </h2>
+
+
+                <p>
+                    Официалният сайт на Средно училище
+                    „Недялка Шилева“ – град Съединение.
+                    Място за знание, традиции, развитие
+                    и бъдеще.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Навигация
+                </h3>
+
+                <a href="index.html">
+                    Начало
+                </a>
+
+                <a href="about.html">
+                    За нас
+                </a>
+
+                <a href="news.html">
+                    Новини
+                </a>
+
+                <a href="gallery.html">
+                    Галерия
+                </a>
+
+                <a href="contacts.html">
+                    Контакти
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    Полезно
+                </h3>
+
+                <a href="parents.html">
+                    За родители
+                </a>
+
+                <a href="students.html">
+                    Ученици
+                </a>
+
+                <a href="school-life.html">
+                    Училищен живот
+                </a>
+
+                <a href="projects.html">
+                    Проекти
+                </a>
+
+                <a href="documents.html">
+                    Документи
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            © 2026 СУ „Недялка Шилева“ – град Съединение.
+            Всички права запазени.
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>

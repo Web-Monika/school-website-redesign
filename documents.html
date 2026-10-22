@@ -1,0 +1,1945 @@
+<!DOCTYPE html>
+
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Правилници | СУ „Недялка Шилева“</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #faf7f1;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 105px;
+            background: #fffdf8;
+            border-bottom: 1px solid #e8dfd2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-symbol {
+            width: 115px;
+            height: 115px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-symbol img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .logo-text h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            line-height: 1;
+            color: #151515;
+        }
+
+        .logo-text p {
+            margin-top: 7px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: #6c675f;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #252525;
+            font-size: 14px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #8e2928;
+        }
+
+        nav a.active {
+            color: #8e2928;
+        }
+
+        nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #8e2928;
+        }
+
+        .header-button {
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+            background: #8e2928;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: "Inter";
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .header-button:hover {
+            background: #6f2020;
+            transform: translateY(-2px);
+        }
+
+        .page-hero {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(35, 61, 48, 0.95),
+                    rgba(35, 61, 48, 0.75)
+                ),
+                url("school.jpg");
+
+            background-size: cover;
+            background-position: center;
+
+            min-height: 300px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 60px 20px;
+        }
+
+        .page-hero-content {
+            max-width: 800px;
+        }
+
+        .page-hero h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .page-hero h2::before {
+            content: "✦";
+            color: #e5cda9;
+            margin-right: 12px;
+        }
+
+        .page-hero p {
+            font-size: 15px;
+            color: #eee8df;
+        }
+
+        .breadcrumb {
+            max-width: 1250px;
+            margin: auto;
+            padding: 22px 20px 0;
+
+            font-size: 13px;
+            color: #777;
+        }
+
+        .breadcrumb a {
+            color: #8e2928;
+            text-decoration: none;
+        }
+
+        .rules-section {
+            max-width: 1250px;
+            margin: auto;
+            padding: 55px 20px 80px;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .section-intro h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 42px;
+            color: #171717;
+            margin-bottom: 12px;
+        }
+
+        .section-intro h2::before {
+            content: "✦";
+            color: #8e2928;
+            margin-right: 10px;
+            font-size: 25px;
+        }
+
+        .section-intro p {
+            color: #707070;
+            font-size: 14px;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .rule-card {
+            background: #fffdf8;
+            border: 1px solid #e4dacd;
+            padding: 32px 25px;
+
+            min-height: 245px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .rule-card:hover {
+            transform: translateY(-6px);
+            border-color: #a52d2b;
+            box-shadow: 0 12px 30px rgba(70, 45, 25, 0.1);
+        }
+
+        .rule-icon {
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #efe5d5;
+            border-radius: 50%;
+
+            font-size: 29px;
+            margin-bottom: 18px;
+        }
+
+        .rule-card h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 24px;
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .rule-card p {
+            font-size: 13px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .rule-button {
+            margin-top: auto;
+
+            display: inline-block;
+
+            background: #8e2928;
+            color: white;
+
+            text-decoration: none;
+
+            padding: 10px 21px;
+            border-radius: 25px;
+
+            font-size: 12px;
+
+            transition: 0.3s;
+        }
+
+        .rule-button:hover {
+            background: #6f2020;
+            transform: translateY(-2px);
+        }
+
+        .info-box {
+            margin-top: 45px;
+
+            background: #efe5d5;
+            border-left: 5px solid #8e2928;
+
+            padding: 30px 35px;
+        }
+
+        .info-box h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .info-box p {
+            font-size: 13px;
+            color: #625e57;
+        }
+
+        
+        .documents {
+            max-width: 1150px;
+
+            margin: auto;
+
+            padding: 65px 20px 80px;
+        }
+
+        .category {
+            margin-bottom: 65px;
+        }
+
+        .category:last-child {
+            margin-bottom: 0;
+        }
+
+        .category-title {
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            margin-bottom: 25px;
+
+            padding-bottom: 12px;
+
+            border-bottom: 1px solid #dfd5c8;
+        }
+
+        .category-title span {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #8e2928;
+
+            color: white;
+
+            border-radius: 50%;
+
+            font-size: 19px;
+        }
+
+        .category-title h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 34px;
+
+            color: #171717;
+        }
+
+        .document-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 18px;
+        }
+
+        .document-card {
+            background: #fffdf8;
+
+            border: 1px solid #e4dacd;
+
+            padding: 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            transition: 0.3s;
+        }
+
+        .document-card:hover {
+            transform: translateY(-3px);
+
+            border-color: #bca994;
+
+            box-shadow: 0 8px 22px rgba(70, 45, 25, 0.08);
+        }
+
+        .document-info {
+            display: flex;
+
+            align-items: center;
+
+            gap: 16px;
+        }
+
+        .document-icon {
+            min-width: 48px;
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: #f1e6d7;
+
+            color: #8e2928;
+
+            border-radius: 50%;
+
+            font-size: 23px;
+        }
+
+        .document-info h4 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 21px;
+
+            line-height: 1.2;
+
+            color: #252525;
+        }
+
+        .document-type {
+            display: block;
+
+            margin-top: 4px;
+
+            font-size: 11px;
+
+            color: #888;
+        }
+
+        .document-link {
+            flex-shrink: 0;
+
+            text-decoration: none;
+
+            color: #8e2928;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+        }
+
+        .document-link:hover {
+            color: #6f2020;
+        }
+
+         .administrative {
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding: 65px 20px 80px;
+        }
+
+        
+        .admin-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+        .admin-card {
+            background: #fffdf8;
+
+            border: 1px solid #e4dacd;
+
+            padding: 35px 30px;
+
+            transition: 0.3s;
+
+            position: relative;
+        }
+
+        .admin-card:hover {
+            transform: translateY(-5px);
+
+            box-shadow: 0 12px 30px rgba(70, 45, 25, 0.10);
+
+            border-color: #c7b6a0;
+        }
+
+        .admin-icon {
+            width: 58px;
+            height: 58px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #f1e6d7;
+
+            color: #8e2928;
+
+            font-size: 28px;
+
+            border-radius: 50%;
+
+            margin-bottom: 18px;
+        }
+
+        .admin-card h3 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 29px;
+
+            color: #171717;
+
+            margin-bottom: 10px;
+        }
+
+        .admin-card h4 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 22px;
+
+            color: #171717;
+
+            margin-bottom: 10px;
+        }
+
+        .admin-card p {
+            font-size: 13px;
+
+            color: #707070;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+        }
+
+        .admin-link {
+            display: inline-block;
+
+            text-decoration: none;
+
+            background: #8e2928;
+
+            color: white;
+
+            padding: 11px 21px;
+
+            border-radius: 25px;
+
+            font-size: 13px;
+
+            transition: 0.3s;
+        }
+
+        .admin-link:hover {
+            background: #6f2020;
+
+            transform: translateY(-2px);
+        }
+
+        .important {
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 75px 20px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+        }
+
+
+        .important-box {
+            background: #fffdf8;
+
+            border: 1px solid #e5ddd2;
+
+            padding: 35px;
+
+            position: relative;
+        }
+
+
+        .important-box h2 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 32px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .important-box h2::before {
+            content: "✦";
+
+            color: #8e2928;
+
+            margin-right: 9px;
+
+            font-size: 20px;
+        }
+
+
+        .info-item {
+            display: flex;
+
+            gap: 15px;
+
+            padding: 14px 0;
+
+            border-bottom: 1px solid #e8dfd2;
+        }
+
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+
+        .info-icon {
+            font-size: 20px;
+        }
+
+
+        .info-item h4 {
+            font-family: "Cormorant Garamond", serif;
+
+            font-size: 20px;
+        }
+
+
+        .info-item h5 {
+            font-size: 13px;
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+
+        .info-item a {
+            color: #8e2928;
+
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #233d30;
+            color: white;
+            padding: 55px 6% 25px;
+        }
+
+        .footer-grid {
+            max-width: 1250px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            color: #d7d7d0;
+            font-size: 13px;
+            max-width: 300px;
+        }
+
+        footer h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+        }
+
+        footer a {
+            color: #d7d7d0;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            max-width: 1250px;
+            margin: 45px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+
+            text-align: center;
+
+            font-size: 11px;
+            color: #bfc6c0;
+        }
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 15px;
+            }
+
+            .rules-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            header {
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .header-button {
+                display: none;
+            }
+
+            .folk-border {
+                display: none;
+            }
+
+            .page-hero {
+                min-height: 250px;
+            }
+
+            .page-hero h2 {
+                font-size: 40px;
+            }
+
+            .rules-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+
+        <div class="logo-symbol">
+            <img src="logo.png" alt="Лого на училището">
+        </div>
+
+        <div class="logo-text">
+            <h1>
+                Средно училище<br>
+                „Недялка Шилева“
+            </h1>
+
+            <p>
+                ЗНАНИЕ • ТРАДИЦИИ • БЪДЕЩЕ
+            </p>
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="index.html">Начало</a>
+
+        <a href="about.html">За нас</a>
+
+        <a href="news.html">Новини</a>
+
+        <a href="gallery.html">Галерия</a>
+
+        <a href="contacts.html">Контакти</a>
+
+        <a href="parents.html">За родители</a>
+
+    </nav>
+
+    <a href="rabota.html" class="header-button">
+        ♡ Търсите ли работа?
+    </a>
+
+</header>
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <h2>Училищни документи</h2>
+
+        <p>
+            СУ „Недялка Шилева“ – гр. Съединение
+        </p>
+
+    </div>
+
+</section>
+
+<div class="breadcrumb">
+
+    <a href="index.html">Начало</a>
+    &nbsp; / &nbsp;
+    Училищни документи
+
+</div>
+
+<main class="rules-section">
+
+    <div class="section-intro">
+
+        <h2>Правилници и правила</h2>
+
+        <p>
+            Тук можете да намерите основните правилници,
+            регламентиращи организацията и дейността
+            на училището.
+        </p>
+
+    </div>
+
+    <div class="rules-grid">
+
+        <div class="rule-card">
+
+            <div class="rule-icon">
+                📖
+            </div>
+
+            <h3>
+                Правилник за дейността на училището 2026/2027
+            </h3>
+
+            <a href="ПРАВИЛНИК ЗА ДЕЙНОСТТА НА УЧИЛИЩЕТО 15092026.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="rule-button">
+                Преглед на документа →
+            </a>
+
+        </div>
+
+        <div class="rule-card">
+
+            <div class="rule-icon">
+                📚
+            </div>
+
+            <h3>
+                Правилник ЗБУВОТ
+            </h3>
+
+            <a href="ПРАВИЛНИК ЗБУВОТ.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="rule-button">
+                Преглед на документа →
+            </a>
+
+        </div>
+
+        <div class="rule-card">
+
+            <div class="rule-icon">
+                👨‍🎓
+            </div>
+
+            <h3>
+                ПРАВИЛА ЗА МРЕЖОВА И ИНФОРМАЦИОННА СИГУРНОСТ И ВИДЕОКОНТРОЛ 2026/2027
+            </h3>
+
+            <a href="ВЪТРЕШНИ_ПРАВИЛА_МРЕЖОВА_ИНФОРМАЦИОННА_СИГУРНОСТ_И_ВИДЕОКОНТРОЛ.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="rule-button">
+                Преглед на документа →
+            </a>
+
+        </div>
+
+        <div class="rule-card">
+
+            <div class="rule-icon">
+                🛡️
+            </div>
+
+            <h3>
+                Правила електронен дневник 2026/2027
+            </h3>
+
+            <a href="ПРАВИЛА ЕЛЕКТРОНЕН ДНЕВНИК.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="rule-button">
+                Преглед на документа →
+            </a>
+
+        </div>
+
+        <div class="rule-card">
+
+            <div class="rule-icon">
+                💻
+            </div>
+
+            <h3>
+                Вътрешни правила ЗИ
+            </h3>
+
+            <a href="ВЪТРЕШНИ ПРАВИЛА ЗИ.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="rule-button">
+                Преглед на документа →
+            </a>
+
+        </div>
+
+        <div class="rule-card">
+
+            <div class="rule-icon">
+                🏫
+            </div>
+
+            <h3>
+                Етичен кодекс 2025/2026
+            </h3>
+
+            <a href="Етичен кодекс 25 26.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="rule-button">
+                Преглед на документа →
+            </a>
+
+        </div>
+
+    </div>
+
+    <section class="rules-section">
+
+        <div class="section-intro">
+
+            <h2>Безопасност и подкрепа</h2>
+
+        </div>
+
+        <div class="rules-grid">
+
+            <div class="rule-card">
+
+                <div class="rule-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Механизъм тормоз
+                </h3>
+
+                <a href="Mehzm_protivodejstvie_tormoz_281217.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="rule-button">
+                    Преглед на документа →
+                </a>
+
+            </div>
+
+            <div class="rule-card">
+
+                <div class="rule-icon">
+                    📚
+                </div>
+
+                <h3>
+                    БДП
+                </h3>
+
+                <a href="План БДП 2025 2026.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="rule-button">
+                    Преглед на документа →
+                </a>
+
+            </div>
+
+            <div class="rule-card">
+
+                <div class="rule-icon">
+                    👨‍🎓
+                </div>
+
+                <h3>
+                    Политика за осигуряване на подкрепа за личностно развитие
+                </h3>
+
+                <a href="ПОЛИТИКА ЗА ОСИГУРЯВАНЕ НА ПОДКРЕПА.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="rule-button">
+                    Преглед на документа →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <main class="documents">
+
+        <section class="category">
+
+            <div class="category-title">
+
+                <span>◆</span>
+
+                <h3>
+                    Стратегии
+                </h3>
+
+            </div>
+
+            <div class="document-grid">
+
+                <article class="document-card">
+
+                    <div class="document-info">
+
+                        <div class="document-icon">
+                            📘
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Стратегия СУ „Недялка Шилева“ 2025–2030
+                            </h4>
+
+                            <span class="document-type">
+                                Стратегически документ
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="https://e.pcloud.link/publink/show?code=XZQCPIZQytsY6QfAQHHUgeimRqgmmCgfpfV"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="document-link"
+                    >
+                        Отвори →
+                    </a>
+
+                </article>
+
+                <article class="document-card">
+
+                    <div class="document-info">
+
+                        <div class="document-icon">
+                            📘
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Стратегия 10 клас НВО
+                            </h4>
+
+                            <span class="document-type">
+                                Стратегически документ
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="https://e.pcloud.link/publink/show?code=XZjXmGZuMTcHxAA7E0wMfDrAXwRARzyeO3X"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="document-link"
+                    >
+                        Отвори →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="category">
+
+            <div class="category-title">
+
+                <span>✦</span>
+
+                <h3>
+                    Планове
+                </h3>
+
+            </div>
+
+            <div class="document-grid">
+
+                <article class="document-card">
+
+                    <div class="document-info">
+
+                        <div class="document-icon">
+                            📄
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Актуализиран план за изпълнение на стратегията 2025–2030
+                            </h4>
+
+                            <span class="document-type">
+                                План
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="https://1drv.ms/w/c/f3b7a900dbf56ced/IQB7xKILj_v3SommzbH780T8AXC4BaWygq6lr6i0W8U9vwo?e=qI2s0f"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="document-link"
+                    >
+                        Отвори →
+                    </a>
+
+                </article>
+
+                <article class="document-card">
+
+                    <div class="document-info">
+
+                        <div class="document-icon">
+                            📄
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Годишен план 2026/2027
+                            </h4>
+
+                            <span class="document-type">
+                                Годишен план
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="https://e.pcloud.link/publink/show?code=XZywPIZWwv9iEWN8L5UyqjbkztMKfMj6tLX"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="document-link"
+                    >
+                        Отвори →
+                    </a>
+
+                </article>
+
+                <article class="document-card">
+
+                    <div class="document-info">
+
+                        <div class="document-icon">
+                            📚
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                План за квалификационна дейност 2026/2027
+                            </h4>
+
+                            <span class="document-type">
+                                План
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="https://e.pcloud.link/publink/show?code=XZ8cVAZF5dQsc8x79uEdc27i3WJAJ5fTwWV"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="document-link"
+                    >
+                        Отвори →
+                    </a>
+
+                </article>
+
+                <article class="document-card">
+
+                    <div class="document-info">
+
+                        <div class="document-icon">
+                            🌱
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                План-програма за образователна интеграция на етнически малцинства 2026/2027
+                            </h4>
+
+                            <span class="document-type">
+                                План-програма
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="https://e.pcloud.link/publink/show?code=XZ6KWIZmxc1zHYer4V740jkK45uThObTGYV"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="document-link"
+                    >
+                        Отвори →
+                    </a>
+
+                </article>
+
+                <article class="document-card">
+
+                    <div class="document-info">
+
+                        <div class="document-icon">
+                            📋
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                План на комисия ГЗЕИО
+                            </h4>
+
+                            <span class="document-type">
+                                План
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQDdyxJZ83aUTLP2UZzkhCsCAa1NIgNJj9XRH96hrI3Gzag?e=hEtbxd"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="document-link"
+                    >
+                        Отвори →
+                    </a>
+
+                </article>
+
+                <article class="document-card">
+
+                    <div class="document-info">
+
+                        <div class="document-icon">
+                            🎓
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Училищен план-прием за учебната 2026/2027 година
+                            </h4>
+
+                            <span class="document-type">
+                                План-прием
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <a
+                        href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQDEj9d-uOy6R5aGezMjeKzVASguT_c8s9oemDRiWTaKNe8?e=CTeg02"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="document-link"
+                    >
+                        Отвори →
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div class="admin-grid">
+
+            <article class="admin-card">
+
+                <div class="admin-icon">
+                    💰
+                </div>
+
+                <h3>
+                    Бюджет
+                </h3>
+
+                <p>
+                    ОТЧЕТНИ ДАННИ ПО ЕБК ЗА ИЗПЪЛНЕНИЕТО НА БЮДЖЕТА
+                    на СРЕДНО УЧИЛИЩЕ „НЕДЯЛКА ШИЛЕВА“ ГР. СЪЕДИНЕНИЕ
+                    за периода 01.01.2026 г. – 31.03.2026 г.
+                </p>
+
+                <p>
+                    ОТЧЕТНИ ДАННИ ПО ЕБК ЗА ИЗПЪЛНЕНИЕТО НА БЮДЖЕТА
+                    на СРЕДНО УЧИЛИЩЕ „НЕДЯЛКА ШИЛЕВА“ ГР. СЪЕДИНЕНИЕ
+                    за периода 01.01.2025 г. – 31.12.2025 г.
+                </p>
+
+                <p>
+                    ОТЧЕТНИ ДАННИ ПО ЕБК ЗА СМЕТКИТЕ ЗА СРЕДСТВАТА
+                    ОТ ЕВРОПЕЙСКИЯ СЪЮЗ – КСФ по ПРОЕКТ
+                    BG-RRP-1.015-„УЧИЛИЩНА STEM СРЕДА“ –
+                    СУ „ХРИСТО БОТЕВ“ за периода 01.01.2025 г. – 31.12.2025 г.
+                </p>
+
+                <p>
+                    ОТЧЕТНИ ДАННИ ПО ЕБК ЗА СМЕТКИТЕ ЗА СРЕДСТВАТА
+                    ОТ ЕВРОПЕЙСКИЯ СЪЮЗ – КСФ по ПРОЕКТ
+                    BG-RRP-1.015-„УЧИЛИЩНА STEM СРЕДА“ –
+                    НУ „ЛЮБЕН КАРАВЕЛОВ“ за периода 01.01.2025 г. – 31.12.2025 г.
+                </p>
+
+                <a
+                    href="https://1drv.ms/x/c/f3b7a900dbf56ced/IQAVTchnl_4sR7I6dn6L5ipSAe_5BozTlc_JRC_WwsCagME?e=Qd5aZK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="admin-link"
+                >
+                    Виж информацията →
+                </a>
+
+            </article>
+
+            <article class="admin-card">
+
+                <div class="admin-icon">
+                    👥
+                </div>
+
+                <h3>
+                    Обществен съвет
+                </h3>
+
+                <h4>
+                    2026/2027
+                </h4>
+
+                <p>
+                    Заповед №РД-10-1884/31.08.2026 г. на Директора
+                    на СУ „Недялка Шилева“, с която се определя
+                    съставът на членовете на Обществения съвет 2026/2027 г. –
+                    тук.<br>
+
+                    Протоколи от заседания на Обществения съвет
+                    за 2026/2027 година – тук.
+                </p>
+
+                <a
+                    href="https://1drv.ms/b/c/a33ad915f83e713a/IQCCvXmV7_KpR4suyLNWKmnpAflQgtKADLPwHTRMbzLSZOM?e=tEEf5K"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="admin-link"
+                >
+                    Виж информацията →
+                </a>
+
+                <h4 style="margin-top: 25px;">
+                    2025/2026
+                </h4>
+
+                <p>
+                    Заповед №РД-10-173/15.10.2025 г. на Директора
+                    на СУ „Недялка Шилева“, с която се определя
+                    съставът на членовете на Обществения съвет 2025/2026 г. –
+                    тук.<br>
+
+                    Протоколи от заседания на Обществения съвет
+                    за 2025/2026 година – тук.
+                </p>
+
+                <a
+                    href="https://e.pcloud.link/publink/show?code=XZrgRIZyglnqpmKdW4jxuNhWYKYbB0R9goV"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="admin-link"
+                >
+                    Виж информацията →
+                </a>
+
+            </article>
+
+        </div>
+
+    </main>
+
+    <section class="important">
+
+    <div class="important-box" id="parents">
+
+        <h2>
+            Прием в 1️⃣-ви клас
+        </h2>
+
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                📚
+            </div>
+
+
+            <div>
+
+                <h4>
+
+                    <a href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQBH83poqb6dTroZoZF8vMGtARZexdkXpgtChkAf24rq-wE?e=EphOuT">
+                        График с дейности
+                    </a>
+
+                    по прием в ПЪРВИ клас за учебната
+                    2026/2027 година.
+
+                    Заповед №РД-166/13.02.2026 г.
+                    на Кмета на община Съединение
+
+                    <a href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQBH83poqb6dTroZoZF8vMGtARZexdkXpgtChkAf24rq-wE?e=EphOuT">
+                        тук
+                    </a>.
+
+                </h4>
+
+                <br>
+
+                <h5>
+                    Изберете спокойна и вдъхновяваща среда за първите училищни стъпки на Вашето дете!
+                </h5>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                📔
+            </div>
+
+
+            <div>
+
+                <h4>
+                    НИЕ ПРЕДЛАГАМЕ:
+                </h4>
+
+
+                <h5>
+
+                    <br>
+
+                    - Едносменен режим на обучение<br>
+                    - Целодневна организация на учебния ден<br>
+                    - Столово хранене<br>
+                    - Библиотека и компютърни кабинети<br>
+                    - Медицински кабинет<br>
+                    - Психолог, логопед и ресурсен учител<br>
+                    - Добра спортна база<br>
+                    - Разширена подготовка: Български език и литература, Математика<br>
+
+                    <br>
+
+                </h5>
+
+
+                <h5>
+
+                    - Разнообразни извънкласни дейности:<br>
+
+                    • Народни танци<br>
+                    • Забавна математика<br>
+                    • Вокална група<br>
+                    • Спорт<br>
+                    • Литературен клуб<br>
+
+                    <br>
+
+                </h5>
+
+
+                <h4>
+                    Защо да изберете нас?
+                </h4>
+
+
+                <h5>
+
+                    В СУ „Недялка Шилева“ създаваме среда на доверие,
+                    подкрепа и уважение. Работим с внимание към всяко дете,
+                    насърчаваме любознателността и изграждаме увереност.
+                    Тук знанието среща грижата, а успехът започва от първия учебен ден!
+
+                    <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgAP-EUQWzfMQIuzJzhZVlU3AUq1xkgS7r262ee47tzVDws?e=V3DEwG">
+                        Снимки тук
+                    </a>.
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="important-box" id="students">
+
+        <h2>
+            Прием в 5️⃣-ти клас
+        </h2>
+
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                🎓
+            </div>
+
+
+            <div>
+
+                <h5>
+
+                    Изберете училище, което развива знания, умения и увереност!
+
+                    <br><br>
+
+                    Разширена подготовка (РП):<br>
+
+                    - Български език и литература<br>
+                    - Математика<br>
+
+                    <br>
+
+                    Факултативни учебни часове (ФУЧ):<br>
+
+                    – „Езикови игри и изкуствен интелект“ – учене чрез технологии и творчество<br>
+                    – „Лаборатория за геймъри“ – логика, стратегии и дигитални умения<br>
+                    – Волейболна академия – спорт, дисциплина и отборен дух<br>
+                    - „Творческа работилница“ – въображение, изкуство и себеизразяване<br>
+
+                    <br>
+
+                    Нашите предимства:<br>
+
+                    – квалифицирани и мотивирани учители<br>
+                    - съвременна материална база и STEM център<br>
+                    - уютни и просторни класни стаи<br>
+                    – богата извънкласна дейност<br>
+                    - участия и успехи в състезания и конкурси<br>
+                    – целодневно обучение<br>
+                    - безплатен транспорт от населените места в общината<br>
+                    – нов физкултурен салон и голямо дворно пространство<br>
+
+                    <br>
+
+                    Изберете знание.<br>
+                    Изберете развитие.<br>
+
+                    Изберете СУ „Недялка Шилева“ – град Съединение!
+
+                    Снимки
+
+                    <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgCdx6xq1TntRZIpIcaAAsMsAZQzFpGshYY9rxLjLJ5f0pU?e=al25iQ">
+                        тук
+                    </a>.
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="important-box" id="teachers">
+
+        <h2>
+            Прием в 8️⃣-ми клас
+        </h2>
+
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                🎓
+            </div>
+
+
+            <div>
+
+                <h3>
+
+                    <a href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQCOnvCAdCciTLPkfB2ePp2qAX5a6DACKyorrO5cKfQFvew?e=bMQ3dA">
+                        „Електронна търговия, маркетинг и реклама“
+                    </a>
+
+                </h3>
+
+
+                <br>
+
+
+                <h5>
+
+                    Дневна форма на обучение (5 години),
+                    без интензивно и без разширено изучаване на френски език,
+                    III-та степен на професионална квалификация
+
+                    <br><br>
+
+                    След 5 години обучение учениците могат да се реализират като:<br>
+
+                    - специалисти по електронна търговия и онлайн магазини<br>
+                    – дигитални маркетинг и рекламни асистенти<br>
+                    – администратори на социални мрежи и онлайн съдържание<br>
+                    – участници в създаване и управление на рекламни кампании<br>
+
+                    <br>
+
+                    Обучението е практично и съвременно –
+                    работа със специализиран софтуер, дигитални инструменти,
+                    проекти и STEM среда.
+
+                    Професия с широко приложение,
+                    възможност за бърза реализация и продължаване на образованието.
+
+                    Избери дигитални умения.
+                    Избери бъдеще.
+
+                    <br><br>
+
+                    Разгледайте повече за професията
+
+                    <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDXMrmV5VHTTYEcnnylRUOqAQrS7ugLggRW9SlhZq7AYYc?e=RQnDQ6">
+                        тук
+                    </a>.
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="important-box" id="teachers">
+
+        <h2>
+            Прием в 8️⃣-ми клас
+        </h2>
+
+        <div class="info-item">
+
+            <div class="info-icon">
+                📋
+            </div>
+
+
+            <div>
+
+                <h3>
+
+                    <a href="https://1drv.ms/b/c/f3b7a900dbf56ced/IQASrM1tGekSS44QcHhT8gLAAXkyIK1aa5-sWpeYPTGcShs?e=Kutilx">
+                        „Автоматизация и управляваща техника“
+                    </a>
+
+                </h3>
+
+
+                <br>
+
+
+                <h5>
+
+                    Дуална форма на обучение (5 години),
+                    без интензивно и без разширено изучаване на английски език,
+                    III-та степен на професионална квалификация.
+
+                    <br><br>
+
+                    С подкрепата на „Готмар“ ЕООД –
+                    практическото обучение се провежда в реална работна среда,
+                    а партньорът ще оборудва нова, модерна лаборатория в училището.
+
+                    <br><br>
+
+                    След 5 години обучение учениците могат да се реализират като:<br>
+
+                    – техници по автоматизация и управление<br>
+                    – сервизни специалисти на автоматизирани системи<br>
+                    - оператори и поддържащ персонал на производствени линии<br>
+                    - специалисти по контролно-измервателна техника<br>
+
+                    <br>
+
+                    Обучението съчетава теория и практика –
+                    работа с автоматизирани системи, контролери,
+                    сензори и специализиран софтуер.
+
+                    Търсена професия, сигурна реализация
+                    и конкурентни умения за пазара на труда.
+
+                    Избери практика.
+                    Избери технология.
+                    Избери бъдеще.
+
+                    <br><br>
+
+                    Разгледайте повече за професията
+
+                    <a href="https://1drv.ms/f/c/f3b7a900dbf56ced/IgDXMrmV5VHTTYEcnnylRUOqAQrS7ugLggRW9SlhZq7AYYc?e=RQnDQ6">
+                        тук
+                    </a>.
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </section>
+
+    <div class="info-box">
+
+        <h3>
+            Важно
+        </h3>
+
+        <p>
+            Документите на тази страница са предназначени
+            за ученици, родители, учители и служители на
+            СУ „Недялка Шилева“. При публикуване на нови
+            или актуализирани документи информацията ще
+            бъде обновявана.
+        </p>
+
+    </div>
+
+</main>
+
+<footer id="contacts">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <h2>
+                СУ „Недялка Шилева“
+            </h2>
+
+            <p>
+                Знание, традиции и вдъхновение.
+                Заедно изграждаме бъдещето на нашите деца.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Навигация</h3>
+
+            <ul>
+
+                <li>
+                    <a href="index.html">
+                        Начало
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html">
+                        За нас
+                    </a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">
+                        Галерия
+                    </a>
+                </li>
+
+                <li>
+                    <a href="news.html">
+                        Новини
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>Полезно</h3>
+
+            <ul>
+
+                <li>
+                    СУ „Недялка Шилева“ –
+                    град Съединение
+                </li>
+
+                <li>
+                    Нова образователна институция,
+                    образувана на 15.09.2025 г.
+                    чрез сливане на съществуващите
+                    училища на територията на община
+                    Съединение.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div>
+
+            <h3>Контакти</h3>
+
+            <ul>
+
+                <li>
+                    📍 4190, гр. Съединение,
+                    обл. Пловдивска,
+                    ул. „Баба Исака Скачкова” № 3
+                </li>
+
+                <li>
+                    ☎ 0879600898, 0318/22032
+                </li>
+
+                <li>
+                    ✉ info-1600035@edu.mon.bg
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 СУ „Недялка Шилева“
+        • Всички права запазени
+
+    </div>
+
+</footer>
+
+</body>
+</html>

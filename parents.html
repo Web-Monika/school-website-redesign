@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>За родители | СУ „Недялка Шилева“</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #faf7f1;
+            color: #252525;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 105px;
+            background: #fffdf8;
+            border-bottom: 1px solid #e8dfd2;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        .logo-symbol {
+            width: 90px;
+            height: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .logo-symbol img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+        .logo-text h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 27px;
+            line-height: 1;
+            color: #151515;
+        }
+
+
+        .logo-text p {
+            margin-top: 7px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #6c675f;
+        }
+
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+
+        nav a {
+            text-decoration: none;
+            color: #252525;
+            font-size: 14px;
+            position: relative;
+            transition: 0.3s;
+        }
+
+
+        nav a:hover {
+            color: #8e2928;
+        }
+
+
+        nav a.active {
+            color: #8e2928;
+        }
+
+
+        nav a.active::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #8e2928;
+        }
+
+
+        .header-button {
+            background: #8e2928;
+            color: white;
+            border: none;
+            padding: 13px 22px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: "Inter";
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+
+        .header-button:hover {
+            background: #6f2020;
+            transform: translateY(-2px);
+        }
+
+        .page-title {
+            max-width: 1250px;
+            margin: auto;
+            padding: 65px 20px 40px;
+            text-align: center;
+        }
+
+
+        .page-title h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 48px;
+            color: #171717;
+            margin-bottom: 10px;
+        }
+
+
+        .page-title h2::before {
+            content: "✦";
+            color: #8e2928;
+            margin-right: 12px;
+            font-size: 25px;
+        }
+
+
+        .page-title p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+
+        .intro h3 {
+            font-size: 14px;
+            font-weight: 400;
+            color: #666;
+            line-height: 1.8;
+        }
+
+
+        .intro h4 {
+            font-size: 13px;
+            font-weight: 400;
+            color: #666;
+            line-height: 1.8;
+        }
+
+
+        .intro a {
+            color: #8e2928;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+
+        .intro a:hover {
+            color: #28553d;
+        }
+
+
+        .parents-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 10px 20px 70px;
+        }
+
+
+        .parents-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+
+        .parent-card {
+            background: #fffdf8;
+            border: 1px solid #e4dacd;
+            padding: 30px 22px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+
+        .parent-card:hover {
+            transform: translateY(-5px);
+            border-color: #a52d2b;
+            box-shadow: 0 10px 25px rgba(70, 45, 25, 0.08);
+        }
+
+
+        .parent-icon {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+
+        .parent-card h3 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+
+        .parent-card p {
+            font-size: 13px;
+            color: #707070;
+            line-height: 1.7;
+        }
+
+
+        .parent-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #8e2928;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+
+        .parent-card a:hover {
+            color: #28553d;
+        }
+
+        .important {
+            max-width: 1100px;
+            margin: 0 auto 70px;
+            padding: 35px;
+            background: #efe5d5;
+            border-left: 4px solid #8e2928;
+        }
+
+
+        .important h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 31px;
+            margin-bottom: 15px;
+        }
+
+
+        .important h2::before {
+            content: "✦";
+            color: #8e2928;
+            margin-right: 8px;
+        }
+
+
+        .important p {
+            font-size: 13px;
+            color: #5f5a53;
+            line-height: 1.8;
+        }
+
+        .back {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+
+        .back a {
+            display: inline-block;
+            background: #8e2928;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+
+        .back a:hover {
+            background: #6f2020;
+            transform: translateY(-2px);
+        }
+
+
+        footer {
+            background: #233d30;
+            color: white;
+            padding: 45px 6% 20px;
+        }
+
+
+        .footer-content {
+            max-width: 1250px;
+            margin: auto;
+            text-align: center;
+        }
+
+
+        .footer-content h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+
+        .footer-content p {
+            color: #d7d7d0;
+            font-size: 12px;
+        }
+
+
+        .copyright {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            font-size: 11px;
+            color: #bfc6c0;
+        }
+
+        @media (max-width: 1000px) {
+
+            nav {
+                gap: 15px;
+            }
+
+            .parents-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            header {
+                height: auto;
+                padding: 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+
+            .header-button {
+                display: none;
+            }
+
+
+            .page-title {
+                padding-top: 45px;
+            }
+
+
+            .page-title h2 {
+                font-size: 38px;
+            }
+
+
+            .parents-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .important {
+                margin-left: 20px;
+                margin-right: 20px;
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <header>
+
+
+        <div class="logo">
+
+            <div class="logo-symbol">
+
+                <img src="logo.png" alt="Лого на училището">
+
+            </div>
+
+
+            <div class="logo-text">
+
+                <h1>
+                    Средно училище<br>
+                    „Недялка Шилева“
+                </h1>
+
+                <p>
+                    ЗНАНИЕ • ТРАДИЦИИ • БЪДЕЩЕ
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Начало
+            </a>
+
+            <a href="about.html">
+                За нас
+            </a>
+
+            <a href="news.html">
+                Новини
+            </a>
+
+            <a href="gallery.html">
+                Галерия
+            </a>
+
+            <a href="contacts.html">
+                Контакти
+            </a>
+
+            <a href="parents.html" class="active">
+                За родители
+            </a>
+
+        </nav>
+
+
+        <a href="rabota.html" style="text-decoration:none;">
+
+            <button class="header-button">
+                ♡ Търсите ли работа?
+            </button>
+
+        </a>
+
+
+    </header>
+
+    <section class="page-title">
+
+        <h2>
+            Уважаеми родители,
+        </h2>
+
+    </section>
+
+    <section class="intro">
+
+        <h3>
+            Добре дошли в страницата, създадена специално за вас!<br>
+            Тук ще откривате полезна и актуална информация,
+            свързана с обучението, училищния живот и
+            възможностите за развитие на вашите деца.<br>
+            Каним ви редовно да я посещавате и да бъдете активна
+            част от училищната общност.
+        </h3>
+
+        <br>
+
+        <h4>
+            Всички училищни документи за учебната 2025/2026
+            година може да намерите в страница
+            "<a href="documents.html">Училищни документи</a>".
+        </h4>
+
+    </section>
+
+    <main class="parents-container">
+
+
+        <div class="parents-grid">
+
+            <div class="parent-card">
+
+                <div class="parent-icon">
+                    📄
+                </div>
+
+                <h3>
+                    Документи
+                </h3>
+
+                <p>
+                    Правилници, заявления и други
+                    документи, необходими на родителите.
+                </p>
+
+                <a href="documents.html">
+                    Разгледайте →
+                </a>
+
+            </div>
+
+
+            <div class="parent-card">
+
+                <div class="parent-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Учебен процес
+                </h3>
+
+                <p>
+                    Информация за учебния ден,
+                    учебните планове, ваканциите
+                    и организацията на обучението.
+                </p>
+
+                <a href="students.html">
+                    Разгледайте →
+                </a>
+
+            </div>
+
+
+            <div class="parent-card">
+
+                <div class="parent-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Електронен дневник
+                </h3>
+
+                <p>
+                    Достъп до електронния дневник
+                    и информация за използването му.
+                </p>
+
+                <a href="https://app.shkolo.bg/" target="_blank" rel="noopener noreferrer">
+                    SHKOLO →
+                </a>
+
+            </div>
+
+
+            <div class="parent-card">
+
+                <div class="parent-icon">
+                    📰
+                </div>
+
+                <h3>
+                    Новини
+                </h3>
+
+                <p>
+                    Актуална информация и новини
+                    от живота на училището.
+                </p>
+
+                <a href="news.html">
+                    Новини →
+                </a>
+
+            </div>
+
+
+            <div class="parent-card">
+
+                <div class="parent-icon">
+                    ☎
+                </div>
+
+                <h3>
+                    Контакти
+                </h3>
+
+                <p>
+                    Адрес, телефони и електронна поща
+                    на СУ „Недялка Шилева“.
+                </p>
+
+                <a href="contacts.html">
+                    Контакти →
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="important">
+
+            <h2>
+                Важно за родителите
+            </h2>
+
+            <p>
+                Следете редовно сайта на училището и електронния
+                дневник за актуална информация, съобщения,
+                промени в учебния процес и предстоящи събития.
+            </p>
+
+        </div>
+
+
+        <div class="back">
+
+            <a href="index.html">
+                ← Обратно към началото
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h2>
+                СУ „Недялка Шилева“
+            </h2>
+
+            <p>
+                Знание, традиции и вдъхновение.
+                Заедно изграждаме бъдещето на нашите деца.
+            </p>
+
+
+            <div class="copyright">
+                © 2026 СУ „Недялка Шилева“ • Всички права запазени
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
